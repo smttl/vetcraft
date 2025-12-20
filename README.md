@@ -100,17 +100,13 @@ Test ortamında hızlıca senaryo oluşturmak için özel NBT verileriyle çağ�
 
 2. Hasta İnek (Asidoz - Mide Rahatsızlığı):
 
-Kod snippet'i
-
 /summon vetsim:cattle ~ ~ ~ {VetSim_Disease:"acidosis", VetSim_AgeDays:20}
+
 3. Damızlık Boğa (Simmental, 900kg):
 
-Kod snippet'i
-
 /summon vetsim:cattle ~ ~ ~ {VetSim_IsMale:1b, VetSim_Weight:900.0f, VetSim_Breed:"Simmental", VetSim_AgeDays:20}
-4. Gebe İnek (Doğuma Yakın):
 
-Kod snippet'i
+4. Gebe İnek (Doğuma Yakın):
 
 /summon vetsim:cattle ~ ~ ~ {VetSim_IsPregnant:1b, VetSim_PregnancyTimer:200, VetSim_AgeDays:20}
 
