@@ -11,6 +11,7 @@ Oyundaki standart ineklerin yerini alan, tamamen özelleştirilmiş **VetSim Cat
 - **Kimlik Sistemi:** Her hayvanın kendine özel, görsel olarak tepesinde ve veritabanında görünen bir Küpe Numarası (Ear Tag) vardır (Örn: `TR45129`).
 - **Irk ve Cinsiyet:** Holstein, Simmental, Angus, Jersey gibi gerçek ırklar. Boğa (Erkek) ve İnek (Dişi) ayrımı mevcuttur.
 - **Fiziksel Özellikler:** Dinamik ağırlık sistemi (kg), yaş takibi (gün bazlı büyüme) ve açlık/metabolizma döngüsü.
+- **Üreme ve Büyüme:** yetişkin dişi ve erkek bir araya geldiğinde otomatik çiftleşir yavrularda bu özellik yoktur çiftleşen dişi bir süre süt droplar erkeklerde de çiftleşme için dinlenme süresi vardır.
 
 ### 2. Gerçekçi Sağlık ve Hastalık Sistemi
 Hayvanlar sadece can barından ibaret değildir. Çevresel faktörlere ve beslenmeye göre hastalanabilirler.
@@ -106,7 +107,11 @@ Test ortamında hızlıca senaryo oluşturmak için özel NBT verileriyle çağ�
 
 /summon vetsim:cattle ~ ~ ~ {VetSim_IsMale:1b, VetSim_Weight:900.0f, VetSim_Breed:"Simmental", VetSim_AgeDays:20}
 
-4. Gebe İnek (Doğuma Yakın):
+4. Damızlık inek
+
+/summon vetsim:cattle ~ ~ ~ {VetSim_IsMale:0b, VetSim_IsPregnant:0b, VetSim_Weight:650.0f, VetSim_Breed:"Simmental", VetSim_AgeDays:1000}
+
+5. Gebe İnek (Doğuma Yakın):
 
 /summon vetsim:cattle ~ ~ ~ {VetSim_IsPregnant:1b, VetSim_PregnancyTimer:200, VetSim_AgeDays:20}
 
