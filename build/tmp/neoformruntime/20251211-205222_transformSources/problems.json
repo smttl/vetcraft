@@ -1,0 +1,146 @@
+[
+  {
+    "problemId": {
+      "id": "invalid-at",
+      "displayName": "Invalid",
+      "group": {
+        "id": "access-transformer",
+        "displayName": "Access Transformers"
+      }
+    },
+    "severity": "WARNING",
+    "location": {
+      "file": "/Users/smtl/Downloads/vetcraft 2/build/tmp/neoformruntime/20251211-205222_transformSources/ats/accesstransformer.cfg",
+      "line": 208
+    },
+    "contextualLabel": "Access transformer targeting record class net.minecraft.core.RegistrySynchronization$NetworkedRegistryData attempts to widen its access without widening the constructor\u0027s access. You must AT the constructor too: \"public net.minecraft.core.RegistrySynchronization$NetworkedRegistryData \u003cinit\u003e(Lnet/minecraft/resources/ResourceKey;Lcom/mojang/serialization/Codec;)V\""
+  },
+  {
+    "problemId": {
+      "id": "invalid-at",
+      "displayName": "Invalid",
+      "group": {
+        "id": "access-transformer",
+        "displayName": "Access Transformers"
+      }
+    },
+    "severity": "WARNING",
+    "location": {
+      "file": "/Users/smtl/Downloads/vetcraft 2/build/tmp/neoformruntime/20251211-205222_transformSources/ats/accesstransformer.cfg",
+      "line": 258
+    },
+    "contextualLabel": "Access transformer targeting record class net.minecraft.server.MinecraftServer$ReloadableResources attempts to widen its access without widening the constructor\u0027s access. You must AT the constructor too: \"public net.minecraft.server.MinecraftServer$ReloadableResources \u003cinit\u003e(Lnet/minecraft/server/packs/resources/CloseableResourceManager;Lnet/minecraft/server/ReloadableServerResources;)V\""
+  },
+  {
+    "problemId": {
+      "id": "invalid-at",
+      "displayName": "Invalid",
+      "group": {
+        "id": "access-transformer",
+        "displayName": "Access Transformers"
+      }
+    },
+    "severity": "WARNING",
+    "location": {
+      "file": "/Users/smtl/Downloads/vetcraft 2/build/tmp/neoformruntime/20251211-205222_transformSources/ats/accesstransformer.cfg",
+      "line": 277
+    },
+    "contextualLabel": "Access transformer targeting record class net.minecraft.util.datafix.fixes.StructuresBecomeConfiguredFix$Conversion attempts to widen its access without widening the constructor\u0027s access. You must AT the constructor too: \"public net.minecraft.util.datafix.fixes.StructuresBecomeConfiguredFix$Conversion \u003cinit\u003e(Ljava/util/Map;Ljava/lang/String;)V\""
+  },
+  {
+    "problemId": {
+      "id": "invalid-at",
+      "displayName": "Invalid",
+      "group": {
+        "id": "access-transformer",
+        "displayName": "Access Transformers"
+      }
+    },
+    "severity": "WARNING",
+    "location": {
+      "file": "/Users/smtl/Downloads/vetcraft 2/build/tmp/neoformruntime/20251211-205222_transformSources/ats/accesstransformer.cfg",
+      "line": 347
+    },
+    "contextualLabel": "Access transformer attempted to make toNetwork of net.minecraft.world.item.crafting.Ingredient final. Was non-final"
+  },
+  {
+    "problemId": {
+      "id": "invalid-at",
+      "displayName": "Invalid",
+      "group": {
+        "id": "access-transformer",
+        "displayName": "Access Transformers"
+      }
+    },
+    "severity": "WARNING",
+    "location": {
+      "file": "/Users/smtl/Downloads/vetcraft 2/build/tmp/neoformruntime/20251211-205222_transformSources/ats/accesstransformer.cfg",
+      "line": 363
+    },
+    "contextualLabel": "Access transformer targeting record class net.minecraft.world.level.biome.Biome$ClimateSettings attempts to widen its access without widening the constructor\u0027s access. You must AT the constructor too: \"public net.minecraft.world.level.biome.Biome$ClimateSettings \u003cinit\u003e(ZFLnet/minecraft/world/level/biome/Biome$TemperatureModifier;F)V\""
+  },
+  {
+    "problemId": {
+      "id": "missing-target",
+      "displayName": "Missing Target",
+      "group": {
+        "id": "access-transformer",
+        "displayName": "Access Transformers"
+      }
+    },
+    "severity": "ERROR",
+    "location": {
+      "file": "/Users/smtl/Downloads/vetcraft 2/build/tmp/neoformruntime/20251211-205222_transformSources/ats/accesstransformer.cfg",
+      "line": 528
+    },
+    "contextualLabel": "The target net.minecraft.world.level.levelgen.NoiseGeneratorSettings METHOD lambda$static$0(Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App; does not exist."
+  },
+  {
+    "problemId": {
+      "id": "missing-target",
+      "displayName": "Missing Target",
+      "group": {
+        "id": "access-transformer",
+        "displayName": "Access Transformers"
+      }
+    },
+    "severity": "ERROR",
+    "location": {
+      "file": "/Users/smtl/Downloads/vetcraft 2/build/tmp/neoformruntime/20251211-205222_transformSources/ats/accesstransformer.cfg",
+      "line": 442
+    },
+    "contextualLabel": "The target net.minecraft.world.level.block.MelonBlock METHOD \u003cinit\u003e(Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)V does not exist."
+  },
+  {
+    "problemId": {
+      "id": "missing-target",
+      "displayName": "Missing Target",
+      "group": {
+        "id": "access-transformer",
+        "displayName": "Access Transformers"
+      }
+    },
+    "severity": "ERROR",
+    "location": {
+      "file": "/Users/smtl/Downloads/vetcraft 2/build/tmp/neoformruntime/20251211-205222_transformSources/ats/accesstransformer.cfg",
+      "line": 235
+    },
+    "contextualLabel": "The target net.minecraft.data.recipes.ShapedRecipeBuilder INNERCLASS Result does not exist."
+  },
+  {
+    "problemId": {
+      "id": "missing-target",
+      "displayName": "Missing Target",
+      "group": {
+        "id": "access-transformer",
+        "displayName": "Access Transformers"
+      }
+    },
+    "severity": "ERROR",
+    "location": {
+      "file": "/Users/smtl/Downloads/vetcraft 2/build/tmp/neoformruntime/20251211-205222_transformSources/ats/accesstransformer.cfg",
+      "line": 169
+    },
+    "contextualLabel": "The target net.minecraft.client.renderer.blockentity.BlockEntityRenderDispatcher FIELD fontRenderer does not exist."
+  }
+]

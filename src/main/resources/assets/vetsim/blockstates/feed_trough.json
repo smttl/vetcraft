@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "level=0": { "model": "vetsim:block/feed_trough_empty" },
+    "level=1": { "model": "vetsim:block/feed_trough_medium" },
+    "level=2": { "model": "vetsim:block/feed_trough_medium" },
+    "level=3": { "model": "vetsim:block/feed_trough_full" }
+  }
+}

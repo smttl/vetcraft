@@ -1,0 +1,30 @@
+modLoader="javafml"
+loaderVersion="[2]"
+license="All Rights Reserved"
+issueTrackerURL="https://github.com/vetsim/issues"
+
+[[mods]]
+modId="vetsim" # İŞTE EKSİK OLAN KISIM BUYDU
+version="1.0.0"
+displayName="VetCraft"
+displayURL="https://vetsim.com"
+logoFile="icon.png" # Eğer logon yoksa hata vermez, boş geçer
+credits="Veteriner Simulasyonu Ekibi"
+authors="SeninAdin"
+description='''
+    Gerçekçi veterinerlik ve hayvancılık simülasyonu.
+    '''
+
+[[dependencies.vetsim]]
+modId="neoforge"
+type="required"
+versionRange="[20.4,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.vetsim]]
+modId="minecraft"
+type="required"
+versionRange="[1.20.4,)"
+ordering="NONE"
+side="BOTH"

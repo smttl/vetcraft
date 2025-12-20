@@ -1,0 +1,31 @@
+/summon vetsim:cattle
+/data merge entity @e[type=vetsim:cattle,limit=1,sort=nearest] {VetSim_Breed:"Angus"}
+/summon ve
+/summon vet
+/summon vetsim:cattle ~ ~ ~ {Age:-24000, VetSim_Breed:"Holstein", VetSim_EarTag:"TR-BEBEK", VetSim_Weight:18.0f, VetSim_AgeDays:0}
+/summon vetsim:cattle ~ ~ ~ {Age:-24000, VetSim_Breed:"Angus", VetSim_EarTag:"TR-ANGUS-B", VetSim_Weight:22.0f, VetSim_AgeDays:0}
+/summon vetsim:cattle ~ ~ ~ {VetSim_Breed:"Holstein", VetSim_Weight:30.0f, VetSim_EarTag:"TR-HASTA"}
+/summon vetsim:cattle ~ ~ ~ {Age:-24000, VetSim_Breed:"Default", VetSim_Weight:18.0f, VetSim_AgeDays:0}
+/summon vetsim:cattle ~ ~ ~ {Age:-24000, VetSim_Breed:"Defat", VetSim_Weight:18.0f, VetSim_AgeDays:0}
+/summon vetsim:cattle ~ ~ ~ {VetSim_Breed:"Bilinmeyen"}
+/summon vetsim:cattle ~ ~ ~ {VetSim_Breed:"Angus"}
+/summon vetsim:cattle ~ ~ ~ {VetSim_Breed:"holstein"}
+/summon vetsim:cattle ~ ~ ~ {VetSim_Breed:"Angus", VetSim_EarTag:"TR-ANGUS-01"}
+/summon vetsim:cattle ~ ~ ~ {VetSim_Breed:"Angujjhs", VetSim_EarTag:"TR-AS-01"}
+/summon vetsim:cattle
+/summon ve
+/summon vetsim:cattle
+/summon vetsim:cattle ~ ~ ~ {VetSim_IsMale:0b, Age:0, VetSim_AgeDays:700, VetSim_Weight:650.0f, VetSim_Hunger:90, VetSim_BirthCount:1}
+/summon vetsim:cattle ~ ~ ~ {VetSim_IsMale:1b, Age:0, VetSim_AgeDays:800, VetSim_Weight:950.0f, VetSim_Hunger:90}
+/summon vetsim:cattle ~ ~ ~ {VetSim_Disease:"pneumonia", VetSim_Hunger:30}
+/summon vetsim:cattle ~ ~ ~ {VetSim_Disease:"acidosis", VetSim_Hunger:100}
+/summon vetsim:cattle ~ ~ ~ {VetSim_Disease:"pneumonia", VetSim_Hunger:30}
+/summon vetsim:cattle
+/summon vetsim:cattle ~ ~ ~ {VetSim_Disease:"pneumonia", VetSim_Hunger:30}
+/summon vetsim:cattle ~ ~ ~ {VetSim_IsPregnant:1b, VetSim_PregnancyTimer:200, VetSim_IsMale:0b}
+/summon vetsim:cattle ~ ~ ~ {VetSim_IsPregnant:1b, VetSim_PregnancyTimer:210000, VetSim_IsMale:0b}
+/summon vetsim:cattle ~ ~ ~ {VetSim_IsPregnant:1b, VetSim_PregnancyTimer:200, VetSim_IsMale:0b, VetSim_AgeDays:20}
+/summon vetsim:cattle ~ ~ ~ {VetSim_IsPregnant:0b, VetSim_BreedingCooldown:10000, VetSim_IsMale:0b, VetSim_AgeDays:20}
+/summon vetsim:cattle ~ ~ ~ {VetSim_IsMale:0b, VetSim_AgeDays:20, VetSim_IsPregnant:0b, VetSim_BreedingCooldown:0}
+/summon vetsim:cattle
+/summon vetsim:cattle ~ ~ ~ {VetSim_IsMale:1b, VetSim_AgeDays:20, VetSim_Weight:900.0f, VetSim_Breed:"Simmental"}

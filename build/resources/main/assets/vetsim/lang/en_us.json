@@ -1,0 +1,15 @@
+{
+  "block.vetsim.feed_trough": "Yemlik",
+  "item.vetsim.antibiotics": "Genel Antibiyotik",
+  "item.vetsim.penicillin": "Penisilin G",
+  "item.vetsim.flunixin": "Flunixin (Ağrı Kesici)",
+  "item.vetsim.multivitamin": "Multivitamin Kompleks",
+  "creativetab.vet_tab": "VetCraft Ekipmanları",
+
+  "entity.vetsim.cattle": "Sığır",
+  "item.vetsim.stethoscope": "Stetoskop",
+  "item.vetsim.vet_clipboard": "Veteriner Kayıt Defteri",
+  "item.vetsim.thermometer": "Dijital Termometre",
+  "item.vetsim.empty_blood_tube": "Boş Kan Tüpü (Vakum)",
+  "item.vetsim.filled_blood_tube": "Kan Numunesi"
+}

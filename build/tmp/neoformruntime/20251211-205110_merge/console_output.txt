@@ -1,0 +1,18 @@
+--------------------------------------------------------------------------------
+
+Command-Line:
+ - /Users/smtl/Library/Java/JavaVirtualMachines/ms-17.0.17/Contents/Home/bin/java
+ - -jar
+ - /Users/smtl/.gradle/caches/modules-2/files-2.1/net.neoforged/mergetool/2.0.2/f65ce45660841dcf1a58363fdcef0dab4d5a26c8/mergetool-2.0.2-fatjar.jar
+ - --client
+ - /Users/smtl/.gradle/caches/neoformruntime/intermediate_results/stripClient_62a780c51d86238de56e29a338a2c8be1cc827c9_output.jar
+ - --server
+ - /Users/smtl/.gradle/caches/neoformruntime/intermediate_results/stripServer_633098d8507058ce70798ca224d1974eddabe88a_output.jar
+ - --ann
+ - 1.20.4
+ - --output
+ - ./output.jar
+ - --inject
+ - false
+--------------------------------------------------------------------------------
+
