@@ -107,7 +107,11 @@ Test ortamında hızlıca senaryo oluşturmak için özel NBT verileriyle çağ�
 
 /summon vetsim:cattle ~ ~ ~ {VetSim_IsMale:1b, VetSim_Weight:900.0f, VetSim_Breed:"Simmental", VetSim_AgeDays:20}
 
-4. Gebe İnek (Doğuma Yakın):
+4. Damızlık inek
+
+/summon vetsim:cattle ~ ~ ~ {VetSim_IsMale:0b, VetSim_IsPregnant:0b, VetSim_Weight:650.0f, VetSim_Breed:"Simmental", VetSim_AgeDays:1000}
+
+5. Gebe İnek (Doğuma Yakın):
 
 /summon vetsim:cattle ~ ~ ~ {VetSim_IsPregnant:1b, VetSim_PregnancyTimer:200, VetSim_AgeDays:20}
 
