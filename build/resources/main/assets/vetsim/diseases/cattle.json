@@ -2,43 +2,46 @@
   {
     "id": "pneumonia",
     "displayName": "Pnömoni (Zatürre)",
-    "triggerHungerBelow": 50,
+    "triggerHungerBelow": 40,
     "triggerChance": 0.5,
-    "weightLossPerTick": 0.2,
-    "damagePerTick": 1.0,
+    "weightLossPerTick": 0.5,
+    "damagePerTick": 2.0,
+    "abortChance": 0.10,
     "contagious": true,
     "visualEffect": "SNEEZE",
     "slowness": true,
-
     "cureType": "ITEM",
-    "cureTarget": "vetsim:antibiotics",
-
+    "cureTarget": "vetsim:penicillin",
     "symptoms": {
-      "anamnesis": "Sabah yemlemesinde iştahsızlık (Anoreksi) fark edildi. Süt veriminde ani düşüş var. Ahırda öksürük sesleri duyuldu.",
-      "visual": "Burun akıntısı (Mukopurulent) mevcut. Hayvan titriyor ve tüyleri karışık.",
-      "stethoscope": "Akciğerlerde hırıltı (Ral) ve sürtünme sesleri.",
+      "anamnesis": "İştahsızlık ve öksürük nöbetleri.",
+      "visual": "Burun akıntısı, başı önde.",
+      "stethoscope": "Akciğerlerde yaş hırıltı (Ral).",
       "temperature": 41.2
     }
   },
   {
     "id": "acidosis",
     "displayName": "Rumen Asidozu",
+    "cureType": "FEED",
+    "cureTarget": "minecraft:hay_block",
     "triggerHungerBelow": 100,
     "triggerChance": 0.0,
-    "weightLossPerTick": 0.5,
-    "damagePerTick": 0.0,
+    "weightLossPerTick": 1.0,
+    "damagePerTick": 0.5,
+    "abortChance": 0.02,
     "contagious": false,
     "visualEffect": "SMOKE",
     "slowness": true,
-
-    "cureType": "FEED",
-    "cureTarget": "minecraft:hay_block",
-
     "symptoms": {
-      "anamnesis": "Dün gece yem deposunun kapısı açık kalmış. Hayvan fazla miktarda kesif yem (tahıl) tüketmiş olabilir. Dışkısı cıvık.",
-      "visual": "Sol karın boşluğu (Açlık çukuru) şişkin. Ayaklarda hassasiyet var (Laminits).",
-      "stethoscope": "Rumen hareketleri durmuş. (Ping sesi yok).",
+      "anamnesis": "Yem yemeyi kesti, dışkı cıvık.",
+      "visual": "Sol karın şişkin, ayaklarına vuruyor.",
+      "stethoscope": "Rumen hareketleri durmuş.",
       "temperature": 38.5
-    }
+    },
+    "risky_items": [
+      { "item": "minecraft:rotten_flesh", "chance": 0.3 },
+      { "item": "minecraft:poisonous_potato", "chance": 0.5 },
+      { "item": "minecraft:cookie", "chance": 0.1 }
+    ]
   }
 ]

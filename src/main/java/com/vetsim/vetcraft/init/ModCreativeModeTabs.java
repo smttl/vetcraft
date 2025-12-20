@@ -38,8 +38,12 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.EMPTY_BLOOD_TUBE.get());  // Boş Tüp
                         pOutput.accept(ModItems.FILLED_BLOOD_TUBE.get()); // Dolu Tüp
 
-                        // 4. ENTITY YUMURTALARI (Spawn Eggs)
-                        // Eğer spawn egg yaptıysan buraya eklersin, şimdilik komutla çağırıyoruz.
+                        // 4. GENETİK / TOHUMLAMA
+                        pOutput.accept(ModItems.EMPTY_STRAW.get()); // Boş Payet (Temsili/Çöp veya Crafting için)
+
+                        // Dolu Payetler (Direkt İneğe Sağ Tıklanacak)
+                        pOutput.accept(ModItems.FILLED_STRAW.get());
+
                     })
                     .build());
 

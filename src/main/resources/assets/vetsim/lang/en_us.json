@@ -11,5 +11,7 @@
   "item.vetsim.vet_clipboard": "Veteriner Kayıt Defteri",
   "item.vetsim.thermometer": "Dijital Termometre",
   "item.vetsim.empty_blood_tube": "Boş Kan Tüpü (Vakum)",
-  "item.vetsim.filled_blood_tube": "Kan Numunesi"
+  "item.vetsim.filled_blood_tube": "Kan Numunesi",
+  "item.vetcraft.empty_straw": "Boş Payet",
+  "item.vetcraft.filled_straw": "Dolu Payet"
 }

@@ -3,6 +3,13 @@ package com.vetsim.vetcraft.util;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.vetsim.vetcraft.VetCraft;
+
+// --- YENİ EKLENEN İMPORTLAR ---
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.util.RandomSource;
+// ------------------------------
+
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
@@ -13,7 +20,9 @@ import java.util.Random;
 
 public class DiseaseManager {
     private static List<DiseaseData> loadedDiseases = new ArrayList<>();
-    private static final Random random = new Random();
+
+    // Genel kullanım için Random (Açlık kontrolü vb. için)
+    private static final Random internalRandom = new Random();
 
     public static void loadDiseases() {
         try {
@@ -42,7 +51,7 @@ public class DiseaseManager {
     public static DiseaseData checkForDisease(int currentHunger) {
         for (DiseaseData disease : loadedDiseases) {
             if (currentHunger < disease.triggerHungerBelow) {
-                if (random.nextDouble() < disease.triggerChance) {
+                if (internalRandom.nextDouble() < disease.triggerChance) {
                     return disease;
                 }
             }
@@ -55,5 +64,31 @@ public class DiseaseManager {
             if (d.id.equals(id)) return d;
         }
         return null;
+    }
+
+    // --- YENİ EKLENEN METOT: YEMEK RİSK HESAPLAMA ---
+    public static String calculateRisk(ItemStack stack, RandomSource random) {
+        if (stack.isEmpty()) return null;
+
+        // Yenen eşyanın string ID'sini al (örn: "minecraft:rotten_flesh")
+        String itemId = BuiltInRegistries.ITEM.getKey(stack.getItem()).toString();
+
+        for (DiseaseData disease : loadedDiseases) {
+            // Eğer hastalığın 'risky_items' listesi varsa kontrol et
+            if (disease.risky_items != null) {
+                for (DiseaseData.RiskyItem risk : disease.risky_items) {
+
+                    // Eşya ID'si eşleşiyor mu?
+                    if (risk.item.equals(itemId)) {
+                        // Şans faktörü (0.3 > 0.1 vb.)
+                        // Entity'nin kendi RandomSource'unu kullanıyoruz ki simülasyon tutarlı olsun
+                        if (random.nextFloat() < risk.chance) {
+                            return disease.id; // Hastalık ID'sini döndür (örn: "acidosis")
+                        }
+                    }
+                }
+            }
+        }
+        return null; // Risk yok
     }
 }

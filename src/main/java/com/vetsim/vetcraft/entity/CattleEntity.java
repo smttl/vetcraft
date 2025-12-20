@@ -6,9 +6,10 @@ import com.vetsim.vetcraft.entity.ModEntities;
 import com.vetsim.vetcraft.init.ModItems;
 import com.vetsim.vetcraft.util.DiseaseData;
 import com.vetsim.vetcraft.util.DiseaseManager;
+import com.vetsim.vetcraft.util.FeedData;
+import com.vetsim.vetcraft.util.FeedManager;
 
 import net.minecraft.core.registries.BuiltInRegistries;
-
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -53,7 +54,11 @@ public class CattleEntity extends Animal {
     public static final int BABY_GROWTH_DAYS = 7;
     private int breedingCooldown = 0;
     private String fatherBreed = "Melez";
+
+    // Gübre Sayacı ve Metabolizma
     private int metabolismTimer = 0;
+    private int manureTimer = 0;
+
     private static final String[] BREEDS = {"Holstein", "Angus", "Simmental", "Jersey", "Melez"};
 
     public CattleEntity(EntityType<? extends Animal> entityType, Level level) {
@@ -78,7 +83,7 @@ public class CattleEntity extends Animal {
                 .add(Attributes.FOLLOW_RANGE, 16.0D);
     }
 
-    // --- OYUN DÖNGÜSÜ ---
+    // --- OYUN DÖNGÜSÜ (TICK) ---
     @Override
     public void aiStep() {
         super.aiStep();
@@ -98,8 +103,19 @@ public class CattleEntity extends Animal {
             }
         }
 
-        // 2. Metabolizma (Server)
+        // 2. Metabolizma ve Hastalık İlerlemesi (Server)
         if (!this.level().isClientSide()) {
+
+            // --- GÜBRE SİSTEMİ (Her 12000 tick / Yarım Gün) ---
+            if (!this.isBaby()) {
+                this.manureTimer++;
+                if (this.manureTimer >= 12000) {
+                    this.manureTimer = 0;
+                    this.spawnAtLocation(ModItems.MANURE.get());
+                    this.playSound(SoundEvents.CHICKEN_EGG, 1.0F, 0.5F);
+                }
+            }
+
             // Büyüme
             if (this.getAgeDays() < BABY_GROWTH_DAYS) {
                 if (!this.isBaby()) this.setAge(-24000);
@@ -107,7 +123,7 @@ public class CattleEntity extends Animal {
                 this.setAge(0);
             }
 
-            // Günlük
+            // Günlük Sayaçlar
             if (this.tickCount % 24000 == 0) {
                 this.setAgeDays(this.getAgeDays() + 1);
                 if (!this.isMale() && this.breedingCooldown > 0 && this.getHunger() > 30) {
@@ -119,13 +135,16 @@ public class CattleEntity extends Animal {
             if (!this.getDisease().equals("NONE")) this.setSpeed(0.1F);
             else this.setSpeed(0.2F);
 
-            // Dakikalık Metabolizma
+            // Dakikalık Metabolizma Döngüsü (1200 tick = 1 dakika)
             this.metabolismTimer++;
             if (this.metabolismTimer >= 1200) {
                 this.metabolismTimer = 0;
+
+                // A) Açlık Yönetimi
                 int currentHunger = this.getHunger();
                 if (currentHunger > 0) this.setHunger(currentHunger - 2);
 
+                // B) Kilo Yönetimi
                 float currentWeight = this.getWeight();
                 if (currentHunger >= 80) {
                     float gain = this.isBaby() ? 0.8F : 0.4F;
@@ -135,20 +154,34 @@ public class CattleEntity extends Animal {
                     if (currentWeight > 30.0F) this.setWeight(currentWeight - loss);
                 }
 
+                // C) HASTALIK ETKİLERİ
                 String currentDisease = this.getDisease();
                 if (!currentDisease.equals("NONE")) {
                     DiseaseData data = DiseaseManager.getDiseaseById(currentDisease);
                     if (data != null) {
-                        if (data.damagePerTick > 0 && this.random.nextDouble() < 0.1) this.hurt(this.damageSources().starve(), (float)data.damagePerTick);
-                        if (this.getWeight() > 30.0F) this.setWeight(this.getWeight() - (float)data.weightLossPerTick);
+                        // 1. Can Yakma
+                        if (data.damagePerTick > 0) {
+                            this.hurt(this.damageSources().starve(), (float)data.damagePerTick);
+                        }
+                        // 2. Kilo Kaybı
+                        if (this.getWeight() > 30.0F) {
+                            this.setWeight(this.getWeight() - (float)data.weightLossPerTick);
+                        }
+                        // 3. ABORT Riski
+                        if (this.isPregnant() && data.abortChance > 0) {
+                            if (this.random.nextDouble() < data.abortChance) {
+                                triggerAbortion();
+                            }
+                        }
                     }
                 } else {
+                    // Hasta değilse yeni hastalık kapma kontrolü (Rutin)
                     DiseaseData newDisease = DiseaseManager.checkForDisease(this.getHunger());
                     if (newDisease != null) this.setDisease(newDisease.id);
                 }
             }
 
-            // Gebelik
+            // Gebelik Sayacı
             if (this.isPregnant()) {
                 this.pregnancyTimer--;
                 if (this.pregnancyTimer <= 0) this.giveBirth();
@@ -157,43 +190,91 @@ public class CattleEntity extends Animal {
         }
     }
 
-    // --- ETKİLEŞİM YÖNETİCİSİ (INTERACTION) ---
+    // --- ETKİLEŞİM YÖNETİCİSİ ---
     @Override
     public InteractionResult mobInteract(Player player, InteractionHand hand) {
-        if (hand == InteractionHand.OFF_HAND) return InteractionResult.PASS; // Çift tık engelleme
+        if (hand == InteractionHand.OFF_HAND) return InteractionResult.PASS;
 
         ItemStack itemstack = player.getItemInHand(hand);
 
         if (!this.level().isClientSide()) {
 
-            // A) LAB: KAN ALMA (GELİŞMİŞ SİSTEM) 🩸
+            // --- 1. SPERMA ALMA (BOĞADAN) ---
+            if (itemstack.is(ModItems.EMPTY_STRAW.get())) {
+                if (this.isMale() && !this.isBaby()) {
+                    itemstack.shrink(1);
+
+                    ItemStack filledStraw = new ItemStack(ModItems.FILLED_STRAW.get());
+                    CompoundTag tag = filledStraw.getOrCreateTag();
+                    tag.putString("VetSim_Breed", this.getBreed());
+                    filledStraw.setTag(tag);
+
+                    if (!player.getInventory().add(filledStraw)) {
+                        player.drop(filledStraw, false);
+                    }
+
+                    this.playSound(SoundEvents.COW_AMBIENT, 1.0F, 1.0F);
+                    player.sendSystemMessage(Component.literal("§aSperma alındı. Irk: " + this.getBreed()));
+                    return InteractionResult.SUCCESS;
+                } else {
+                    player.sendSystemMessage(Component.literal("§cSadece yetişkin boğalardan sperma alabilirsiniz!"));
+                    return InteractionResult.CONSUME;
+                }
+            }
+
+            // --- 2. SUNİ TOHUMLAMA (İNEĞE) ---
+            if (itemstack.is(ModItems.FILLED_STRAW.get())) {
+                if (!this.isMale() && !this.isBaby()) {
+                    if (!this.isPregnant()) {
+                        String fatherBreed = "Melez";
+                        if (itemstack.hasTag() && itemstack.getTag().contains("VetSim_Breed")) {
+                            fatherBreed = itemstack.getTag().getString("VetSim_Breed");
+                        }
+
+                        // %75 Şansla Tutma
+                        if (this.random.nextFloat() < 0.75F) {
+                            this.startPregnancy(fatherBreed);
+                            this.playSound(SoundEvents.EXPERIENCE_ORB_PICKUP, 1.0F, 1.0F);
+                            ((ServerLevel)this.level()).sendParticles(ParticleTypes.HEART, this.getX(), this.getY() + 1.0, this.getZ(), 5, 0.5, 0.5, 0.5, 0.0);
+                            player.sendSystemMessage(Component.literal("§d ♥ Suni tohumlama BAŞARILI! Gebelik başladı."));
+                        } else {
+                            this.playSound(SoundEvents.COW_HURT, 1.0F, 1.0F);
+                            player.sendSystemMessage(Component.literal("§c x Tohumlama başarısız oldu. Tekrar deneyin."));
+                        }
+
+                        itemstack.shrink(1);
+                        return InteractionResult.SUCCESS;
+                    } else {
+                        player.sendSystemMessage(Component.literal("§cBu hayvan zaten gebe!"));
+                        return InteractionResult.PASS;
+                    }
+                } else {
+                    player.sendSystemMessage(Component.literal("§cSadece dişi inekleri tohumlayabilirsiniz."));
+                    return InteractionResult.PASS;
+                }
+            }
+
+            // --- 3. LAB: KAN ALMA ---
             if (itemstack.is(ModItems.EMPTY_BLOOD_TUBE.get())) {
                 this.playSound(SoundEvents.BOTTLE_FILL, 1.0F, 1.0F);
-
                 ItemStack bloodSample = new ItemStack(ModItems.FILLED_BLOOD_TUBE.get());
                 CompoundTag tag = bloodSample.getOrCreateTag();
 
-                // 1. Küpeyi Kaydet
                 tag.putString("VetSim_EarTag", this.getEarTag());
+                float wbc = 5.0F + this.random.nextFloat() * 5.0F;
+                float ph = 7.35F + this.random.nextFloat() * 0.10F;
 
-                // 2. Rastgele Temel Değerler (Sağlıklı)
-                float wbc = 5.0F + this.random.nextFloat() * 5.0F; // Normal: 5-10
-                float ph = 7.35F + this.random.nextFloat() * 0.10F; // Normal: 7.35-7.45
-
-                // 3. Hastalığa Göre Değerleri Boz
                 String currentDisease = this.getDisease();
                 if (currentDisease.equals("pneumonia")) {
-                    wbc = 18.0F + this.random.nextFloat() * 12.0F; // Enfeksiyon! (WBC Fırlar)
+                    wbc = 18.0F + this.random.nextFloat() * 12.0F;
                 } else if (currentDisease.equals("acidosis")) {
-                    ph = 6.90F + this.random.nextFloat() * 0.30F; // Asidoz! (pH Düşer)
+                    ph = 6.90F + this.random.nextFloat() * 0.30F;
                 }
 
-                // 4. Değerleri Yaz
                 tag.putFloat("VetSim_WBC", wbc);
                 tag.putFloat("VetSim_PH", ph);
                 bloodSample.setTag(tag);
 
-                // 5. Oyuncuya Ver
                 if (!player.getAbilities().instabuild) itemstack.shrink(1);
                 if (!player.getInventory().add(bloodSample)) player.drop(bloodSample, false);
 
@@ -201,45 +282,29 @@ public class CattleEntity extends Animal {
                 return InteractionResult.SUCCESS;
             }
 
-            // B) DİĞER ALETLER
-            if (itemstack.is(ModItems.VET_CLIPBOARD.get())) {
-                printAnamnesis(player);
-                return InteractionResult.SUCCESS;
-            }
-            if (itemstack.is(ModItems.STETHOSCOPE.get())) {
-                printStethoscope(player);
-                return InteractionResult.SUCCESS;
-            }
-            if (itemstack.is(ModItems.THERMOMETER.get())) {
-                printTemperature(player);
-                return InteractionResult.SUCCESS;
-            }
-            if (itemstack.is(ModItems.ANTIBIOTICS.get())) {
-                tryCure(player, itemstack, "ITEM"); // Normal antibiyotik (Eski)
-                return InteractionResult.SUCCESS;
-            }
-            // YENİ İLAÇLAR
-            if (itemstack.is(ModItems.PENICILLIN.get())) {
-                tryCure(player, itemstack, "ITEM"); // Sadece Pnömoni için (JSON'da ayarlı)
-                return InteractionResult.SUCCESS;
-            }
+            // --- 4. VETERİNER ALETLERİ ---
+            if (itemstack.is(ModItems.VET_CLIPBOARD.get())) { printAnamnesis(player); return InteractionResult.SUCCESS; }
+            if (itemstack.is(ModItems.STETHOSCOPE.get())) { printStethoscope(player); return InteractionResult.SUCCESS; }
+            if (itemstack.is(ModItems.THERMOMETER.get())) { printTemperature(player); return InteractionResult.SUCCESS; }
+            if (itemstack.is(ModItems.ANTIBIOTICS.get())) { tryCure(player, itemstack, "ITEM"); return InteractionResult.SUCCESS; }
+            if (itemstack.is(ModItems.PENICILLIN.get())) { tryCure(player, itemstack, "ITEM"); return InteractionResult.SUCCESS; }
             if (itemstack.is(ModItems.FLUNIXIN.get())) {
                 player.sendSystemMessage(Component.literal("§eAğrı kesici uygulandı. Hayvan rahatladı."));
                 if (!player.getAbilities().instabuild) itemstack.shrink(1);
                 return InteractionResult.SUCCESS;
             }
 
-            // C) YEMLEME
-            if (itemstack.is(Items.WHEAT)) { this.feed(itemstack, 10); return InteractionResult.SUCCESS; }
-            if (itemstack.is(Items.HAY_BLOCK)) { this.feed(itemstack, 50); return InteractionResult.SUCCESS; }
+            // --- 5. YEMLEME (JSON SİSTEMİ) ---
+            FeedData feedData = FeedManager.getFeedData(itemstack);
+            if (feedData != null) {
+                this.feed(itemstack, feedData);
+                return InteractionResult.SUCCESS;
+            }
 
-            // D) BOŞ EL (Inspection / Info)
+            // --- 6. BOŞ EL (BİLGİ) ---
             if (itemstack.isEmpty()) {
-                if (player.isCrouching()) {
-                    printVisualInspection(player);
-                } else {
-                    showVetInfo(player);
-                }
+                if (player.isCrouching()) printVisualInspection(player);
+                else showVetInfo(player);
                 return InteractionResult.SUCCESS;
             }
         }
@@ -247,6 +312,28 @@ public class CattleEntity extends Animal {
     }
 
     // --- YARDIMCI METODLAR ---
+
+    // Düşük Yapma Tetikleyicisi
+    private void triggerAbortion() {
+        if (!this.level().isClientSide) {
+            this.entityData.set(IS_PREGNANT, false);
+            this.pregnancyTimer = 0;
+            this.fatherBreed = "Melez";
+            this.breedingCooldown = 48000;
+
+            this.playSound(SoundEvents.COW_HURT, 1.0F, 0.5F);
+            this.level().broadcastEntityEvent(this, (byte) 61);
+
+            if (this.level() instanceof ServerLevel serverLevel) {
+                for (Player player : serverLevel.players()) {
+                    if (player.distanceToSqr(this) < 256) {
+                        player.sendSystemMessage(Component.literal("§c⚠ DİKKAT: " + this.getEarTag() + " küpeli inek DÜŞÜK YAPTI!"));
+                    }
+                }
+            }
+        }
+    }
+
     private void printAnamnesis(Player player) {
         player.sendSystemMessage(Component.literal("§6--- [ 📔 GÜNLÜK KAYITLARI ] ---"));
         if (this.getDisease().equals("NONE")) {
@@ -294,10 +381,7 @@ public class CattleEntity extends Animal {
         if (!this.getDisease().equals("NONE")) {
             DiseaseData data = DiseaseManager.getDiseaseById(this.getDisease());
             if (data != null && type.equals(data.cureType)) {
-                // Item türü eşleşiyor mu kontrolü
-                // Eğer JSON'da "cureTarget": "vetsim:penicillin" varsa sadece o iyileştirir
                 String itemId = BuiltInRegistries.ITEM.getKey(itemstack.getItem()).toString();
-
                 if (data.cureTarget.equals(itemId) || (data.cureTarget.equals("vetsim:antibiotics") && itemstack.is(ModItems.ANTIBIOTICS.get()))) {
                     this.setDisease("NONE");
                     this.playSound(SoundEvents.GENERIC_DRINK, 1.0F, 1.0F);
@@ -308,17 +392,33 @@ public class CattleEntity extends Animal {
         }
     }
 
-    public void feed(ItemStack stack, int foodValue) {
+    public void feed(ItemStack stack, FeedData foodData) {
         int currentHunger = this.getHunger();
         if (currentHunger < 100) {
-            this.setHunger(Math.min(currentHunger + foodValue, 100));
+            this.setHunger(Math.min(currentHunger + foodData.nutrition, 100));
             this.playSound(SoundEvents.GENERIC_EAT, 1.0F, 1.0F);
             this.level().broadcastEntityEvent(this, (byte) 18);
+
+            // HASTALIK RİSKİ KONTROLÜ (JSON SİSTEMİ)
+            if (!this.level().isClientSide) {
+                // DiseaseManager otomatik olarak itemin riskini hesaplar
+                String riskResult = DiseaseManager.calculateRisk(stack, this.random);
+
+                if (riskResult != null) {
+                    this.setDisease(riskResult);
+                    this.playSound(SoundEvents.ZOMBIE_INFECT, 1.0F, 1.0F);
+                    // System.out.println("Zehirlenme Tetiklendi: " + riskResult);
+                }
+            }
+
+            stack.shrink(1);
         }
+
+        // Beslenme ile tedavi
         if (!this.getDisease().equals("NONE")) {
             DiseaseData data = DiseaseManager.getDiseaseById(this.getDisease());
             if (data != null && "FEED".equals(data.cureType)) {
-                if (stack.is(Items.HAY_BLOCK) && data.cureTarget.equals("minecraft:hay_block")) {
+                if (foodData.itemId.equals(data.cureTarget)) {
                     this.setDisease("NONE");
                     this.playSound(SoundEvents.PLAYER_LEVELUP, 1.0F, 1.0F);
                 }
@@ -388,7 +488,7 @@ public class CattleEntity extends Animal {
         return sb.toString();
     }
 
-    // --- VERİ SENKRONİZASYONU ---
+    // --- VERİ SENKRONİZASYONU (SAYACLAR DAHİL) ---
     @Override
     protected void defineSynchedData() {
         super.defineSynchedData();
@@ -418,6 +518,9 @@ public class CattleEntity extends Animal {
         compound.putInt("VetSim_BirthCount", this.getBirthCount());
         compound.putInt("VetSim_Hunger", this.getHunger());
         compound.putString("VetSim_Disease", this.getDisease());
+
+        // Gübre Sayacı Kaydı
+        compound.putInt("VetSim_ManureTimer", this.manureTimer);
     }
 
     @Override
@@ -435,6 +538,9 @@ public class CattleEntity extends Animal {
         if (compound.contains("VetSim_BirthCount")) this.setBirthCount(compound.getInt("VetSim_BirthCount"));
         if (compound.contains("VetSim_Hunger")) this.setHunger(compound.getInt("VetSim_Hunger"));
         if (compound.contains("VetSim_Disease")) this.setDisease(compound.getString("VetSim_Disease"));
+
+        // Gübre Sayacı Yükleme
+        if (compound.contains("VetSim_ManureTimer")) this.manureTimer = compound.getInt("VetSim_ManureTimer");
     }
 
     // --- GETTER & SETTER ---
@@ -448,14 +554,11 @@ public class CattleEntity extends Animal {
     public int getBreedingCooldown() { return breedingCooldown; }
     public void setBreedingCooldown(int cd) { this.breedingCooldown = cd; }
     public String getEarTag() { return this.entityData.get(EAR_TAG); }
-
-    // !!! ÖNEMLİ: İsim Gösterimi !!!
     public void setEarTag(String tag) {
         this.entityData.set(EAR_TAG, tag);
         this.setCustomName(Component.literal("Küpe: " + tag));
         this.setCustomNameVisible(true);
     }
-
     public String getBreed() { return this.entityData.get(BREED); }
     public void setBreed(String breed) { this.entityData.set(BREED, breed); }
     public boolean isMale() { return this.entityData.get(IS_MALE); }
@@ -468,9 +571,7 @@ public class CattleEntity extends Animal {
     // --- BAŞLANGIÇ ---
     @Override
     public SpawnGroupData finalizeSpawn(net.minecraft.world.level.ServerLevelAccessor level, net.minecraft.world.DifficultyInstance difficulty, net.minecraft.world.entity.MobSpawnType reason, @Nullable SpawnGroupData spawnData, @Nullable CompoundTag dataTag) {
-        if (this.getEarTag().equals("TR000000")) {
-            this.setEarTag(generateEarTag());
-        }
+        if (this.getEarTag().equals("TR000000")) this.setEarTag(generateEarTag());
         return super.finalizeSpawn(level, difficulty, reason, spawnData, dataTag);
     }
 

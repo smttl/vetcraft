@@ -1,0 +1,22 @@
+[
+  {
+    "itemId": "minecraft:wheat",
+    "nutrition": 10,
+    "isDryFood": false
+  },
+  {
+    "itemId": "minecraft:hay_block",
+    "nutrition": 50,
+    "isDryFood": true
+  },
+  {
+    "itemId": "minecraft:apple",
+    "nutrition": 5,
+    "isDryFood": false
+  },
+  {
+    "itemId": "vetsim:multivitamin",
+    "nutrition": 2,
+    "isDryFood": false
+  }
+]

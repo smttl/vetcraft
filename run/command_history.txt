@@ -29,3 +29,8 @@
 /summon vetsim:cattle ~ ~ ~ {VetSim_IsMale:0b, VetSim_AgeDays:20, VetSim_IsPregnant:0b, VetSim_BreedingCooldown:0}
 /summon vetsim:cattle
 /summon vetsim:cattle ~ ~ ~ {VetSim_IsMale:1b, VetSim_AgeDays:20, VetSim_Weight:900.0f, VetSim_Breed:"Simmental"}
+/summon vetsim:cattle
+/summon vetsim:cattle ~ ~ ~ {VetSim_IsMale:1b, VetSim_Weight:900.0f, VetSim_Breed:"Simmental", VetSim_AgeDays:20}
+/summon vetsim:cattle
+/summon vetsim:cattle ~ ~ ~ {VetSim_IsMale:0b, VetSim_IsPregnant:0b, VetSim_Weight:650.0f, VetSim_Breed:"Simmental", VetSim_AgeDays:1000}
+/summon vetsim:cattle ~ ~ ~ {VetSim_IsMale:1b, VetSim_Weight:900.0f, VetSim_Breed:"Sim", VetSim_AgeDays:20}

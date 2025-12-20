@@ -4,6 +4,7 @@ import com.vetsim.vetcraft.VetCraft;
 import com.vetsim.vetcraft.item.MedicineItem; // İlaç sınıfımız
 import com.vetsim.vetcraft.item.FilledBloodTubeItem;
 
+import com.vetsim.vetcraft.item.SemenStrawItem;
 import net.minecraft.world.item.BlockItem; // <--- BU LAZIM (Blok Eşyası için)
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
@@ -33,6 +34,20 @@ public class ModItems {
     public static final DeferredHolder<Item, Item> FEED_TROUGH_ITEM = ITEMS.register("feed_trough",
             () -> new BlockItem(ModBlocks.FEED_TROUGH.get(), new Item.Properties()));
 
+
+    // --- SUNİ TOHUMLAMA ---
+
+    // 1. Boş Payet (Boğadan almak için)
+    public static final DeferredHolder<Item, Item> EMPTY_STRAW = ITEMS.register("empty_straw",
+            () -> new Item(new Item.Properties().stacksTo(64)));
+
+    // 2. Dolu Payet (İneğe uygulamak için) -> Özel sınıf yazacağız (Tooltip için)
+    public static final DeferredHolder<Item, Item> FILLED_STRAW = ITEMS.register("filled_straw",
+            () -> new SemenStrawItem(new Item.Properties().stacksTo(16)));
+
+
+    public static final DeferredHolder<Item, Item> MANURE = ITEMS.register("manure",
+            () -> new Item(new Item.Properties().stacksTo(64)));
 
     // --- İLAÇLAR (DETAYLI TIP) ---
 
