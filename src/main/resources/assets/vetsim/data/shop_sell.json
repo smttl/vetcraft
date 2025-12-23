@@ -1,0 +1,7 @@
+[
+  { "itemId": "minecraft:milk_bucket", "price": 180 },
+  { "itemId": "minecraft:beef", "price": 250 },
+  { "itemId": "minecraft:leather", "price": 80 },
+  { "itemId": "minecraft:mutton", "price": 200 },
+  { "itemId": "vetsim:manure", "price": 50 }
+]

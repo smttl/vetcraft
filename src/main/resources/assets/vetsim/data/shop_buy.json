@@ -1,0 +1,10 @@
+[
+  { "itemId": "minecraft:wheat", "price": 50, "name": "Buğday" },
+  { "itemId": "minecraft:hay_block", "price": 450, "name": "Saman Balhası" },
+  { "itemId": "minecraft:apple", "price": 100, "name": "Elma" },
+  { "itemId": "minecraft:carrot", "price": 80, "name": "Havuç" },
+  { "itemId": "vetsim:antibiotics", "price": 1500, "name": "Antibiyotik" },
+  { "itemId": "vetsim:multivitamin", "price": 1200, "name": "Vitamin" },
+  { "itemId": "vetsim:empty_blood_tube", "price": 200, "name": "Boş Tüp" },
+  { "itemId": "vetsim:halter", "price": 500, "name": "Yular" }
+]

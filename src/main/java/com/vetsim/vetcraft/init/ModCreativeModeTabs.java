@@ -6,8 +6,8 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
@@ -15,34 +15,38 @@ public class ModCreativeModeTabs {
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> VET_TAB = CREATIVE_MODE_TABS.register("vet_tab",
             () -> CreativeModeTab.builder()
-                    .icon(() -> new ItemStack(ModItems.STETHOSCOPE.get())) // İkon artık Stetoskop olsun
-                    .title(Component.translatable("creativetab.vet_tab"))
+                    .title(Component.translatable("itemGroup.vetsim_tab")) // Dil dosyasındaki isim
+                    .icon(() -> new ItemStack(ModItems.STETHOSCOPE.get())) // Sekme ikonu (Stetoskop)
                     .displayItems((pParameters, pOutput) -> {
 
-                        // 1. BLOKLAR
-                        pOutput.accept(ModItems.FEED_TROUGH_ITEM.get());
-
-                        // 2. TANI ALETLERİ (Buraya ekliyoruz)
-                        pOutput.accept(ModItems.VET_CLIPBOARD.get());
+                        // --- 1. EKİPMANLAR ---
                         pOutput.accept(ModItems.STETHOSCOPE.get());
+                        pOutput.accept(ModItems.VET_CLIPBOARD.get());
                         pOutput.accept(ModItems.THERMOMETER.get());
+                        pOutput.accept(ModItems.HALTER.get()); // Yular
 
-                        // 3. İLAÇLAR
+                        // --- 2. LABORATUVAR & TOHUMLAMA ---
+                        pOutput.accept(ModItems.EMPTY_BLOOD_TUBE.get());
+                        pOutput.accept(ModItems.FILLED_BLOOD_TUBE.get());
+                        pOutput.accept(ModItems.EMPTY_STRAW.get());
+                        pOutput.accept(ModItems.FILLED_STRAW.get());
 
+                        // --- 3. İLAÇLAR ---
                         pOutput.accept(ModItems.ANTIBIOTICS.get());
                         pOutput.accept(ModItems.PENICILLIN.get());
                         pOutput.accept(ModItems.FLUNIXIN.get());
                         pOutput.accept(ModItems.MULTIVITAMIN.get());
 
-                        // --- 3. LABORATUVAR (YENİ EKLENDİ) 🩸 ---
-                        pOutput.accept(ModItems.EMPTY_BLOOD_TUBE.get());  // Boş Tüp
-                        pOutput.accept(ModItems.FILLED_BLOOD_TUBE.get()); // Dolu Tüp
+                        // --- 4. EKONOMİ VE TİCARET (YENİ) ---
+                        pOutput.accept(ModItems.DEBIT_CARD.get());     // Banka Kartı
+                        pOutput.accept(ModItems.CELEP_WHISTLE.get());  // Celep Düdüğü
+                        pOutput.accept(ModItems.CELEP_SPAWN_EGG.get());// Celep Yumurtası
+                        //pOutput.accept(ModItems.MARKET_BLOCK_ITEM.get()); // Pazar Bloğu (Varsa)
+                        pOutput.accept(ModItems.SMART_PHONE.get());
 
-                        // 4. GENETİK / TOHUMLAMA
-                        pOutput.accept(ModItems.EMPTY_STRAW.get()); // Boş Payet (Temsili/Çöp veya Crafting için)
-
-                        // Dolu Payetler (Direkt İneğe Sağ Tıklanacak)
-                        pOutput.accept(ModItems.FILLED_STRAW.get());
+                        // --- 5. BLOKLAR VE YEMLER ---
+                        pOutput.accept(ModItems.FEED_TROUGH_ITEM.get());
+                        pOutput.accept(ModItems.MANURE.get());
 
                     })
                     .build());

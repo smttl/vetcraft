@@ -3,45 +3,108 @@
     "id": "pneumonia",
     "displayName": "Pnömoni (Zatürre)",
     "triggerHungerBelow": 40,
-    "triggerChance": 0.5,
-    "weightLossPerTick": 0.5,
-    "damagePerTick": 2.0,
-    "abortChance": 0.10,
+    "triggerChance": 0.05,
+    "weightLossPerTick": 0.08,
+    "damagePerTick": 0.02,
+    "abortChance": 0.15,
     "contagious": true,
     "visualEffect": "SNEEZE",
     "slowness": true,
     "cureType": "ITEM",
-    "cureTarget": "vetsim:penicillin",
+    "cureTarget": "vetsim:antibiotics",
     "symptoms": {
-      "anamnesis": "İştahsızlık ve öksürük nöbetleri.",
-      "visual": "Burun akıntısı, başı önde.",
-      "stethoscope": "Akciğerlerde yaş hırıltı (Ral).",
+      "anamnesis": "Hayvanın solunumu güçleşmiş ve sık sık öksürüyor.",
+      "visual": "Burun akıntısı var, başını öne uzatmış şekilde duruyor.",
+      "stethoscope": "Akciğerlerde hırıltı (Ral) ve sürtünme sesleri var.",
       "temperature": 41.2
     }
   },
   {
     "id": "acidosis",
     "displayName": "Rumen Asidozu",
-    "cureType": "FEED",
-    "cureTarget": "minecraft:hay_block",
     "triggerHungerBelow": 100,
     "triggerChance": 0.0,
-    "weightLossPerTick": 1.0,
-    "damagePerTick": 0.5,
-    "abortChance": 0.02,
+    "weightLossPerTick": 0.12,
+    "damagePerTick": 0.01,
+    "abortChance": 0.05,
+    "contagious": false,
+    "visualEffect": "NONE",
+    "slowness": true,
+    "cureType": "FEED",
+    "cureTarget": "minecraft:hay_block",
+    "risky_items": [
+      { "item": "minecraft:wheat", "chance": 0.35 },
+      { "item": "minecraft:bread", "chance": 0.50 }
+    ],
+    "symptoms": {
+      "anamnesis": "Yem yemeyi kesti, dışkısı sulu ve kötü kokulu.",
+      "visual": "Sürekli dişlerini gıcırdatıyor, karnına bakıyor.",
+      "stethoscope": "Rumen hareketleri (mide kasılması) durmuş.",
+      "temperature": 38.0
+    }
+  },
+  {
+    "id": "bloat",
+    "displayName": "Gazlı Şişkinlik (Bloat)",
+    "triggerHungerBelow": 0,
+    "triggerChance": 0.0,
+    "weightLossPerTick": 0.0,
+    "damagePerTick": 0.20,
+    "abortChance": 0.30,
     "contagious": false,
     "visualEffect": "SMOKE",
     "slowness": true,
-    "symptoms": {
-      "anamnesis": "Yem yemeyi kesti, dışkı cıvık.",
-      "visual": "Sol karın şişkin, ayaklarına vuruyor.",
-      "stethoscope": "Rumen hareketleri durmuş.",
-      "temperature": 38.5
-    },
+    "cureType": "ITEM",
+    "cureTarget": "vetsim:oil_bottle",
     "risky_items": [
-      { "item": "minecraft:rotten_flesh", "chance": 0.3 },
-      { "item": "minecraft:poisonous_potato", "chance": 0.5 },
-      { "item": "minecraft:cookie", "chance": 0.1 }
-    ]
+      { "item": "minecraft:rotten_flesh", "chance": 0.80 },
+      { "item": "minecraft:poisonous_potato", "chance": 0.60 }
+    ],
+    "symptoms": {
+      "anamnesis": "Aniden şişmeye başladı, nefes darlığı çekiyor.",
+      "visual": "Sol karın boşluğu (açlık çukuru) davul gibi gerilmiş.",
+      "stethoscope": "Kalp atışları aşırı hızlı, solunum sesleri duyulmuyor.",
+      "temperature": 39.2
+    }
+  },
+  {
+    "id": "mastitis",
+    "displayName": "Mastitis (Meme İltihabı)",
+    "triggerHungerBelow": 30,
+    "triggerChance": 0.07,
+    "weightLossPerTick": 0.05,
+    "damagePerTick": 0.0,
+    "abortChance": 0.0,
+    "contagious": false,
+    "visualEffect": "NONE",
+    "slowness": false,
+    "cureType": "ITEM",
+    "cureTarget": "vetsim:antibiotics",
+    "symptoms": {
+      "anamnesis": "Süt verimi düştü, sütte sarı pıhtılar görülüyor.",
+      "visual": "Meme loblarından biri aşırı şişmiş ve kızarık.",
+      "stethoscope": "Nabız normalin üzerinde, genel durum bitkin.",
+      "temperature": 40.8
+    }
+  },
+  {
+    "id": "fmd",
+    "displayName": "Şap Hastalığı (FMD)",
+    "triggerHungerBelow": 20,
+    "triggerChance": 0.04,
+    "weightLossPerTick": 0.15,
+    "damagePerTick": 0.05,
+    "abortChance": 0.70,
+    "contagious": true,
+    "visualEffect": "SNEEZE",
+    "slowness": true,
+    "cureType": "ITEM",
+    "cureTarget": "vetsim:fmd_vaccine",
+    "symptoms": {
+      "anamnesis": "Ağızdan salya akıtıyor, tırnak aralarında yaralar var.",
+      "visual": "Ağzında şapırtı sesi var, sürekli yatmak istiyor.",
+      "stethoscope": "Kalp ritminde düzensizlik (Miyokardit) riski.",
+      "temperature": 41.8
+    }
   }
 ]

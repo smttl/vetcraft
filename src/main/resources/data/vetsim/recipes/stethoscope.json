@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "Y Y",
+    " I ",
+    " D "
+  ],
+  "key": {
+    "Y": {
+      "tag": "minecraft:wool"
+    },
+    "I": {
+      "item": "minecraft:string"
+    },
+    "D": {
+      "item": "minecraft:iron_nugget"
+    }
+  },
+  "result": {
+    "item": "vetsim:stethoscope",
+    "count": 1
+  }
+}

@@ -34,3 +34,8 @@
 /summon vetsim:cattle
 /summon vetsim:cattle ~ ~ ~ {VetSim_IsMale:0b, VetSim_IsPregnant:0b, VetSim_Weight:650.0f, VetSim_Breed:"Simmental", VetSim_AgeDays:1000}
 /summon vetsim:cattle ~ ~ ~ {VetSim_IsMale:1b, VetSim_Weight:900.0f, VetSim_Breed:"Sim", VetSim_AgeDays:20}
+/summon vetsim:cattle ~ ~ ~ {VetSim_IsMale:1b, VetSim_Weight:900.0f, VetSim_Breed:"Simmental", VetSim_AgeDays:20}
+/summon vetsim:cattle ~ ~ ~ {VetSim_Disease: "fmd", VetSim_EarTag: "HASTA-01"}
+/summon vetsim:cattle ~ ~ ~ {Age:0, VetSim_AgeDays:10, VetSim_Weight:550.0f, VetSim_Disease:"pneumonia", VetSim_EarTag:"HASTA-02"}
+/summon vetsim:cattle ~ ~ ~ {Age:0, VetSim_AgeDays:15, VetSim_IsMale:0b, VetSim_IsPregnant:0b, VetSim_BreedingCooldown:0, VetSim_Weight:500.0f, VetSim_Hunger:100, VetSim_Disease:"NONE", VetSim_EarTag:"KIZGIN-01"}
+/summon vetsim:cattle ~ ~ ~ {Age:0, VetSim_AgeDays:20, VetSim_IsMale:0b, VetSim_IsPregnant:0b, VetSim_BreedingCooldown:200000, VetSim_Weight:550.0f, VetSim_Hunger:100, VetSim_Disease:"NONE", VetSim_EarTag:"SUTCU-01"}
