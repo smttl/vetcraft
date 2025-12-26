@@ -1,544 +1,346 @@
-[21Ara2025 14:58:48.188] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeclientuserdev, --version, 20.4.251, --assetIndex, 12, --assetsDir, /Users/smtl/.gradle/caches/neoformruntime/assets, --gameDir, ., --fml.neoForgeVersion, 20.4.251, --fml.fmlVersion, 2.0.17, --fml.mcVersion, 1.20.4, --fml.neoFormVersion, 20240627.114801]
-[21Ara2025 14:58:48.190] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 21.0.7 by Oracle Corporation; OS Mac OS X arch aarch64 version 26.3
-[21Ara2025 14:58:48.241] [main/INFO] [net.neoforged.fml.loading.ImmediateWindowHandler/]: Loading ImmediateWindowProvider fmlearlywindow
-[21Ara2025 14:58:48.441] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.6
-[21Ara2025 14:58:48.533] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.5
-[21Ara2025 14:58:48.542] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.4
-[21Ara2025 14:58:48.551] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.3
-[21Ara2025 14:58:48.559] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.2
-[21Ara2025 14:58:48.568] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.1
-[21Ara2025 14:58:48.583] [main/INFO] [EARLYDISPLAY/]: Requested GL version 4.1 got version 4.1
-[21Ara2025 14:58:48.712] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/Users/smtl/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.13.4+mixin.0.8.5/8adf0cff1795a169141b9e16ad7b9f6e2527a990/sponge-mixin-0.13.4+mixin.0.8.5.jar%23123!/ Service=ModLauncher Env=CLIENT
-[21Ara2025 14:58:48.928] [main/INFO] [net.neoforged.fml.loading.moddiscovery.JarInJarDependencyLocator/]: Found 1 dependencies adding them to mods collection
-[21Ara2025 14:58:48.968] [pool-2-thread-1/INFO] [EARLYDISPLAY/]: GL info: Apple M2 GL version 4.1 Metal - 90.5, Apple
-[21Ara2025 14:58:49.705] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeclientuserdev' with arguments [--version, 20.4.251, --gameDir, ., --assetsDir, /Users/smtl/.gradle/caches/neoformruntime/assets, --assetIndex, 12]
-[21Ara2025 14:58:54.314] [Datafixer Bootstrap/INFO] [com.mojang.datafixers.DataFixerBuilder/]: 198 Datafixer optimizations took 121 milliseconds
-[21Ara2025 14:58:55.549] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
-[21Ara2025 14:58:55.550] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
-[21Ara2025 14:58:55.551] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
-[21Ara2025 14:58:55.552] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
-[21Ara2025 14:58:55.553] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
-[21Ara2025 14:58:55.606] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/Users/smtl/Downloads/vetcraft%202/build/moddev/artifacts/neoforge-20.4.251-merged.jar%23175!/assets/.mcassetsroot' uses unexpected schema
-[21Ara2025 14:58:55.606] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/Users/smtl/Downloads/vetcraft%202/build/moddev/artifacts/neoforge-20.4.251-merged.jar%23175!/data/.mcassetsroot' uses unexpected schema
-[21Ara2025 14:58:55.624] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
-[21Ara2025 14:58:55.628] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: Dev
-[21Ara2025 14:58:55.664] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.3.2+13
-[21Ara2025 14:58:56.018] [modloading-worker-0/INFO] [net.neoforged.neoforge.common.NeoForgeMod/NEOFORGE-MOD]: NeoForge mod loading, version 20.4.251, for MC 1.20.4 with MCP 20240627.114801
-[21Ara2025 14:58:56.504] [Render thread/INFO] [net.neoforged.neoforge.gametest.GameTestHooks/]: Enabled Gametest Namespaces: [vetcraft]
-[21Ara2025 14:58:57.301] [Render thread/INFO] [net.minecraft.server.packs.resources.ReloadableResourceManager/]: Reloading ResourceManager: mod_resources, mod:vetsim, mod:neoforge, vanilla
-[21Ara2025 14:58:57.364] [Worker-Main-5/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_all_no_pua-15.1.04.hex, loading
-[21Ara2025 14:58:57.625] [Render thread/INFO] [com.vetsim.vetcraft.VetCraft/]: Market verileri yüklendi. Alınabilir: 8, Satılabilir: 5
-[21Ara2025 14:58:57.631] [Render thread/INFO] [com.vetsim.vetcraft.VetCraft/]: Sığır Hastalıkları Yüklendi: 5 adet.
-[21Ara2025 14:58:57.631] [Render thread/INFO] [com.vetsim.vetcraft.VetCraft/]: VetCraft: Hastalık veritabanı yüklendi.
-[21Ara2025 14:58:58.042] [Worker-Main-6/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'vetsim:manure#inventory' referenced from: vetsim:manure#inventory: java.io.FileNotFoundException: vetsim:models/item/manure.json
-[21Ara2025 14:58:58.043] [Worker-Main-6/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'vetsim:filled_blood_tube#inventory' referenced from: vetsim:filled_blood_tube#inventory: java.io.FileNotFoundException: vetsim:models/item/filled_blood_tube.json
-[21Ara2025 14:58:58.043] [Worker-Main-6/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'vetsim:celep_spawn_egg#inventory' referenced from: vetsim:celep_spawn_egg#inventory: java.io.FileNotFoundException: vetsim:models/item/celep_spawn_egg.json
-[21Ara2025 14:58:58.044] [Worker-Main-6/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'vetsim:smart_phone#inventory' referenced from: vetsim:smart_phone#inventory: java.io.FileNotFoundException: vetsim:models/item/smart_phone.json
-[21Ara2025 14:58:58.044] [Worker-Main-6/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'vetsim:antibiotics#inventory' referenced from: vetsim:antibiotics#inventory: java.io.FileNotFoundException: vetsim:models/item/antibiotics.json
-[21Ara2025 14:58:58.044] [Worker-Main-6/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'vetsim:stethoscope#inventory' referenced from: vetsim:stethoscope#inventory: java.io.FileNotFoundException: vetsim:models/item/stethoscope.json
-[21Ara2025 14:58:58.045] [Worker-Main-6/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'vetsim:celep_whistle#inventory' referenced from: vetsim:celep_whistle#inventory: java.io.FileNotFoundException: vetsim:models/item/celep_whistle.json
-[21Ara2025 14:58:58.045] [Worker-Main-6/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'vetsim:thermometer#inventory' referenced from: vetsim:thermometer#inventory: java.io.FileNotFoundException: vetsim:models/item/thermometer.json
-[21Ara2025 14:58:58.045] [Worker-Main-6/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'vetsim:multivitamin#inventory' referenced from: vetsim:multivitamin#inventory: java.io.FileNotFoundException: vetsim:models/item/multivitamin.json
-[21Ara2025 14:58:58.045] [Worker-Main-6/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'vetsim:filled_straw#inventory' referenced from: vetsim:filled_straw#inventory: java.io.FileNotFoundException: vetsim:models/item/filled_straw.json
-[21Ara2025 14:58:58.046] [Worker-Main-6/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'vetsim:penicillin#inventory' referenced from: vetsim:penicillin#inventory: java.io.FileNotFoundException: vetsim:models/item/penicillin.json
-[21Ara2025 14:58:58.046] [Worker-Main-6/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'vetsim:vet_clipboard#inventory' referenced from: vetsim:vet_clipboard#inventory: java.io.FileNotFoundException: vetsim:models/item/vet_clipboard.json
-[21Ara2025 14:58:58.046] [Worker-Main-6/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'vetsim:empty_blood_tube#inventory' referenced from: vetsim:empty_blood_tube#inventory: java.io.FileNotFoundException: vetsim:models/item/empty_blood_tube.json
-[21Ara2025 14:58:58.046] [Worker-Main-6/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'vetsim:debit_card#inventory' referenced from: vetsim:debit_card#inventory: java.io.FileNotFoundException: vetsim:models/item/debit_card.json
-[21Ara2025 14:58:58.046] [Worker-Main-6/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'vetsim:halter#inventory' referenced from: vetsim:halter#inventory: java.io.FileNotFoundException: vetsim:models/item/halter.json
-[21Ara2025 14:58:58.046] [Worker-Main-6/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'vetsim:empty_straw#inventory' referenced from: vetsim:empty_straw#inventory: java.io.FileNotFoundException: vetsim:models/item/empty_straw.json
-[21Ara2025 14:58:58.046] [Worker-Main-6/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'vetsim:flunixin#inventory' referenced from: vetsim:flunixin#inventory: java.io.FileNotFoundException: vetsim:models/item/flunixin.json
-[21Ara2025 14:58:58.653] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:item.goat_horn.play
-[21Ara2025 14:58:58.653] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:entity.goat.screaming.horn_break
-[21Ara2025 14:58:58.653] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:entity.generic.wind_burst
-[21Ara2025 14:58:59.017] [Render thread/INFO] [com.mojang.blaze3d.audio.Library/]: OpenAL initialized on device R25f-30
-[21Ara2025 14:58:59.019] [Render thread/INFO] [net.minecraft.client.sounds.SoundEngine/SOUNDS]: Sound engine started
-[21Ara2025 14:58:59.105] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
-[21Ara2025 14:58:59.114] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
-[21Ara2025 14:58:59.114] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
-[21Ara2025 14:58:59.115] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
-[21Ara2025 14:58:59.115] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
-[21Ara2025 14:58:59.126] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
-[21Ara2025 14:58:59.127] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
-[21Ara2025 14:58:59.127] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
-[21Ara2025 14:58:59.128] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
-[21Ara2025 14:58:59.208] [Render thread/WARN] [net.minecraft.client.renderer.ShaderInstance/]: Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
-[21Ara2025 14:58:59.281] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
-[21Ara2025 14:58:59.282] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
-[21Ara2025 14:58:59.282] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
-[21Ara2025 14:58:59.282] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x512x0 minecraft:textures/atlas/gui.png-atlas
-[21Ara2025 14:59:08.292] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 7 recipes
-[21Ara2025 14:59:08.394] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 1271 advancements
-[21Ara2025 14:59:08.606] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Starting integrated minecraft server version 1.20.4
-[21Ara2025 14:59:08.606] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
-[21Ara2025 14:59:10.098] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld
-[21Ara2025 14:59:12.598] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[21Ara2025 14:59:12.599] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[21Ara2025 14:59:12.599] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[21Ara2025 14:59:12.599] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[21Ara2025 14:59:12.599] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[21Ara2025 14:59:12.631] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[21Ara2025 14:59:13.141] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 31%
-[21Ara2025 14:59:13.620] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 78%
-[21Ara2025 14:59:13.705] [Server thread/INFO] [net.neoforged.neoforge.server.permission.PermissionAPI/]: Successfully initialized permission handler neoforge:default_handler
-[21Ara2025 14:59:13.713] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Time elapsed: 3601 ms
-[21Ara2025 14:59:13.796] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing view distance to 12, from 10
-[21Ara2025 14:59:13.796] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing simulation distance to 12, from 0
-[21Ara2025 14:59:14.102] [Server thread/INFO] [net.minecraft.server.players.PlayerList/]: Dev[local:E:ac82a154] logged in with entity id 203 at (32.65385825228554, 61.0, -14.485836143580578)
-[21Ara2025 14:59:14.126] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev joined the game
-[21Ara2025 14:59:14.269] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 77 advancements
-[21Ara2025 14:59:14.438] [Render thread/WARN] [net.minecraft.client.multiplayer.ClientPacketListener/]: Received passengers for unknown entity
-[21Ara2025 14:59:17.853] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:17.861] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:17.861] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:17.861] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:17.861] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:17.861] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:17.861] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:17.861] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:17.861] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:17.861] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:17.861] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:17.861] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:17.861] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:17.861] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:17.861] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:17.861] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:17.861] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:17.862] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:17.862] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:17.862] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:17.862] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⭐ VET KAYDI: TR634765 ==================
-[21Ara2025 14:59:17.863] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🧬 Irk: Angus  ♂ Cinsiyet: Boğa  🎂 Yaş: 3G
-[21Ara2025 14:59:17.863] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⚖ Kilo: 92,4kg  🍽 Tokluk: [||||||||..] %84
-[21Ara2025 14:59:17.863] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ✅ Sağlık: Stabil ve sağlıklı.
-[21Ara2025 14:59:17.863] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ==================================================
-[21Ara2025 14:59:19.008] [Render thread/WARN] [net.minecraft.client.renderer.texture.TextureManager/]: Failed to load texture: vetsim:textures/entity/celep.png
-java.io.FileNotFoundException: vetsim:textures/entity/celep.png
-	at net.minecraft.server.packs.resources.ResourceProvider.lambda$getResourceOrThrow$0(ResourceProvider.java:16) ~[neoforge-20.4.251.jar:?]
-	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
-	at net.minecraft.server.packs.resources.ResourceProvider.getResourceOrThrow(ResourceProvider.java:16) ~[neoforge-20.4.251.jar:?]
-	at net.minecraft.client.renderer.texture.SimpleTexture$TextureImage.load(SimpleTexture.java:83) ~[neoforge-20.4.251.jar:?]
-	at net.minecraft.client.renderer.texture.SimpleTexture.getTextureImage(SimpleTexture.java:57) ~[neoforge-20.4.251.jar:?]
-	at net.minecraft.client.renderer.texture.SimpleTexture.load(SimpleTexture.java:30) ~[neoforge-20.4.251.jar:?]
-	at net.minecraft.client.renderer.texture.TextureManager.loadTexture(TextureManager.java:92) ~[neoforge-20.4.251.jar:?]
-	at net.minecraft.client.renderer.texture.TextureManager.register(TextureManager.java:63) ~[neoforge-20.4.251.jar:?]
-	at net.minecraft.client.renderer.texture.TextureManager.getTexture(TextureManager.java:113) ~[neoforge-20.4.251.jar:?]
-	at net.minecraft.client.renderer.RenderStateShard$TextureStateShard.lambda$new$0(RenderStateShard.java:626) ~[neoforge-20.4.251.jar:?]
-	at net.minecraft.client.renderer.RenderStateShard.setupRenderState(RenderStateShard.java:371) ~[neoforge-20.4.251.jar:?]
-	at com.google.common.collect.ImmutableList.forEach(ImmutableList.java:422) ~[guava-32.1.2-jre.jar:?]
-	at net.minecraft.client.renderer.RenderType$CompositeRenderType.lambda$new$1(RenderType.java:1198) ~[neoforge-20.4.251.jar:?]
-	at net.minecraft.client.renderer.RenderStateShard.setupRenderState(RenderStateShard.java:371) ~[neoforge-20.4.251.jar:?]
-	at net.minecraft.client.renderer.RenderType.end(RenderType.java:1114) ~[neoforge-20.4.251.jar:?]
-	at net.minecraft.client.renderer.MultiBufferSource$BufferSource.endBatch(MultiBufferSource.java:94) ~[neoforge-20.4.251.jar:?]
-	at net.minecraft.client.renderer.MultiBufferSource$BufferSource.getBuffer(MultiBufferSource.java:47) ~[neoforge-20.4.251.jar:?]
-	at net.minecraft.client.renderer.entity.EntityRenderDispatcher.renderShadow(EntityRenderDispatcher.java:344) ~[neoforge-20.4.251.jar:?]
-	at net.minecraft.client.renderer.entity.EntityRenderDispatcher.render(EntityRenderDispatcher.java:171) ~[neoforge-20.4.251.jar:?]
-	at net.minecraft.client.renderer.LevelRenderer.renderEntity(LevelRenderer.java:1295) ~[neoforge-20.4.251.jar:?]
-	at net.minecraft.client.renderer.LevelRenderer.renderLevel(LevelRenderer.java:1059) ~[neoforge-20.4.251.jar:?]
-	at net.minecraft.client.renderer.GameRenderer.renderLevel(GameRenderer.java:1328) ~[neoforge-20.4.251.jar:?]
-	at net.minecraft.client.renderer.GameRenderer.render(GameRenderer.java:1081) ~[neoforge-20.4.251.jar:?]
-	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1269) ~[neoforge-20.4.251.jar:?]
-	at net.minecraft.client.Minecraft.run(Minecraft.java:824) ~[neoforge-20.4.251.jar:?]
-	at net.minecraft.client.main.Main.main(Main.java:244) ~[neoforge-20.4.251.jar:?]
-	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
-	at net.neoforged.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:136) ~[loader-2.0.17.jar:2.0]
-	at net.neoforged.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:124) ~[loader-2.0.17.jar:2.0]
-	at net.neoforged.fml.loading.targets.ForgeClientUserdevLaunchHandler.runService(ForgeClientUserdevLaunchHandler.java:19) ~[loader-2.0.17.jar:2.0]
-	at net.neoforged.fml.loading.targets.CommonLaunchHandler.lambda$launchService$4(CommonLaunchHandler.java:118) ~[loader-2.0.17.jar:2.0]
-	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) ~[modlauncher-10.0.9.jar:?]
-	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) ~[modlauncher-10.0.9.jar:?]
-	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) ~[modlauncher-10.0.9.jar:?]
-	at cpw.mods.modlauncher.Launcher.run(Launcher.java:108) ~[modlauncher-10.0.9.jar:?]
-	at cpw.mods.modlauncher.Launcher.main(Launcher.java:78) ~[modlauncher-10.0.9.jar:?]
-	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) ~[modlauncher-10.0.9.jar:?]
-	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) ~[modlauncher-10.0.9.jar:?]
-	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:141) ~[bootstraplauncher-1.1.2.jar:?]
-	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
-	at net.neoforged.devlaunch.Main.main(Main.java:57) ~[?:?]
-[21Ara2025 14:59:20.203] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:20.205] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:20.205] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:20.205] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:20.205] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:20.205] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:20.205] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:20.205] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:20.205] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:20.205] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:20.205] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:20.205] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:20.206] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:20.206] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:20.206] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:20.206] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:20.206] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:20.206] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:20.206] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:20.206] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:20.207] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⭐ VET KAYDI: SUTCU-01 ==================
-[21Ara2025 14:59:20.207] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🧬 Irk: Simmental  ♀ Cinsiyet: İnek  🎂 Yaş: 20G
-[21Ara2025 14:59:20.207] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⚖ Kilo: 551,2kg  🍽 Tokluk: [|||||||||.] %94
-[21Ara2025 14:59:20.208] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ✅ Sağlık: Stabil ve sağlıklı.
-[21Ara2025 14:59:20.208] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] --------------------------------------------------
-[21Ara2025 14:59:20.208] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🥛 DURUM: SÜT VERİYOR | Kalan: 8 gün
-[21Ara2025 14:59:20.208] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ┗ Laktasyon (Tohumlanamaz)
-[21Ara2025 14:59:20.208] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🍼 Toplam Doğum: 0
-[21Ara2025 14:59:20.208] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ==================================================
-[21Ara2025 14:59:23.082] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:23.084] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:23.084] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:23.085] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:23.085] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:23.085] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:23.085] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:23.085] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:23.085] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:23.085] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:23.085] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:23.085] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:23.085] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:23.085] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:23.085] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:23.085] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:23.085] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:23.085] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:23.085] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:23.085] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:23.085] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⭐ VET KAYDI: TR812868 ==================
-[21Ara2025 14:59:23.085] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🧬 Irk: Simmental  ♀ Cinsiyet: İnek  🎂 Yaş: 1002G
-[21Ara2025 14:59:23.085] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⚖ Kilo: 675,7kg  🍽 Tokluk: [|||||||...] %78
-[21Ara2025 14:59:23.085] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ☣ HASTA! (Teşhis için aletleri kullanın)
-[21Ara2025 14:59:23.085] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] --------------------------------------------------
-[21Ara2025 14:59:23.086] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🥛 DURUM: SÜT VERİYOR | Kalan: 1 gün
-[21Ara2025 14:59:23.086] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ┗ Hazır (Süt Bitiyor)
-[21Ara2025 14:59:23.086] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🍼 Toplam Doğum: 0
-[21Ara2025 14:59:23.086] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ==================================================
-[21Ara2025 14:59:25.537] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:25.538] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:25.538] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:25.538] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:25.538] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:25.538] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:25.538] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:25.538] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:25.538] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:25.538] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:25.538] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:25.538] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:25.538] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:25.538] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:25.538] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:25.538] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:25.538] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:25.538] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:25.538] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:25.538] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:25.538] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⭐ VET KAYDI: SUTCU-01 ==================
-[21Ara2025 14:59:25.539] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🧬 Irk: Simmental  ♀ Cinsiyet: İnek  🎂 Yaş: 20G
-[21Ara2025 14:59:25.539] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⚖ Kilo: 551,2kg  🍽 Tokluk: [|||||||||.] %94
-[21Ara2025 14:59:25.539] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ✅ Sağlık: Stabil ve sağlıklı.
-[21Ara2025 14:59:25.539] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] --------------------------------------------------
-[21Ara2025 14:59:25.539] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🥛 DURUM: SÜT VERİYOR | Kalan: 8 gün
-[21Ara2025 14:59:25.539] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ┗ Laktasyon (Tohumlanamaz)
-[21Ara2025 14:59:25.539] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🍼 Toplam Doğum: 0
-[21Ara2025 14:59:25.539] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ==================================================
-[21Ara2025 14:59:28.788] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:28.789] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:28.789] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:28.789] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:28.789] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:28.789] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:28.789] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:28.789] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:28.789] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:28.789] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:28.789] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:28.789] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:28.789] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:28.789] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:28.789] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:28.789] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:28.789] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:28.790] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:28.790] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:28.790] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:28.790] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⭐ VET KAYDI: TR634765 ==================
-[21Ara2025 14:59:28.790] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🧬 Irk: Angus  ♂ Cinsiyet: Boğa  🎂 Yaş: 3G
-[21Ara2025 14:59:28.790] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⚖ Kilo: 92,4kg  🍽 Tokluk: [||||||||..] %84
-[21Ara2025 14:59:28.790] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ✅ Sağlık: Stabil ve sağlıklı.
-[21Ara2025 14:59:28.790] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ==================================================
-[21Ara2025 14:59:31.690] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:31.691] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:31.691] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:31.691] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:31.691] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:31.691] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:31.691] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:31.691] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:31.691] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:31.691] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:31.691] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:31.691] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:31.691] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:31.691] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:31.692] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:31.692] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:31.692] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:31.692] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:31.692] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:31.692] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:31.692] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⭐ VET KAYDI: TR812868 ==================
-[21Ara2025 14:59:31.692] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🧬 Irk: Simmental  ♀ Cinsiyet: İnek  🎂 Yaş: 1002G
-[21Ara2025 14:59:31.692] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⚖ Kilo: 675,7kg  🍽 Tokluk: [|||||||...] %78
-[21Ara2025 14:59:31.692] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ☣ HASTA! (Teşhis için aletleri kullanın)
-[21Ara2025 14:59:31.692] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] --------------------------------------------------
-[21Ara2025 14:59:31.692] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🥛 DURUM: SÜT VERİYOR | Kalan: 1 gün
-[21Ara2025 14:59:31.692] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ┗ Hazır (Süt Bitiyor)
-[21Ara2025 14:59:31.692] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🍼 Toplam Doğum: 0
-[21Ara2025 14:59:31.692] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ==================================================
-[21Ara2025 14:59:46.062] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Satış Başarılı: +50.0 TL
-[21Ara2025 14:59:49.834] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:49.835] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:49.835] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:49.835] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:49.835] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:49.835] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:49.835] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:49.835] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:49.835] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:49.835] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:49.835] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:49.835] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:49.835] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:49.835] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:49.835] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:49.835] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:49.835] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:49.835] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:49.835] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:49.835] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 14:59:49.835] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⭐ VET KAYDI: TR812868 ==================
-[21Ara2025 14:59:49.835] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🧬 Irk: Simmental  ♀ Cinsiyet: İnek  🎂 Yaş: 1002G
-[21Ara2025 14:59:49.835] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⚖ Kilo: 675,7kg  🍽 Tokluk: [|||||||...] %78
-[21Ara2025 14:59:49.835] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ☣ HASTA! (Teşhis için aletleri kullanın)
-[21Ara2025 14:59:49.835] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] --------------------------------------------------
-[21Ara2025 14:59:49.835] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🥛 DURUM: SÜT VERİYOR | Kalan: 1 gün
-[21Ara2025 14:59:49.836] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ┗ Hazır (Süt Bitiyor)
-[21Ara2025 14:59:49.836] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🍼 Toplam Doğum: 0
-[21Ara2025 14:59:49.836] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ==================================================
-[21Ara2025 15:00:10.940] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] [Celep] Geldim ağam, ne satacaksın?
-[21Ara2025 15:00:14.118] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⚠ DİKKAT: TR865806 küpeli inek DÜŞÜK YAPTI!
-[21Ara2025 15:00:42.034] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:00:42.036] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:00:42.036] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:00:42.036] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:00:42.036] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:00:42.036] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:00:42.036] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:00:42.036] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:00:42.036] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:00:42.037] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:00:42.037] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:00:42.037] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:00:42.037] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:00:42.037] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:00:42.037] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:00:42.037] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:00:42.037] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:00:42.037] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:00:42.037] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:00:42.037] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:00:42.037] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⭐ VET KAYDI: TR556247 ==================
-[21Ara2025 15:00:42.037] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🧬 Irk: Simmental  ♂ Cinsiyet: Boğa  🎂 Yaş: 20G
-[21Ara2025 15:00:42.037] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⚖ Kilo: 900,0kg  🍽 Tokluk: [|||||.....] %50
-[21Ara2025 15:00:42.037] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ✅ Sağlık: Stabil ve sağlıklı.
-[21Ara2025 15:00:42.037] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ==================================================
-[21Ara2025 15:00:47.238] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:00:47.239] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:00:47.239] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:00:47.239] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:00:47.239] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:00:47.239] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:00:47.239] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:00:47.239] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:00:47.239] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:00:47.239] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:00:47.239] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:00:47.239] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:00:47.239] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:00:47.239] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:00:47.239] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:00:47.239] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:00:47.239] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:00:47.239] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:00:47.239] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:00:47.240] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:00:47.240] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⭐ VET KAYDI: KIZGIN-01 ==================
-[21Ara2025 15:00:47.240] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🧬 Irk: Melez  ♀ Cinsiyet: İnek  🎂 Yaş: 15G
-[21Ara2025 15:00:47.240] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⚖ Kilo: 501,6kg  🍽 Tokluk: [|||||||||.] %92
-[21Ara2025 15:00:47.240] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ✅ Sağlık: Stabil ve sağlıklı.
-[21Ara2025 15:00:47.240] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] --------------------------------------------------
-[21Ara2025 15:00:47.240] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ♥ DURUM: GEBE | Doğuma: 8 gün (Süt: Yok)
-[21Ara2025 15:00:47.240] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🍼 Toplam Doğum: 0
-[21Ara2025 15:00:47.240] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ==================================================
-[21Ara2025 15:00:57.107] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
-[21Ara2025 15:00:57.125] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[21Ara2025 15:00:57.139] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[21Ara2025 15:00:57.140] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[21Ara2025 15:01:17.207] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
-[21Ara2025 15:01:17.215] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[21Ara2025 15:01:17.222] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[21Ara2025 15:01:17.224] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[21Ara2025 15:01:18.007] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
-[21Ara2025 15:01:18.010] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[21Ara2025 15:01:18.015] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[21Ara2025 15:01:18.016] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[21Ara2025 15:01:20.407] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
-[21Ara2025 15:01:20.422] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[21Ara2025 15:01:20.440] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[21Ara2025 15:01:20.441] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[21Ara2025 15:02:34.723] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] --- [ 📔 GÜNLÜK KAYITLARI ] ---
-[21Ara2025 15:02:34.726] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT]  ✓ Rutin kontroller normal.
-[21Ara2025 15:02:36.720] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⚠ DİKKAT: KIZGIN-01 küpeli inek DÜŞÜK YAPTI!
-[21Ara2025 15:02:38.866] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] --- [ 📔 GÜNLÜK KAYITLARI ] ---
-[21Ara2025 15:02:38.866] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT]  ✓ Rutin kontroller normal.
-[21Ara2025 15:02:41.017] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] --- [ 📔 GÜNLÜK KAYITLARI ] ---
-[21Ara2025 15:02:41.018] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT]  ✓ Rutin kontroller normal.
-[21Ara2025 15:02:44.766] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] --- [ 📔 GÜNLÜK KAYITLARI ] ---
-[21Ara2025 15:02:44.767] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT]  ⚠ NOT: Ağızdan salya akıtıyor, tırnak aralarında yaralar var.
-[21Ara2025 15:02:48.823] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Bulgular: Kalp ritminde düzensizlik (Miyokardit) riski.
-[21Ara2025 15:02:51.425] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] [ 🌡️ ] Vücut Isısı: 41.8 °C
-[21Ara2025 15:02:53.965] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Kan örneği alındı. Etiket: TR812868
-[21Ara2025 15:03:53.507] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
-[21Ara2025 15:03:53.514] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[21Ara2025 15:03:53.522] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[21Ara2025 15:03:53.523] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[21Ara2025 15:12:28.883] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Satış Başarılı: +50.0 TL
-[21Ara2025 15:12:33.105] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:33.106] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:33.106] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:33.106] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:33.106] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:33.106] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:33.106] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:33.106] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:33.106] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:33.106] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:33.106] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:33.106] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:33.106] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:33.106] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:33.106] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:33.106] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:33.106] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:33.106] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:33.106] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:33.106] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:33.106] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⭐ VET KAYDI: HASTA-02 ==================
-[21Ara2025 15:12:33.107] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🧬 Irk: Simmental  ♂ Cinsiyet: Boğa  🎂 Yaş: 10G
-[21Ara2025 15:12:33.107] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⚖ Kilo: 549,6kg  🍽 Tokluk: [|||||||||.] %98
-[21Ara2025 15:12:33.107] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ☣ HASTA! (Teşhis için aletleri kullanın)
-[21Ara2025 15:12:33.107] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ==================================================
-[21Ara2025 15:12:38.353] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:38.354] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:38.354] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:38.354] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:38.354] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:38.354] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:38.354] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:38.354] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:38.354] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:38.354] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:38.354] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:38.354] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:38.354] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:38.354] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:38.354] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:38.354] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:38.354] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:38.354] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:38.354] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:38.355] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:38.355] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⭐ VET KAYDI: TR634765 ==================
-[21Ara2025 15:12:38.355] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🧬 Irk: Angus  ♂ Cinsiyet: Boğa  🎂 Yaş: 3G
-[21Ara2025 15:12:38.355] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⚖ Kilo: 94,8kg  🍽 Tokluk: [|||||||...] %74
-[21Ara2025 15:12:38.355] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ✅ Sağlık: Stabil ve sağlıklı.
-[21Ara2025 15:12:38.355] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ==================================================
-[21Ara2025 15:12:42.255] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:42.255] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:42.255] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:42.255] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:42.255] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:42.255] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:42.255] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:42.255] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:42.255] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:42.255] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:42.255] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:42.255] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:42.256] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:42.256] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:42.256] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:42.256] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:42.256] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:42.256] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:42.256] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:42.256] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:42.256] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⭐ VET KAYDI: KIZGIN-01 ==================
-[21Ara2025 15:12:42.256] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🧬 Irk: Melez  ♀ Cinsiyet: İnek  🎂 Yaş: 15G
-[21Ara2025 15:12:42.256] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⚖ Kilo: 503,0kg  🍽 Tokluk: [||||||||..] %82
-[21Ara2025 15:12:42.256] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ☣ HASTA! (Teşhis için aletleri kullanın)
-[21Ara2025 15:12:42.256] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] --------------------------------------------------
-[21Ara2025 15:12:42.256] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🥛 DURUM: SÜT VERİYOR | Kalan: 1 gün
-[21Ara2025 15:12:42.256] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ┗ Hazır (Süt Bitiyor)
-[21Ara2025 15:12:42.256] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🍼 Toplam Doğum: 0
-[21Ara2025 15:12:42.256] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ==================================================
-[21Ara2025 15:12:44.059] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:44.060] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:44.060] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:44.060] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:44.061] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:44.061] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:44.061] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:44.061] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:44.061] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:44.061] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:44.061] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:44.061] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:44.061] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:44.061] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:44.061] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:44.061] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:44.061] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:44.061] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:44.061] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:44.061] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
-[21Ara2025 15:12:44.061] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⭐ VET KAYDI: TR812868 ==================
-[21Ara2025 15:12:44.061] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🧬 Irk: Simmental  ♀ Cinsiyet: İnek  🎂 Yaş: 1002G
-[21Ara2025 15:12:44.062] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⚖ Kilo: 677,2kg  🍽 Tokluk: [||||||||..] %88
-[21Ara2025 15:12:44.062] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ☣ HASTA! (Teşhis için aletleri kullanın)
-[21Ara2025 15:12:44.062] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] --------------------------------------------------
-[21Ara2025 15:12:44.062] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🥛 DURUM: SÜT VERİYOR | Kalan: 1 gün
-[21Ara2025 15:12:44.062] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ┗ Hazır (Süt Bitiyor)
-[21Ara2025 15:12:44.062] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🍼 Toplam Doğum: 0
-[21Ara2025 15:12:44.062] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ==================================================
-[21Ara2025 15:12:57.408] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
-[21Ara2025 15:12:57.415] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[21Ara2025 15:12:57.423] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[21Ara2025 15:12:57.424] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[21Ara2025 15:12:58.672] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Dev lost connection: Disconnected
-[21Ara2025 15:12:58.675] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev left the game
-[21Ara2025 15:12:58.681] [Server thread/INFO] [net.minecraft.server.network.ServerCommonPacketListenerImpl/]: Stopping singleplayer server as player logged out
-[21Ara2025 15:12:58.708] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server
-[21Ara2025 15:12:58.708] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving players
-[21Ara2025 15:12:58.708] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving worlds
-[21Ara2025 15:12:59.390] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[21Ara2025 15:12:59.496] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[21Ara2025 15:12:59.497] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[21Ara2025 15:12:59.500] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (New World (3)): All chunks are saved
-[21Ara2025 15:12:59.500] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[21Ara2025 15:12:59.501] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[21Ara2025 15:12:59.501] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved
-[21Ara2025 15:14:31.795] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Stopping!
+[27Ara2025 00:10:31.438] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeclientuserdev, --version, 20.4.251, --assetIndex, 12, --assetsDir, /Users/smtl/.gradle/caches/neoformruntime/assets, --gameDir, ., --fml.neoForgeVersion, 20.4.251, --fml.fmlVersion, 2.0.17, --fml.mcVersion, 1.20.4, --fml.neoFormVersion, 20240627.114801]
+[27Ara2025 00:10:31.440] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 21.0.7 by Oracle Corporation; OS Mac OS X arch aarch64 version 26.3
+[27Ara2025 00:10:31.488] [main/INFO] [net.neoforged.fml.loading.ImmediateWindowHandler/]: Loading ImmediateWindowProvider fmlearlywindow
+[27Ara2025 00:10:31.951] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.6
+[27Ara2025 00:10:32.109] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.5
+[27Ara2025 00:10:32.119] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.4
+[27Ara2025 00:10:32.128] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.3
+[27Ara2025 00:10:32.137] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.2
+[27Ara2025 00:10:32.147] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.1
+[27Ara2025 00:10:32.170] [main/INFO] [EARLYDISPLAY/]: Requested GL version 4.1 got version 4.1
+[27Ara2025 00:10:32.331] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/Users/smtl/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.13.4+mixin.0.8.5/8adf0cff1795a169141b9e16ad7b9f6e2527a990/sponge-mixin-0.13.4+mixin.0.8.5.jar%23123!/ Service=ModLauncher Env=CLIENT
+[27Ara2025 00:10:32.613] [main/INFO] [net.neoforged.fml.loading.moddiscovery.JarInJarDependencyLocator/]: Found 1 dependencies adding them to mods collection
+[27Ara2025 00:10:32.619] [pool-2-thread-1/INFO] [EARLYDISPLAY/]: GL info: Apple M2 GL version 4.1 Metal - 90.5, Apple
+[27Ara2025 00:10:33.335] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeclientuserdev' with arguments [--version, 20.4.251, --gameDir, ., --assetsDir, /Users/smtl/.gradle/caches/neoformruntime/assets, --assetIndex, 12]
+[27Ara2025 00:10:36.958] [Datafixer Bootstrap/INFO] [com.mojang.datafixers.DataFixerBuilder/]: 198 Datafixer optimizations took 82 milliseconds
+[27Ara2025 00:10:38.406] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[27Ara2025 00:10:38.407] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
+[27Ara2025 00:10:38.408] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[27Ara2025 00:10:38.409] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[27Ara2025 00:10:38.410] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[27Ara2025 00:10:38.469] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/Users/smtl/Downloads/vetcraft%202/build/moddev/artifacts/neoforge-20.4.251-merged.jar%23175!/assets/.mcassetsroot' uses unexpected schema
+[27Ara2025 00:10:38.469] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/Users/smtl/Downloads/vetcraft%202/build/moddev/artifacts/neoforge-20.4.251-merged.jar%23175!/data/.mcassetsroot' uses unexpected schema
+[27Ara2025 00:10:38.478] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[27Ara2025 00:10:38.482] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: Dev
+[27Ara2025 00:10:38.513] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.3.2+13
+[27Ara2025 00:10:38.868] [modloading-worker-0/INFO] [net.neoforged.neoforge.common.NeoForgeMod/NEOFORGE-MOD]: NeoForge mod loading, version 20.4.251, for MC 1.20.4 with MCP 20240627.114801
+[27Ara2025 00:10:39.336] [Render thread/INFO] [net.neoforged.neoforge.gametest.GameTestHooks/]: Enabled Gametest Namespaces: [vetcraft]
+[27Ara2025 00:10:40.074] [Render thread/INFO] [net.minecraft.server.packs.resources.ReloadableResourceManager/]: Reloading ResourceManager: mod_resources, mod:vetsim, mod:neoforge, vanilla
+[27Ara2025 00:10:40.140] [Worker-Main-7/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_all_no_pua-15.1.04.hex, loading
+[27Ara2025 00:10:40.271] [Render thread/INFO] [com.vetsim.vetcraft.VetCraft/]: Market verileri yüklendi. Alınabilir: 8, Satılabilir: 5
+[27Ara2025 00:10:40.291] [Render thread/ERROR] [com.vetsim.vetcraft.VetCraft/]: Hastalık yükleme hatası: java.lang.IllegalStateException: Expected BEGIN_ARRAY but was STRING at line 40 column 20 path $[1].cureTarget
+[27Ara2025 00:10:40.291] [Render thread/INFO] [com.vetsim.vetcraft.VetCraft/]: VetCraft: Hastalık veritabanı yüklendi.
+[27Ara2025 00:10:40.735] [Worker-Main-2/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'vetsim:manure#inventory' referenced from: vetsim:manure#inventory: java.io.FileNotFoundException: vetsim:models/item/manure.json
+[27Ara2025 00:10:40.735] [Worker-Main-2/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'vetsim:filled_blood_tube#inventory' referenced from: vetsim:filled_blood_tube#inventory: java.io.FileNotFoundException: vetsim:models/item/filled_blood_tube.json
+[27Ara2025 00:10:40.736] [Worker-Main-2/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'vetsim:celep_spawn_egg#inventory' referenced from: vetsim:celep_spawn_egg#inventory: java.io.FileNotFoundException: vetsim:models/item/celep_spawn_egg.json
+[27Ara2025 00:10:40.736] [Worker-Main-2/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'vetsim:hormone_pgf2a#inventory' referenced from: vetsim:hormone_pgf2a#inventory: java.io.FileNotFoundException: vetsim:models/item/hormone_pgf2a.json
+[27Ara2025 00:10:40.736] [Worker-Main-2/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'vetsim:smart_phone#inventory' referenced from: vetsim:smart_phone#inventory: java.io.FileNotFoundException: vetsim:models/item/smart_phone.json
+[27Ara2025 00:10:40.737] [Worker-Main-2/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'vetsim:antibiotics#inventory' referenced from: vetsim:antibiotics#inventory: java.io.FileNotFoundException: vetsim:models/item/antibiotics.json
+[27Ara2025 00:10:40.737] [Worker-Main-2/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'vetsim:stethoscope#inventory' referenced from: vetsim:stethoscope#inventory: java.io.FileNotFoundException: vetsim:models/item/stethoscope.json
+[27Ara2025 00:10:40.737] [Worker-Main-2/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'vetsim:hormone_gnrh#inventory' referenced from: vetsim:hormone_gnrh#inventory: java.io.FileNotFoundException: vetsim:models/item/hormone_gnrh.json
+[27Ara2025 00:10:40.737] [Worker-Main-2/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'vetsim:celep_whistle#inventory' referenced from: vetsim:celep_whistle#inventory: java.io.FileNotFoundException: vetsim:models/item/celep_whistle.json
+[27Ara2025 00:10:40.738] [Worker-Main-2/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'vetsim:thermometer#inventory' referenced from: vetsim:thermometer#inventory: java.io.FileNotFoundException: vetsim:models/item/thermometer.json
+[27Ara2025 00:10:40.738] [Worker-Main-2/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'vetsim:multivitamin#inventory' referenced from: vetsim:multivitamin#inventory: java.io.FileNotFoundException: vetsim:models/item/multivitamin.json
+[27Ara2025 00:10:40.738] [Worker-Main-2/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'vetsim:hormone_oxytocin#inventory' referenced from: vetsim:hormone_oxytocin#inventory: java.io.FileNotFoundException: vetsim:models/item/hormone_oxytocin.json
+[27Ara2025 00:10:40.738] [Worker-Main-2/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'vetsim:filled_straw#inventory' referenced from: vetsim:filled_straw#inventory: java.io.FileNotFoundException: vetsim:models/item/filled_straw.json
+[27Ara2025 00:10:40.738] [Worker-Main-2/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'vetsim:penicillin#inventory' referenced from: vetsim:penicillin#inventory: java.io.FileNotFoundException: vetsim:models/item/penicillin.json
+[27Ara2025 00:10:40.739] [Worker-Main-2/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'vetsim:vet_clipboard#inventory' referenced from: vetsim:vet_clipboard#inventory: java.io.FileNotFoundException: vetsim:models/item/vet_clipboard.json
+[27Ara2025 00:10:40.739] [Worker-Main-2/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'vetsim:empty_blood_tube#inventory' referenced from: vetsim:empty_blood_tube#inventory: java.io.FileNotFoundException: vetsim:models/item/empty_blood_tube.json
+[27Ara2025 00:10:40.739] [Worker-Main-2/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'vetsim:debit_card#inventory' referenced from: vetsim:debit_card#inventory: java.io.FileNotFoundException: vetsim:models/item/debit_card.json
+[27Ara2025 00:10:40.739] [Worker-Main-2/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'vetsim:halter#inventory' referenced from: vetsim:halter#inventory: java.io.FileNotFoundException: vetsim:models/item/halter.json
+[27Ara2025 00:10:40.739] [Worker-Main-2/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'vetsim:empty_straw#inventory' referenced from: vetsim:empty_straw#inventory: java.io.FileNotFoundException: vetsim:models/item/empty_straw.json
+[27Ara2025 00:10:40.739] [Worker-Main-2/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'vetsim:flunixin#inventory' referenced from: vetsim:flunixin#inventory: java.io.FileNotFoundException: vetsim:models/item/flunixin.json
+[27Ara2025 00:10:41.302] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:item.goat_horn.play
+[27Ara2025 00:10:41.302] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:entity.goat.screaming.horn_break
+[27Ara2025 00:10:41.303] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:entity.generic.wind_burst
+[27Ara2025 00:10:41.633] [Render thread/INFO] [com.mojang.blaze3d.audio.Library/]: OpenAL initialized on device R25f-30
+[27Ara2025 00:10:41.635] [Render thread/INFO] [net.minecraft.client.sounds.SoundEngine/SOUNDS]: Sound engine started
+[27Ara2025 00:10:41.738] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
+[27Ara2025 00:10:41.747] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
+[27Ara2025 00:10:41.747] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[27Ara2025 00:10:41.748] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[27Ara2025 00:10:41.749] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
+[27Ara2025 00:10:41.755] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
+[27Ara2025 00:10:41.755] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
+[27Ara2025 00:10:41.755] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[27Ara2025 00:10:41.756] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[27Ara2025 00:10:41.838] [Render thread/WARN] [net.minecraft.client.renderer.ShaderInstance/]: Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
+[27Ara2025 00:10:41.902] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
+[27Ara2025 00:10:41.903] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
+[27Ara2025 00:10:41.903] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[27Ara2025 00:10:41.903] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x512x0 minecraft:textures/atlas/gui.png-atlas
+[27Ara2025 00:10:46.585] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 7 recipes
+[27Ara2025 00:10:46.675] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 1271 advancements
+[27Ara2025 00:10:46.890] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Starting integrated minecraft server version 1.20.4
+[27Ara2025 00:10:46.890] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
+[27Ara2025 00:10:49.516] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld
+[27Ara2025 00:10:52.258] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[27Ara2025 00:10:52.258] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[27Ara2025 00:10:52.258] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[27Ara2025 00:10:52.258] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[27Ara2025 00:10:52.258] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[27Ara2025 00:10:52.258] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[27Ara2025 00:10:52.527] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 19%
+[27Ara2025 00:10:52.993] [Server thread/INFO] [net.neoforged.neoforge.server.permission.PermissionAPI/]: Successfully initialized permission handler neoforge:default_handler
+[27Ara2025 00:10:53.002] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Time elapsed: 3476 ms
+[27Ara2025 00:10:53.099] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing view distance to 12, from 10
+[27Ara2025 00:10:53.099] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing simulation distance to 12, from 0
+[27Ara2025 00:10:53.387] [Server thread/INFO] [net.minecraft.server.players.PlayerList/]: Dev[local:E:12f05536] logged in with entity id 269 at (-6.593590852046627, 71.0, -3.3781084783175555)
+[27Ara2025 00:10:53.414] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev joined the game
+[27Ara2025 00:10:53.555] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 20 advancements
+[27Ara2025 00:11:06.442] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT]  💧 İnek su içti.
+[27Ara2025 00:11:11.341] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:11.342] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:11.342] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:11.342] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:11.342] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:11.342] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:11.342] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:11.343] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:11.343] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:11.343] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:11.343] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:11.343] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:11.343] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:11.343] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:11.343] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:11.343] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:11.343] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:11.343] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:11.343] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:11.343] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:11.343] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⭐ VET KAYDI: TR000000 ==================
+[27Ara2025 00:11:11.344] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🧬 Simmental ♂ | 🎂 20 Gün
+[27Ara2025 00:11:11.344] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⚖ Kondisyon (BCS): 3,4 / 5.0
+[27Ara2025 00:11:11.344] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🧪 Rumen pH: 7,0 (✔ Dengeli)
+[27Ara2025 00:11:11.344] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ==================================================
+[27Ara2025 00:11:11.345] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💧 Hidrasyon: % 98 (✔)
+[27Ara2025 00:11:11.345] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💨 Gaz Seviyesi: % 0
+[27Ara2025 00:11:17.040] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:17.041] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:17.041] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:17.041] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:17.041] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:17.041] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:17.041] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:17.041] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:17.041] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:17.041] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:17.041] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:17.042] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:17.042] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:17.042] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:17.042] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:17.042] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:17.042] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:17.042] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:17.042] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:17.042] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:17.042] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⭐ VET KAYDI: TR000000 ==================
+[27Ara2025 00:11:17.042] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🧬 Simmental ♀ | 🎂 1000 Gün
+[27Ara2025 00:11:17.042] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⚖ Kondisyon (BCS): 1,0 / 5.0
+[27Ara2025 00:11:17.042] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🧪 Rumen pH: 7,0 (✔ Dengeli)
+[27Ara2025 00:11:17.042] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⚪ SÜT: YOK (Kuruda/Verimsiz)
+[27Ara2025 00:11:17.042] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] --------------------------------------------------
+[27Ara2025 00:11:17.042] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🔥 DURUM: KIZGINLIK (ÖSTRUS) (✔ Tohumlanabilir!)
+[27Ara2025 00:11:17.043] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ==================================================
+[27Ara2025 00:11:17.043] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💧 Hidrasyon: % 90 (✔)
+[27Ara2025 00:11:17.043] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💨 Gaz Seviyesi: % 0
+[27Ara2025 00:11:18.884] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:18.884] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:18.884] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:18.884] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:18.884] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:18.884] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:18.884] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:18.884] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:18.884] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:18.884] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:18.884] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:18.884] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:18.884] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:18.884] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:18.884] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:18.884] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:18.884] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:18.884] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:18.885] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:18.885] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:18.885] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⭐ VET KAYDI: TR815403 ==================
+[27Ara2025 00:11:18.885] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🧬 Simmental ♂ | 🎂 0 Gün
+[27Ara2025 00:11:18.885] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⚖ Kondisyon (BCS): 1,0 / 5.0
+[27Ara2025 00:11:18.885] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🧪 Rumen pH: 7,0 (✔ Dengeli)
+[27Ara2025 00:11:18.885] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ==================================================
+[27Ara2025 00:11:18.885] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💧 Hidrasyon: % 89 (✔)
+[27Ara2025 00:11:18.885] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💨 Gaz Seviyesi: % 0
+[27Ara2025 00:11:20.434] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:20.435] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:20.436] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:20.436] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:20.436] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:20.436] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:20.436] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:20.436] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:20.436] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:20.437] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:20.437] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:20.437] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:20.437] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:20.437] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:20.437] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:20.437] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:20.437] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:20.437] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:20.437] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:20.438] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:20.438] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⭐ VET KAYDI: TR815403 ==================
+[27Ara2025 00:11:20.438] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🧬 Simmental ♂ | 🎂 0 Gün
+[27Ara2025 00:11:20.438] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⚖ Kondisyon (BCS): 1,0 / 5.0
+[27Ara2025 00:11:20.439] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🧪 Rumen pH: 7,0 (✔ Dengeli)
+[27Ara2025 00:11:20.439] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ==================================================
+[27Ara2025 00:11:20.439] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💧 Hidrasyon: % 89 (✔)
+[27Ara2025 00:11:20.439] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💨 Gaz Seviyesi: % 0
+[27Ara2025 00:11:21.135] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:21.135] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:21.135] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:21.135] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:21.135] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:21.135] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:21.135] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:21.135] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:21.135] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:21.135] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:21.135] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:21.135] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:21.135] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:21.135] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:21.135] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:21.135] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:21.135] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:21.135] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:21.135] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:21.136] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:11:21.136] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⭐ VET KAYDI: TR769498 ==================
+[27Ara2025 00:11:21.136] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🧬 Simmental ♂ | 🎂 0 Gün
+[27Ara2025 00:11:21.136] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⚖ Kondisyon (BCS): 2,0 / 5.0
+[27Ara2025 00:11:21.136] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🧪 Rumen pH: 7,0 (✔ Dengeli)
+[27Ara2025 00:11:21.136] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ==================================================
+[27Ara2025 00:11:21.136] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💧 Hidrasyon: % 88 (✔)
+[27Ara2025 00:11:21.136] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💨 Gaz Seviyesi: % 0
+[27Ara2025 00:11:53.539] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Hayvan kızgınlıkta değil! (Progesteron Yüksek)
+[27Ara2025 00:11:57.090] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] --- [ 📔 GÜNLÜK KAYITLARI ] ---
+[27Ara2025 00:11:57.090] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Beslenme: Rumen pH 6,9 (Normal)
+[27Ara2025 00:11:57.090] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT]  ✓ Rutin kontroller normal.
+[27Ara2025 00:12:07.080] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT]  ♥ Kızgınlık (Östrus) tetiklendi.
+[27Ara2025 00:12:07.091] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT]  ♥ Kızgınlık (Östrus) tetiklendi.
+[27Ara2025 00:12:34.240] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT]  ♥ Suni tohumlama BAŞARILI! Gebelik başladı.
+[27Ara2025 00:12:38.093] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:38.093] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:38.093] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:38.093] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:38.094] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:38.094] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:38.094] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:38.094] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:38.094] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:38.094] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:38.094] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:38.094] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:38.094] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:38.094] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:38.094] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:38.094] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:38.094] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:38.094] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:38.094] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:38.094] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:38.094] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⭐ VET KAYDI: TR000000 ==================
+[27Ara2025 00:12:38.094] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🧬 Holstein ♀ | 🎂 30 Gün
+[27Ara2025 00:12:38.094] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⚖ Kondisyon (BCS): 1,0 / 5.0
+[27Ara2025 00:12:38.094] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🧪 Rumen pH: 6,9 (✔ Dengeli)
+[27Ara2025 00:12:38.094] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⚪ SÜT: YOK (Kuruda/Verimsiz)
+[27Ara2025 00:12:38.094] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] --------------------------------------------------
+[27Ara2025 00:12:38.094] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ♥ DURUM: GEBE (Prog: 8,0)
+[27Ara2025 00:12:38.094] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ==================================================
+[27Ara2025 00:12:38.094] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💧 Hidrasyon: % 58 (✔)
+[27Ara2025 00:12:38.095] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💨 Gaz Seviyesi: % 0
+[27Ara2025 00:12:41.841] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT]  💧 İnek su içti.
+[27Ara2025 00:12:44.533] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:44.533] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:44.533] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:44.533] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:44.533] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:44.533] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:44.533] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:44.533] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:44.533] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:44.533] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:44.533] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:44.533] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:44.533] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:44.533] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:44.533] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:44.533] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:44.533] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:44.533] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:44.533] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:44.533] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:44.534] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⭐ VET KAYDI: TR000000 ==================
+[27Ara2025 00:12:44.534] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🧬 Holstein ♀ | 🎂 30 Gün
+[27Ara2025 00:12:44.534] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⚖ Kondisyon (BCS): 1,0 / 5.0
+[27Ara2025 00:12:44.534] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🧪 Rumen pH: 6,9 (✔ Dengeli)
+[27Ara2025 00:12:44.534] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⚪ SÜT: YOK (Kuruda/Verimsiz)
+[27Ara2025 00:12:44.534] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] --------------------------------------------------
+[27Ara2025 00:12:44.534] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ♥ DURUM: GEBE (Prog: 8,0)
+[27Ara2025 00:12:44.534] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ==================================================
+[27Ara2025 00:12:44.534] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💧 Hidrasyon: % 98 (✔)
+[27Ara2025 00:12:44.534] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💨 Gaz Seviyesi: % 0
+[27Ara2025 00:12:59.433] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:59.434] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:59.434] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:59.434] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:59.434] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:59.434] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:59.434] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:59.434] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:59.434] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:59.434] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:59.434] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:59.434] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:59.434] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:59.434] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:59.434] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:59.434] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:59.434] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:59.434] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:59.434] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:59.434] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 
+[27Ara2025 00:12:59.434] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⭐ VET KAYDI: TR000000 ==================
+[27Ara2025 00:12:59.434] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🧬 Simmental ♂ | 🎂 20 Gün
+[27Ara2025 00:12:59.434] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ⚖ Kondisyon (BCS): 3,6 / 5.0
+[27Ara2025 00:12:59.434] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 🧪 Rumen pH: 7,0 (✔ Dengeli)
+[27Ara2025 00:12:59.434] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ==================================================
+[27Ara2025 00:12:59.435] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💧 Hidrasyon: % 54 (✔)
+[27Ara2025 00:12:59.435] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💨 Gaz Seviyesi: % 0
+[27Ara2025 00:13:20.122] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT]  ⚠ Bu hormon sadece dişi hayvanlarda (İnek/Düve) etkilidir.
+[27Ara2025 00:13:20.124] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT]  (Erkeklerde östrus döngüsü bulunmaz)
+[27Ara2025 00:13:20.133] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT]  ⚠ Bu hormon sadece dişi hayvanlarda (İnek/Düve) etkilidir.
+[27Ara2025 00:13:20.133] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT]  (Erkeklerde östrus döngüsü bulunmaz)
+[27Ara2025 00:13:42.443] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
+[27Ara2025 00:13:42.463] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[27Ara2025 00:13:42.478] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[27Ara2025 00:13:42.479] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[27Ara2025 00:13:45.073] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Dev lost connection: Disconnected
+[27Ara2025 00:13:45.074] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev left the game
+[27Ara2025 00:13:45.084] [Server thread/INFO] [net.minecraft.server.network.ServerCommonPacketListenerImpl/]: Stopping singleplayer server as player logged out
+[27Ara2025 00:13:45.094] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server
+[27Ara2025 00:13:45.094] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving players
+[27Ara2025 00:13:45.094] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving worlds
+[27Ara2025 00:13:45.909] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[27Ara2025 00:13:46.013] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[27Ara2025 00:13:46.014] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[27Ara2025 00:13:46.018] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (New World (4)): All chunks are saved
+[27Ara2025 00:13:46.018] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[27Ara2025 00:13:46.018] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[27Ara2025 00:13:46.018] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved
+[27Ara2025 00:13:52.296] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Stopping!

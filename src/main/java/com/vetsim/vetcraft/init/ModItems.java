@@ -107,6 +107,20 @@ public class ModItems {
     public static final DeferredHolder<Item, Item> SMART_PHONE = ITEMS.register("smart_phone",
             () -> new SmartPhoneItem(new Item.Properties().stacksTo(1)));
 
+
+    // --- 4. HORMONLAR (Functional Drugs) ---
+    // PGF2a (Prostaglandin) - Düşük İğnesi / Kızgınlık İğnesi
+    public static final DeferredHolder<Item, Item> HORMONE_PGF2A = ITEMS.register("hormone_pgf2a",
+            () -> new Item(new Item.Properties()));
+
+    // GnRH - Yumurtlama İğnesi (İleride kullanılabilir)
+    public static final DeferredHolder<Item, Item> HORMONE_GNRH = ITEMS.register("hormone_gnrh",
+            () -> new Item(new Item.Properties()));
+
+    // Oxytocin - Süt İndirme İğnesi
+    public static final DeferredHolder<Item, Item> HORMONE_OXYTOCIN = ITEMS.register("hormone_oxytocin",
+            () -> new Item(new Item.Properties()));
+
     // -------------------------------------------------------------------------
 
     public static void register(IEventBus eventBus) {

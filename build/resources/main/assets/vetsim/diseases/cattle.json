@@ -11,7 +11,11 @@
     "visualEffect": "SNEEZE",
     "slowness": true,
     "cureType": "ITEM",
-    "cureTarget": "vetsim:antibiotics",
+
+    "cureTarget": [
+      "vetsim:penicillin",
+      "minecraft:apple"
+    ],
     "symptoms": {
       "anamnesis": "Hayvanın solunumu güçleşmiş ve sık sık öksürüyor.",
       "visual": "Burun akıntısı var, başını öne uzatmış şekilde duruyor.",
@@ -30,6 +34,8 @@
     "contagious": false,
     "visualEffect": "NONE",
     "slowness": true,
+    "bcsLoss": 0.0005,
+    "stopMilk": true,
     "cureType": "FEED",
     "cureTarget": "minecraft:hay_block",
     "risky_items": [
@@ -55,7 +61,11 @@
     "visualEffect": "SMOKE",
     "slowness": true,
     "cureType": "ITEM",
-    "cureTarget": "vetsim:oil_bottle",
+    "cureTarget": [
+      "vetsim:oil_bottle",
+      "minecraft:apple"
+    ],
+
     "risky_items": [
       { "item": "minecraft:rotten_flesh", "chance": 0.80 },
       { "item": "minecraft:poisonous_potato", "chance": 0.60 }
@@ -79,7 +89,10 @@
     "visualEffect": "NONE",
     "slowness": false,
     "cureType": "ITEM",
-    "cureTarget": "vetsim:antibiotics",
+    "cureTarget": [
+      "vetsim:penicillin",
+      "minecraft:apple"
+    ],
     "symptoms": {
       "anamnesis": "Süt verimi düştü, sütte sarı pıhtılar görülüyor.",
       "visual": "Meme loblarından biri aşırı şişmiş ve kızarık.",
@@ -99,7 +112,10 @@
     "visualEffect": "SNEEZE",
     "slowness": true,
     "cureType": "ITEM",
-    "cureTarget": "vetsim:fmd_vaccine",
+    "cureTarget": [
+      "vetsim:penicillin",
+      "vetsim:fmd_vaccine"
+    ],
     "symptoms": {
       "anamnesis": "Ağızdan salya akıtıyor, tırnak aralarında yaralar var.",
       "visual": "Ağzında şapırtı sesi var, sürekli yatmak istiyor.",

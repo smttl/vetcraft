@@ -46,6 +46,8 @@ public class VetCraft {
         event.enqueueWork(() -> {
             // Hastalık verilerini JSON'dan yükle
             MarketManager.loadMarkets();
+            com.vetsim.vetcraft.util.FeedManager.loadFeeds();
+            com.vetsim.vetcraft.util.DrugManager.loadDrugs();
             DiseaseManager.loadDiseases();
             LOGGER.info("VetCraft: Hastalık veritabanı yüklendi.");
         });

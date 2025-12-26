@@ -2,15 +2,13 @@ package com.vetsim.vetcraft.entity;
 
 import com.vetsim.vetcraft.entity.ai.EatFromTroughGoal;
 import com.vetsim.vetcraft.entity.ai.NaturalBreedingGoal;
-import com.vetsim.vetcraft.entity.ModEntities;
+import com.vetsim.vetcraft.entity.components.CattleHealth;
+import com.vetsim.vetcraft.entity.components.CattleMetabolism;
+import com.vetsim.vetcraft.entity.components.CattleReproduction;
 import com.vetsim.vetcraft.init.ModItems;
-import com.vetsim.vetcraft.util.DiseaseData;
-import com.vetsim.vetcraft.util.DiseaseManager;
-import com.vetsim.vetcraft.util.FeedData;
-import com.vetsim.vetcraft.util.FeedManager;
-
-import net.minecraft.core.registries.BuiltInRegistries;
+import com.vetsim.vetcraft.util.*;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -18,7 +16,6 @@ import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
@@ -34,8 +31,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.List;
+import com.vetsim.vetcraft.util.VetDiagnostics;
 
 public class CattleEntity extends Animal {
 
@@ -50,23 +46,27 @@ public class CattleEntity extends Animal {
     private static final EntityDataAccessor<Integer> HUNGER = SynchedEntityData.defineId(CattleEntity.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<String> DISEASE = SynchedEntityData.defineId(CattleEntity.class, EntityDataSerializers.STRING);
 
-    // --- SABİTLER VE SAYAÇLAR ---
-    private int pregnancyTimer = 0;
-    public static final int GESTATION_PERIOD = 216000;
-    public static final int POST_BIRTH_COOLDOWN = 216000;
-    public static final int BABY_GROWTH_DAYS = 7;
-    private int breedingCooldown = 0;
-    private String fatherBreed = "Melez";
+    // --- SİSTEM BİLEŞENLERİ ---
+    private final CattleReproduction reproductionSystem;
+    private final CattleMetabolism metabolismSystem;
+    private final CattleHealth healthSystem;
 
-    // Gübre Sayacı ve Metabolizma
-    private int metabolismTimer = 0;
-    private int manureTimer = 0;
+    private EatBlockGoal eatBlockGoal;
 
-    private static final String[] BREEDS = {"Holstein", "Angus", "Simmental", "Jersey", "Melez"};
+    public static final int GESTATION_PERIOD = 2400; // doum
+    public static final int POST_BIRTH_COOLDOWN = 1200; // diostrus
+    public static final int BABY_GROWTH_DAYS = 1;
 
     public CattleEntity(EntityType<? extends Animal> entityType, Level level) {
         super(entityType, level);
+
+        // Sistemleri başlat
+        this.reproductionSystem = new CattleReproduction(this);
+        this.metabolismSystem = new CattleMetabolism(this);
+        this.healthSystem = new CattleHealth(this);
+
         if (!level.isClientSide()) {
+            String[] BREEDS = {"Holstein", "Angus", "Simmental", "Jersey", "Melez"};
             String randomBreed = BREEDS[this.random.nextInt(BREEDS.length)];
             this.setBreed(randomBreed);
             this.setMale(this.random.nextBoolean());
@@ -79,19 +79,12 @@ public class CattleEntity extends Animal {
         }
     }
 
-    public static AttributeSupplier.Builder createAttributes() {
-        return Animal.createLivingAttributes()
-                .add(Attributes.MAX_HEALTH, 20.0D)
-                .add(Attributes.MOVEMENT_SPEED, 0.2D)
-                .add(Attributes.FOLLOW_RANGE, 16.0D);
-    }
-
-    // --- OYUN DÖNGÜSÜ (TICK) ---
+    // --- OYUN DÖNGÜSÜ ---
     @Override
     public void aiStep() {
         super.aiStep();
 
-        // 1. Görsel Efektler (Client)
+        // 1. Görsel Efektler (Client Side)
         if (this.level().isClientSide() && !this.getDisease().equals("NONE")) {
             DiseaseData data = DiseaseManager.getDiseaseById(this.getDisease());
             if (data != null && data.visualEffect != null) {
@@ -106,109 +99,31 @@ public class CattleEntity extends Animal {
             }
         }
 
-        // 2. Metabolizma ve Hastalık İlerlemesi (Server)
+        // 2. Mantıksal İşlemler (Server Side)
         if (!this.level().isClientSide()) {
+            this.reproductionSystem.tick();
+            this.metabolismSystem.tick();
+            this.healthSystem.tick();
 
-            // --- GÜBRE SİSTEMİ (Her 12000 tick / Yarım Gün) ---
-            if (!this.isBaby()) {
-                this.manureTimer++;
-                if (this.manureTimer >= 12000) {
-                    this.manureTimer = 0;
-                    this.spawnAtLocation(ModItems.MANURE.get());
-                    this.playSound(SoundEvents.CHICKEN_EGG, 1.0F, 0.5F);
-                }
-            }
-
-            // Büyüme
             if (this.getAgeDays() < BABY_GROWTH_DAYS) {
                 if (!this.isBaby()) this.setAge(-24000);
             } else if (this.isBaby()) {
                 this.setAge(0);
             }
 
-            // Günlük Sayaçlar
             if (this.tickCount % 24000 == 0) {
                 this.setAgeDays(this.getAgeDays() + 1);
-                if (!this.isMale() && this.breedingCooldown > 0 && this.getHunger() > 30) {
-                    this.spawnAtLocation(Items.MILK_BUCKET);
-                }
             }
 
-            // Hastalık Hızı (DİNAMİK JSON KONTROLÜ)
             if (!this.getDisease().equals("NONE")) {
                 DiseaseData data = DiseaseManager.getDiseaseById(this.getDisease());
                 if (data != null && data.slowness) this.setSpeed(0.08F);
                 else this.setSpeed(0.12F);
             } else {
-                this.setSpeed(0.2F);
-            }
-
-            // Dakikalık Metabolizma Döngüsü (1200 tick = 1 dakika)
-            this.metabolismTimer++;
-            if (this.metabolismTimer >= 1200) {
-                this.metabolismTimer = 0;
-
-                // A) Açlık Yönetimi
-                int currentHunger = this.getHunger();
-                if (currentHunger > 0) this.setHunger(currentHunger - 2);
-
-                // B) Kilo Yönetimi
-                float currentWeight = this.getWeight();
-                if (currentHunger >= 80) {
-                    float gain = this.isBaby() ? 0.8F : 0.4F;
-                    if (currentWeight < 900.0F) this.setWeight(currentWeight + gain);
-                } else if (currentHunger <= 20) {
-                    float loss = 0.5F;
-                    if (currentWeight > 30.0F) this.setWeight(currentWeight - loss);
-                }
-
-                // C) HASTALIK ETKİLERİ
-                String currentDisease = this.getDisease();
-                if (!currentDisease.equals("NONE")) {
-                    DiseaseData data = DiseaseManager.getDiseaseById(currentDisease);
-                    if (data != null) {
-                        // 1. Can Yakma
-                        if (data.damagePerTick > 0) {
-                            this.hurt(this.damageSources().starve(), (float)data.damagePerTick);
-                        }
-                        // 2. Kilo Kaybı
-                        if (this.getWeight() > 30.0F) {
-                            this.setWeight(this.getWeight() - (float)data.weightLossPerTick);
-                        }
-                        // 3. ABORT Riski
-                        if (this.isPregnant() && data.abortChance > 0) {
-                            if (this.random.nextDouble() < data.abortChance) {
-                                triggerAbortion();
-                            }
-                        }
-                        // 4. BULAŞMA (CONTAGIOUS)
-                        if (data.contagious) {
-                            spreadDisease(currentDisease);
-                        }
-                    }
+                if (this.healthSystem.isLame()) {
+                    this.setSpeed(0.10F);
                 } else {
-                    // Hasta değilse yeni hastalık kapma kontrolü (Rutin)
-                    DiseaseData newDisease = DiseaseManager.checkForDisease(this.getHunger());
-                    if (newDisease != null) this.setDisease(newDisease.id);
-                }
-            }
-
-            // Gebelik Sayacı
-            if (this.isPregnant()) {
-                this.pregnancyTimer--;
-                if (this.pregnancyTimer <= 0) this.giveBirth();
-            }
-            if (this.breedingCooldown > 0) this.breedingCooldown--;
-        }
-    }
-
-    private void spreadDisease(String diseaseId) {
-        List<CattleEntity> nearby = this.level().getEntitiesOfClass(CattleEntity.class, this.getBoundingBox().inflate(3.0D));
-        for (CattleEntity cow : nearby) {
-            if (cow != this && cow.getDisease().equals("NONE") && this.random.nextFloat() < 0.15F) {
-                cow.setDisease(diseaseId);
-                if (this.level() instanceof ServerLevel sl) {
-                    sl.sendParticles(ParticleTypes.ANGRY_VILLAGER, cow.getX(), cow.getY() + 1.0, cow.getZ(), 3, 0.2, 0.2, 0.2, 0.0);
+                    this.setSpeed(0.2F);
                 }
             }
         }
@@ -220,23 +135,38 @@ public class CattleEntity extends Animal {
         if (hand == InteractionHand.OFF_HAND) return InteractionResult.PASS;
 
         ItemStack itemstack = player.getItemInHand(hand);
+// --- 1. SU KOVASI (EN ÜSTTE OLMALI!) ---
+        // Bunu en tepeye koyuyoruz ki oyun başka bir şey yapmaya fırsat bulamasın.
+        if (itemstack.is(Items.WATER_BUCKET)) {
 
+            // Sesi hem Client hem Server duysun
+            player.playSound(SoundEvents.GENERIC_DRINK, 1.0f, 1.0f);
+
+            if (!this.level().isClientSide) {
+                // Suyu içir
+                this.metabolismSystem.drink(100.0f);
+                player.sendSystemMessage(Component.literal("§b 💧 İnek su içti."));
+
+                // Yaratıcı modda değilse kovayı boşalt
+                if (!player.getAbilities().instabuild) {
+                    player.setItemInHand(hand, new ItemStack(Items.BUCKET));
+                }
+            }
+
+            // KRİTİK NOKTA: 'SUCCESS' döndürerek "Yere su koyma" işlemini %100 iptal ediyoruz.
+            return InteractionResult.SUCCESS;
+        }
         if (!this.level().isClientSide()) {
 
-            // --- 1. SPERMA ALMA (BOĞADAN) ---
+            // 1. SPERMA ALMA
             if (itemstack.is(ModItems.EMPTY_STRAW.get())) {
                 if (this.isMale() && !this.isBaby()) {
                     itemstack.shrink(1);
-
                     ItemStack filledStraw = new ItemStack(ModItems.FILLED_STRAW.get());
                     CompoundTag tag = filledStraw.getOrCreateTag();
                     tag.putString("VetSim_Breed", this.getBreed());
                     filledStraw.setTag(tag);
-
-                    if (!player.getInventory().add(filledStraw)) {
-                        player.drop(filledStraw, false);
-                    }
-
+                    if (!player.getInventory().add(filledStraw)) player.drop(filledStraw, false);
                     this.playSound(SoundEvents.COW_AMBIENT, 1.0F, 1.0F);
                     player.sendSystemMessage(Component.literal("§aSperma alındı. Irk: " + this.getBreed()));
                     return InteractionResult.SUCCESS;
@@ -246,142 +176,193 @@ public class CattleEntity extends Animal {
                 }
             }
 
-            // --- 2. SUNİ TOHUMLAMA (İNEĞE) ---
+            // 2. SUNİ TOHUMLAMA
             if (itemstack.is(ModItems.FILLED_STRAW.get())) {
                 if (!this.isMale() && !this.isBaby()) {
-                    if (!this.isPregnant()) {
-                        String fatherBreed = "Melez";
-                        if (itemstack.hasTag() && itemstack.getTag().contains("VetSim_Breed")) {
-                            fatherBreed = itemstack.getTag().getString("VetSim_Breed");
-                        }
+                    String fatherBreed = "Melez";
+                    if (itemstack.hasTag() && itemstack.getTag().contains("VetSim_Breed")) {
+                        fatherBreed = itemstack.getTag().getString("VetSim_Breed");
+                    }
 
-                        if (this.getBreedingCooldown() > 120000) { // Örn: Süt döneminin ilk 5 günü (120k tick)
-                            player.sendSystemMessage(Component.literal("§cHayvan hala yoğun süt döneminde, şu an tohumlanamaz!"));
-                            return InteractionResult.PASS;
-                        }
+                    boolean success = this.reproductionSystem.tryInseminate(fatherBreed, 1.0f);
 
-                        // %75 Şansla Tutma
-                        if (this.random.nextFloat() < 0.75F) {
-                            this.startPregnancy(fatherBreed);
-                            this.playSound(SoundEvents.EXPERIENCE_ORB_PICKUP, 1.0F, 1.0F);
-                            ((ServerLevel)this.level()).sendParticles(ParticleTypes.HEART, this.getX(), this.getY() + 1.0, this.getZ(), 5, 0.5, 0.5, 0.5, 0.0);
-                            player.sendSystemMessage(Component.literal("§d ♥ Suni tohumlama BAŞARILI! Gebelik başladı."));
-                            this.setBreedingCooldown(0);
+                    if (success) {
+                        this.playSound(SoundEvents.EXPERIENCE_ORB_PICKUP, 1.0F, 1.0F);
+                        ((ServerLevel)this.level()).sendParticles(ParticleTypes.HEART, this.getX(), this.getY() + 1.0, this.getZ(), 5, 0.5, 0.5, 0.5, 0.0);
+                        player.sendSystemMessage(Component.literal("§d ♥ Suni tohumlama BAŞARILI! Gebelik başladı."));
+                    } else {
+                        float prog = this.reproductionSystem.getProgesterone();
+                        if (prog > 2.5f) {
+                            if (this.isPregnant()) player.sendSystemMessage(Component.literal("§cBu hayvan zaten gebe!"));
+                            else player.sendSystemMessage(Component.literal("§cHayvan kızgınlıkta değil! (Progesteron Yüksek)"));
                         } else {
                             this.playSound(SoundEvents.COW_HURT, 1.0F, 1.0F);
-                            player.sendSystemMessage(Component.literal("§c x Tohumlama başarısız oldu. Tekrar deneyin."));
+                            player.sendSystemMessage(Component.literal("§c x Tohumlama tutmadı. Tekrar deneyin."));
                         }
-
-                        itemstack.shrink(1);
-                        return InteractionResult.SUCCESS;
-                    } else {
-                        player.sendSystemMessage(Component.literal("§cBu hayvan zaten gebe!"));
-                        return InteractionResult.PASS;
                     }
+                    itemstack.shrink(1);
+                    return InteractionResult.SUCCESS;
                 } else {
                     player.sendSystemMessage(Component.literal("§cSadece dişi inekleri tohumlayabilirsiniz."));
                     return InteractionResult.PASS;
                 }
             }
 
-            // --- 3. LAB: KAN ALMA ---
+            // 3. LAB: KAN ALMA
             if (itemstack.is(ModItems.EMPTY_BLOOD_TUBE.get())) {
                 this.playSound(SoundEvents.BOTTLE_FILL, 1.0F, 1.0F);
                 ItemStack bloodSample = new ItemStack(ModItems.FILLED_BLOOD_TUBE.get());
                 CompoundTag tag = bloodSample.getOrCreateTag();
-
                 tag.putString("VetSim_EarTag", this.getEarTag());
-                float wbc = 5.0F + this.random.nextFloat() * 5.0F;
-                float ph = 7.35F + this.random.nextFloat() * 0.10F;
+                float stress = this.healthSystem.getStressLevel();
+                float wbc = 5.0F + (stress / 10.0F) + this.random.nextFloat() * 2.0F;
+                float rumenPh = this.metabolismSystem.getRumenPh();
+                float bloodPh = 7.35F + (rumenPh - 6.8F) * 0.1F;
 
                 String currentDisease = this.getDisease();
-                if (currentDisease.equals("pneumonia")) {
-                    wbc = 18.0F + this.random.nextFloat() * 12.0F;
-                } else if (currentDisease.equals("acidosis")) {
-                    ph = 6.90F + this.random.nextFloat() * 0.30F;
-                }
+                if (currentDisease.equals("pneumonia")) wbc += 15.0F;
+                else if (currentDisease.equals("acidosis")) bloodPh -= 0.2F;
 
                 tag.putFloat("VetSim_WBC", wbc);
-                tag.putFloat("VetSim_PH", ph);
+                tag.putFloat("VetSim_PH", bloodPh);
                 bloodSample.setTag(tag);
-
                 if (!player.getAbilities().instabuild) itemstack.shrink(1);
                 if (!player.getInventory().add(bloodSample)) player.drop(bloodSample, false);
-
                 player.sendSystemMessage(Component.literal("§cKan örneği alındı. Etiket: " + this.getEarTag()));
                 return InteractionResult.SUCCESS;
             }
 
-            // --- 4. VETERİNER ALETLERİ ---
+            // 4. VETERİNER ALETLERİ
             if (itemstack.is(ModItems.VET_CLIPBOARD.get())) { printAnamnesis(player); return InteractionResult.SUCCESS; }
             if (itemstack.is(ModItems.STETHOSCOPE.get())) { printStethoscope(player); return InteractionResult.SUCCESS; }
             if (itemstack.is(ModItems.THERMOMETER.get())) { printTemperature(player); return InteractionResult.SUCCESS; }
-            if (itemstack.is(ModItems.ANTIBIOTICS.get())) { tryCure(player, itemstack, "ITEM"); return InteractionResult.SUCCESS; }
-            if (itemstack.is(ModItems.PENICILLIN.get())) { tryCure(player, itemstack, "ITEM"); return InteractionResult.SUCCESS; }
-            if (itemstack.is(ModItems.FLUNIXIN.get())) {
-                player.sendSystemMessage(Component.literal("§eAğrı kesici uygulandı. Hayvan rahatladı."));
-                if (!player.getAbilities().instabuild) itemstack.shrink(1);
-                return InteractionResult.SUCCESS;
+            if (itemstack.getItem() instanceof net.minecraft.world.item.Item) {
+                if (itemstack.is(ModItems.ANTIBIOTICS.get()) || itemstack.is(ModItems.PENICILLIN.get())) {
+                    tryCure(player, itemstack, "ITEM"); return InteractionResult.SUCCESS;
+                }
+                if (itemstack.is(ModItems.FLUNIXIN.get())) {
+                    player.sendSystemMessage(Component.literal("§eAğrı kesici uygulandı. Stres azaldı."));
+                    if (!player.getAbilities().instabuild) itemstack.shrink(1);
+                    return InteractionResult.SUCCESS;
+                }
             }
 
-            // --- 5. YEMLEME (JSON SİSTEMİ) ---
+            // 5. YEMLEME
             FeedData feedData = FeedManager.getFeedData(itemstack);
             if (feedData != null) {
-                this.feed(itemstack, feedData);
+                this.metabolismSystem.feed(feedData);
+                this.playSound(SoundEvents.GENERIC_EAT, 1.0F, 1.0F);
+                this.level().broadcastEntityEvent(this, (byte) 18);
+                if (this.getDisease().equals("NONE")) {
+                    String riskResult = DiseaseManager.calculateRisk(itemstack, this.random);
+                    if (riskResult != null) {
+                        this.healthSystem.setDisease(riskResult);
+                        this.playSound(SoundEvents.ZOMBIE_INFECT, 1.0F, 1.0F);
+                    }
+                }
+                itemstack.shrink(1);
                 return InteractionResult.SUCCESS;
             }
 
-            // --- 6. BOŞ EL (BİLGİ) ---
+            // 6. BİLGİ
             if (itemstack.isEmpty()) {
                 if (player.isCrouching()) printVisualInspection(player);
                 else showVetInfo(player);
                 return InteractionResult.SUCCESS;
             }
         }
+        // --- PROFESYONEL İLAÇ & HASTALIK ENTEGRASYONU ---
+        // 4. İLAÇ & HORMON SİSTEMİ
+        DrugData drug = DrugManager.getDrug(itemstack);
+        boolean actionTaken = false;
+
+        // Hormon Kontrolü
+        if (drug != null && drug.category.equals("FUNCTIONAL")) {
+
+            // A) REPRODÜKTİF HORMONLAR (PGF2a, GnRH vb.)
+            if (drug.actionTag.equals("ABORT_OR_ESTRUS")) {
+
+                // --- DÜZELTME: CİNSİYET KONTROLÜ ---
+                if (this.isMale()) {
+                    player.sendSystemMessage(Component.literal("§c ⚠ Bu hormon sadece dişi hayvanlarda (İnek/Düve) etkilidir."));
+                    player.sendSystemMessage(Component.literal("§7 (Erkeklerde östrus döngüsü bulunmaz)"));
+                    return InteractionResult.FAIL; // İlacı harcama, işlemi iptal et
+                }
+                // -----------------------------------
+
+                if (this.isPregnant()) {
+                    this.reproductionSystem.forceAbortion();
+                    player.sendSystemMessage(Component.literal("§c ⚠ Gebelik sonlandırıldı (Abort)."));
+                    actionTaken = true;
+                } else if (!this.isBaby()) {
+                    this.reproductionSystem.induceEstrus();
+                    player.sendSystemMessage(Component.literal("§d ♥ Kızgınlık (Östrus) tetiklendi."));
+                    actionTaken = true;
+                } else {
+                    player.sendSystemMessage(Component.literal("§c Buzağılara hormon uygulanamaz."));
+                    return InteractionResult.FAIL;
+                }
+            }
+            else if (drug.actionTag.equals("STRESS_RELIEF")) { // Ağrı Kesici
+                player.sendSystemMessage(Component.literal("§a Ağrı kesici uygulandı."));
+                actionTaken = true;
+            }
+
+            // Hormon kullanıldıysa yan etkilerini uygula ve itemi sil
+            if (actionTaken) {
+                if (drug.stressImpact != 0) this.healthSystem.increaseStress(drug.stressImpact);
+                if (drug.bcsImpact != 0) this.metabolismSystem.reduceBcs(drug.bcsImpact);
+                if (!player.getAbilities().instabuild) itemstack.shrink(1);
+                return InteractionResult.SUCCESS;
+            }
+        }
+
+        // DURUM 2: BU BİR HASTALIK TEDAVİSİ Mİ?
+        // İlaç DrugManager'da olsa da olmasa da (null olsa da) hastalık listesini kontrol et.
+        // tryCure artık boolean döndürüyor!
+        boolean cureResult = tryCure(player, itemstack, "ITEM");
+
+        if (cureResult) {
+            // Eğer hastalık tedavisinde başarılı bir adım atıldıysa...
+
+            // VE bu ilaç DrugManager'da tanımlıysa (Yan etkileri varsa)
+            if (drug != null) {
+                // Yan etkileri uygula (Örn: Penisilin stresi artırır, Vitamin düşürür)
+                if (drug.stressImpact != 0) this.healthSystem.increaseStress(drug.stressImpact);
+                if (drug.bcsImpact != 0) this.metabolismSystem.reduceBcs(drug.bcsImpact);
+            }
+
+            // tryCure zaten itemi sildiği için burada shrink yapmıyoruz.
+            return InteractionResult.SUCCESS;
+        }
+
         return super.mobInteract(player, hand);
     }
 
     // --- YARDIMCI METODLAR ---
-
-    private void triggerAbortion() {
-        if (!this.level().isClientSide) {
-            this.entityData.set(IS_PREGNANT, false);
-            this.pregnancyTimer = 0;
-            this.fatherBreed = "Melez";
-            this.breedingCooldown = 48000;
-
-            this.playSound(SoundEvents.COW_HURT, 1.0F, 0.5F);
-            this.level().broadcastEntityEvent(this, (byte) 61);
-
-            if (this.level() instanceof ServerLevel serverLevel) {
-                for (Player player : serverLevel.players()) {
-                    if (player.distanceToSqr(this) < 256) {
-                        player.sendSystemMessage(Component.literal("§c⚠ DİKKAT: " + this.getEarTag() + " küpeli inek DÜŞÜK YAPTI!"));
-                    }
-                }
-            }
-        }
-    }
-
     private void printAnamnesis(Player player) {
         player.sendSystemMessage(Component.literal("§6--- [ 📔 GÜNLÜK KAYITLARI ] ---"));
-        if (this.getDisease().equals("NONE")) {
-            player.sendSystemMessage(Component.literal("§a ✓ Rutin kontroller normal."));
-        } else {
+        float ph = this.metabolismSystem.getRumenPh();
+        String phStatus = (ph < 5.8) ? "§c(Asidoz Riski!)" : "§a(Normal)";
+        player.sendSystemMessage(Component.literal("§7Beslenme: Rumen pH " + String.format("%.1f", ph) + " " + phStatus));
+        if (this.getDisease().equals("NONE")) player.sendSystemMessage(Component.literal("§a ✓ Rutin kontroller normal."));
+        else {
             DiseaseData data = DiseaseManager.getDiseaseById(this.getDisease());
-            if (data != null && data.symptoms != null)
-                player.sendSystemMessage(Component.literal("§e ⚠ NOT: §f" + data.symptoms.anamnesis));
+            if (data != null && data.symptoms != null) player.sendSystemMessage(Component.literal("§e ⚠ NOT: §f" + data.symptoms.anamnesis));
         }
     }
 
     private void printStethoscope(Player player) {
         this.playSound(SoundEvents.PLAYER_BREATH, 1.0F, 1.0F);
-        if (this.getDisease().equals("NONE")) {
-            player.sendSystemMessage(Component.literal("§aKalp/Ciğer: §fNormal ritim (60-80 bpm)."));
-        } else {
+        int stress = this.healthSystem.getStressLevel();
+        int bpm = 60 + (stress / 2) + this.random.nextInt(10);
+        player.sendSystemMessage(Component.literal("§b[ 🩺 ] Oskültasyon:"));
+        player.sendSystemMessage(Component.literal("§7Nabız: " + bpm + " bpm " + (stress > 50 ? "§c(Taşikardi)" : "§a(Normal)")));
+        if (!this.getDisease().equals("NONE")) {
             DiseaseData data = DiseaseManager.getDiseaseById(this.getDisease());
-            if (data != null && data.symptoms != null)
-                player.sendSystemMessage(Component.literal("§cBulgular: §f" + data.symptoms.stethoscope));
+            if (data != null && data.symptoms != null) player.sendSystemMessage(Component.literal("§cCiğer Sesi: §f" + data.symptoms.stethoscope));
+        } else {
+            player.sendSystemMessage(Component.literal("§aCiğer Sesi: §fTemiz ve ritmik."));
         }
     }
 
@@ -392,136 +373,119 @@ public class CattleEntity extends Animal {
             DiseaseData data = DiseaseManager.getDiseaseById(this.getDisease());
             if (data != null && data.symptoms != null) temp = data.symptoms.temperature;
         }
+        if (this.healthSystem.getStressLevel() > 70) temp += 0.5;
         String color = (temp > 39.5) ? "§c" : "§a";
-        player.sendSystemMessage(Component.literal("§6[ 🌡️ ] Vücut Isısı: " + color + temp + " °C"));
+        player.sendSystemMessage(Component.literal("§6[ 🌡️ ] Rektal Isı: " + color + String.format("%.1f", temp) + " °C"));
     }
 
     private void printVisualInspection(Player player) {
+        float bcs = this.metabolismSystem.getBcs();
+        String bcsDesc = (bcs < 2.5) ? "§c(Aşırı Zayıf)" : (bcs > 4.0) ? "§c(Obez)" : "§a(İdeal Kondisyon)";
+        player.sendSystemMessage(Component.literal("§6[ 👁️ ] Gözlem:"));
+        player.sendSystemMessage(Component.literal("§7BCS Skoru: §f" + String.format("%.1f", bcs) + " " + bcsDesc));
         if (!this.getDisease().equals("NONE")) {
             DiseaseData data = DiseaseManager.getDiseaseById(this.getDisease());
-            if (data != null && data.symptoms != null)
-                player.sendSystemMessage(Component.literal("§cGözlem: §f" + data.symptoms.visual));
+            if (data != null && data.symptoms != null) player.sendSystemMessage(Component.literal("§cBelirti: §f" + data.symptoms.visual));
         } else {
-            player.sendSystemMessage(Component.literal("§aGözlem: §fDuruşu canlı, tüyleri parlak."));
+            player.sendSystemMessage(Component.literal("§aGenel: §fDuruşu canlı, tüyleri parlak."));
         }
     }
 
-    private void tryCure(Player player, ItemStack itemstack, String type) {
+    // void yerine boolean yaptık
+    private boolean tryCure(Player player, ItemStack itemstack, String type) {
+
+        // 1. NEKAHET KONTROLÜ
+        if (this.healthSystem.isRecovering()) {
+            player.sendSystemMessage(Component.literal("§e ⏳ Hayvan şu an nekahet (iyileşme) döneminde."));
+            return false; // İşlem yapılmadı
+        }
+
+        // 2. HASTALIK KONTROLÜ
         if (!this.getDisease().equals("NONE")) {
             DiseaseData data = DiseaseManager.getDiseaseById(this.getDisease());
+
             if (data != null && type.equals(data.cureType)) {
-                String itemId = BuiltInRegistries.ITEM.getKey(itemstack.getItem()).toString();
-                if (data.cureTarget.equals(itemId) || (data.cureTarget.equals("vetsim:antibiotics") && itemstack.is(ModItems.ANTIBIOTICS.get()))) {
-                    this.setDisease("NONE");
-                    this.playSound(SoundEvents.GENERIC_DRINK, 1.0F, 1.0F);
-                    player.sendSystemMessage(Component.literal("§a ✓ Tedavi Başarılı!"));
-                    if (!player.getAbilities().instabuild) itemstack.shrink(1);
-                }
-            }
-        }
-    }
 
-    public void feed(ItemStack stack, FeedData foodData) {
-        int currentHunger = this.getHunger();
-        if (currentHunger < 100) {
-            this.setHunger(Math.min(currentHunger + foodData.nutrition, 100));
-            this.playSound(SoundEvents.GENERIC_EAT, 1.0F, 1.0F);
-            this.level().broadcastEntityEvent(this, (byte) 18);
-            if (!this.level().isClientSide) {
-                String riskResult = DiseaseManager.calculateRisk(stack, this.random);
-                if (riskResult != null && this.getDisease().equals("NONE")) {
-                    this.setDisease(riskResult);
-                    this.playSound(SoundEvents.ZOMBIE_INFECT, 1.0F, 1.0F);
+                String itemId = BuiltInRegistries.ITEM.getKey(itemstack.getItem()).toString();
+                if (itemstack.getItem().toString().contains("antibiotics")) itemId = "vetsim:antibiotics";
+                if (itemstack.getItem().toString().contains("penicillin")) itemId = "vetsim:penicillin";
+
+                // 3. PROTOKOL KONTROLÜ
+                int currentStep = this.healthSystem.getTreatmentStep();
+
+                if (data.cureTarget != null && currentStep < data.cureTarget.size()) {
+                    String requiredItem = data.cureTarget.get(currentStep);
+
+                    if (itemId.equals(requiredItem)) {
+                        // --- DOĞRU İLAÇ! ---
+                        if (!player.getAbilities().instabuild) itemstack.shrink(1);
+                        this.healthSystem.advanceTreatment();
+
+                        // Protokol bitti mi?
+                        if (this.healthSystem.getTreatmentStep() >= data.cureTarget.size()) {
+                            // ŞANS FAKTÖRÜ
+                            float successChance = 0.80f - (this.healthSystem.getStressLevel() * 0.003f);
+
+                            if (this.random.nextFloat() < successChance) {
+                                this.healthSystem.startRecovery(24000);
+                                this.playSound(SoundEvents.VILLAGER_YES, 1.0F, 1.0F);
+                                player.sendSystemMessage(Component.literal("§a ✓ Tedavi Protokolü Tamamlandı. İyileşme başladı."));
+                            } else {
+                                this.healthSystem.resetTreatment();
+                                this.playSound(SoundEvents.VILLAGER_NO, 1.0F, 1.0F);
+                                player.sendSystemMessage(Component.literal("§c ❌ Tedavi başarısız! Yanıt vermedi."));
+                            }
+                        } else {
+                            // Sıradaki
+                            this.playSound(SoundEvents.EXPERIENCE_ORB_PICKUP, 1.0F, 1.0F);
+                            int remaining = data.cureTarget.size() - this.healthSystem.getTreatmentStep();
+                            player.sendSystemMessage(Component.literal("§e ✓ Doz doğru. Kalan: " + remaining));
+                        }
+                        return true; // BAŞARILI OLDU (Item kullanıldı)
+                    }
                 }
             }
-            stack.shrink(1);
         }
-        if (!this.getDisease().equals("NONE")) {
-            DiseaseData data = DiseaseManager.getDiseaseById(this.getDisease());
-            if (data != null && "FEED".equals(data.cureType)) {
-                if (foodData.itemId.equals(data.cureTarget)) {
-                    this.setDisease("NONE");
-                    this.playSound(SoundEvents.PLAYER_LEVELUP, 1.0F, 1.0F);
-                }
-            }
-        }
+        return false; // HİÇBİR İŞLEM YAPILMADI (Yanlış ilaç veya hastalık yok)
     }
 
     private void showVetInfo(Player player) {
-        // Hafif bir boşluk bırakalım (Eski mesajla karışmasın)
-        for (int i = 0; i < 20; i++) {
-            player.sendSystemMessage(Component.literal(""));
-        }
+        // Artık işi "Taşeron" firmaya (VetDiagnostics) yaptırıyoruz :)
+        VetDiagnostics.showVetInfo(this, player);
+        // ... showVetInfo içinde pH göstergesinin altına ...
 
-        player.sendSystemMessage(Component.literal("§6§l⭐ VET KAYDI: §b§l" + this.getEarTag() + " §8§l=================="));
+        float hyd = this.metabolismSystem.getHydration(); // Artık hata vermez
+        float gas = this.metabolismSystem.getGasLevel();  // Artık hata vermez
 
-        // --- SATIR 1: IRK VE CİNSİYET (Yan Yana) ---
-        String genderIcon = this.isMale() ? "§b♂" : "§d♀";
-        player.sendSystemMessage(Component.literal("§e🧬 Irk: §f" + this.getBreed() + "  " + genderIcon + " §eCinsiyet: §f" + (this.isMale() ? "Boğa" : "İnek") + "  §e🎂 Yaş: §f" + this.getAgeDays() + "G"));
+        // SU GÖSTERGESİ
+        String waterStatus = (hyd < 40) ? " §c(⚠ KRİTİK)" : " §a(✔)";
+        player.sendSystemMessage(Component.literal("§b💧 Hidrasyon: % " + (int)hyd + waterStatus));
 
-        // --- SATIR 2: KİLO VE TOKLUK (Yan Yana) ---
-        int hunger = this.getHunger();
-        String hungerColor = (hunger > 70) ? "§a" : (hunger > 30) ? "§e" : "§c";
-        player.sendSystemMessage(Component.literal("§e⚖ Kilo: §f" + String.format("%.1f", this.getWeight()) + "kg  §e🍽 Tokluk: " + hungerColor + createProgressBar(hunger) + " §f%" + hunger));
-
-        // --- SATIR 3: SAĞLIK (Kısa) ---
-        if (!this.getDisease().equals("NONE")) {
-            player.sendSystemMessage(Component.literal("§c☣ §lHASTA! §7(Teşhis için aletleri kullanın)"));
+        // GAZ GÖSTERGESİ
+        if (gas > 50) {
+            player.sendSystemMessage(Component.literal("§4⚠ GAZ RİSKİ: % " + (int)gas + " (Timpani)"));
         } else {
-            player.sendSystemMessage(Component.literal("§a✅ Sağlık: §fStabil ve sağlıklı."));
+            player.sendSystemMessage(Component.literal("§7💨 Gaz Seviyesi: % " + (int)gas));
         }
-
-        // --- BÖLÜM 4: ÜREME VE VERİM (KOMPAKT) ---
-        if (!this.isMale() && !this.isBaby()) {
-            player.sendSystemMessage(Component.literal("§8§m--------------------------------------------------"));
-
-            if (this.isPregnant()) {
-                int daysLeft = this.pregnancyTimer / 24000;
-                player.sendSystemMessage(Component.literal("§d♥ §lDURUM: GEBE §7| §fDoğuma: " + daysLeft + " gün §7(Süt: Yok)"));
-            } else {
-                int cooldown = this.getBreedingCooldown();
-                if (cooldown > 0) {
-                    int daysLeft = cooldown / 24000;
-                    String status = (cooldown > 120000) ? "§eLaktasyon (Tohumlanamaz)" : "§aHazır (Süt Bitiyor)";
-                    player.sendSystemMessage(Component.literal("§b🥛 §lDURUM: SÜT VERİYOR §7| §fKalan: " + daysLeft + " gün"));
-                    player.sendSystemMessage(Component.literal("§7┗ " + status));
-                } else {
-                    player.sendSystemMessage(Component.literal("§6🔥 §lDURUM: KIZGINLIKTA §7| §aTohumlanmaya Hazır"));
-                }
-            }
-            player.sendSystemMessage(Component.literal("§a🍼 Toplam Doğum: §f" + this.getBirthCount()));
-        }
-
-        player.sendSystemMessage(Component.literal("§8§l=================================================="));
-    }
-    private String createProgressBar(int value) {
-        int bars = value / 10;
-        StringBuilder sb = new StringBuilder("[");
-        for (int i = 0; i < 10; i++) sb.append(i < bars ? "|" : ".");
-        return sb.append("]").toString();
     }
 
-    // --- GETTERS & SETTERS (DERLEME HATALARINI ÇÖZER) ---
-    public String getDisease() { return this.entityData.get(DISEASE); }
-    public void setDisease(String disease) { this.entityData.set(DISEASE, disease); }
-    public int getHunger() { return this.entityData.get(HUNGER); }
-    public void setHunger(int h) { this.entityData.set(HUNGER, Math.max(0, Math.min(100, h))); }
-    public int getBirthCount() { return this.entityData.get(BIRTH_COUNT); }
-    public void setBirthCount(int count) { this.entityData.set(BIRTH_COUNT, count); }
-    public boolean isPregnant() { return this.entityData.get(IS_PREGNANT); }
-    public int getBreedingCooldown() { return breedingCooldown; }
-    public void setBreedingCooldown(int cd) { this.breedingCooldown = cd; }
-    public String getEarTag() { return this.entityData.get(EAR_TAG); }
-    public void setEarTag(String tag) { this.entityData.set(EAR_TAG, tag); this.setCustomName(Component.literal("Küpe: " + tag)); this.setCustomNameVisible(true); }
-    public String getBreed() { return this.entityData.get(BREED); }
-    public void setBreed(String breed) { this.entityData.set(BREED, breed); }
-    public boolean isMale() { return this.entityData.get(IS_MALE); }
-    public void setMale(boolean isMale) { this.entityData.set(IS_MALE, isMale); }
-    public float getWeight() { return this.entityData.get(WEIGHT); }
-    public void setWeight(float weight) { this.entityData.set(WEIGHT, weight); }
-    public int getAgeDays() { return this.entityData.get(AGE_DAYS); }
-    public void setAgeDays(int days) { this.entityData.set(AGE_DAYS, days); }
+    public static AttributeSupplier.Builder createAttributes() {
+        return Animal.createLivingAttributes().add(Attributes.MAX_HEALTH, 20.0D).add(Attributes.MOVEMENT_SPEED, 0.2D).add(Attributes.FOLLOW_RANGE, 16.0D);
+    }
 
+
+    // --- STRES MEKANİĞİ (Hasar alınca stres artar) ---
+    @Override
+    public boolean hurt(DamageSource source, float amount) {
+        boolean result = super.hurt(source, amount);
+        if (result && !this.level().isClientSide) {
+            // Hasar alındığında Health sistemine bildir
+            this.healthSystem.increaseStress(15); // Her vuruşta 15 stres ekle
+
+            // Eğer oyuncu vurduysa ekstra kaçışma (PanicGoal zaten var)
+        }
+        return result;
+    }
     @Override
     protected void defineSynchedData() {
         super.defineSynchedData();
@@ -536,6 +500,22 @@ public class CattleEntity extends Animal {
         this.entityData.define(DISEASE, "NONE");
     }
 
+    // ... defineSynchedData metodunun altına ekle ...
+
+    @Override
+    public void onSyncedDataUpdated(EntityDataAccessor<?> key) {
+        super.onSyncedDataUpdated(key);
+        // Eğer sunucudan veya kayıttan KÜPE NO verisi güncellendiyse:
+        if (EAR_TAG.equals(key)) {
+            String tag = this.getEarTag();
+            // İsim etiketini anında güncelle
+            if (!tag.equals("TR000000")) {
+                this.setCustomName(Component.literal("Küpe: " + tag));
+                this.setCustomNameVisible(true);
+            }
+        }
+    }
+
     @Override
     public void addAdditionalSaveData(CompoundTag compound) {
         super.addAdditionalSaveData(compound);
@@ -545,13 +525,12 @@ public class CattleEntity extends Animal {
         compound.putFloat("VetSim_Weight", this.getWeight());
         compound.putInt("VetSim_AgeDays", this.getAgeDays());
         compound.putBoolean("VetSim_IsPregnant", this.isPregnant());
-        compound.putInt("VetSim_PregnancyTimer", this.pregnancyTimer);
-        compound.putString("VetSim_FatherBreed", this.fatherBreed);
-        compound.putInt("VetSim_BreedingCooldown", this.breedingCooldown);
         compound.putInt("VetSim_BirthCount", this.getBirthCount());
         compound.putInt("VetSim_Hunger", this.getHunger());
         compound.putString("VetSim_Disease", this.getDisease());
-        compound.putInt("VetSim_ManureTimer", this.manureTimer);
+        this.reproductionSystem.save(compound);
+        this.metabolismSystem.save(compound);
+        this.healthSystem.save(compound);
     }
 
     @Override
@@ -563,53 +542,74 @@ public class CattleEntity extends Animal {
         if (compound.contains("VetSim_Weight")) this.setWeight(compound.getFloat("VetSim_Weight"));
         if (compound.contains("VetSim_AgeDays")) this.setAgeDays(compound.getInt("VetSim_AgeDays"));
         if (compound.contains("VetSim_IsPregnant")) this.entityData.set(IS_PREGNANT, compound.getBoolean("VetSim_IsPregnant"));
-        if (compound.contains("VetSim_PregnancyTimer")) this.pregnancyTimer = compound.getInt("VetSim_PregnancyTimer");
-        if (compound.contains("VetSim_FatherBreed")) this.fatherBreed = compound.getString("VetSim_FatherBreed");
-        if (compound.contains("VetSim_BreedingCooldown")) this.breedingCooldown = compound.getInt("VetSim_BreedingCooldown");
         if (compound.contains("VetSim_BirthCount")) this.setBirthCount(compound.getInt("VetSim_BirthCount"));
         if (compound.contains("VetSim_Hunger")) this.setHunger(compound.getInt("VetSim_Hunger"));
         if (compound.contains("VetSim_Disease")) this.setDisease(compound.getString("VetSim_Disease"));
-        if (compound.contains("VetSim_ManureTimer")) this.manureTimer = compound.getInt("VetSim_ManureTimer");
+        this.reproductionSystem.load(compound);
+        this.metabolismSystem.load(compound);
+        this.healthSystem.load(compound);
+        if (compound.contains("VetSim_EarTag")) {
+            this.setEarTag(compound.getString("VetSim_EarTag"));
+        }
+
+        // YÜKLEME SONRASI GÖRÜNÜRLÜĞÜ ZORLA
+        if (!this.getEarTag().equals("TR000000")) {
+            this.setCustomNameVisible(true);
+        }
     }
 
     @Override
     public SpawnGroupData finalizeSpawn(net.minecraft.world.level.ServerLevelAccessor level, net.minecraft.world.DifficultyInstance difficulty, net.minecraft.world.entity.MobSpawnType reason, @Nullable SpawnGroupData spawnData, @Nullable CompoundTag dataTag) {
-        if (this.getEarTag().equals("TR000000")) this.setEarTag(generateEarTag());
+        if (this.getEarTag().equals("TR000000")) this.setEarTag("TR" + (this.random.nextInt(900000) + 100000));
         return super.finalizeSpawn(level, difficulty, reason, spawnData, dataTag);
     }
 
-    public void startPregnancy(String fatherBreedInput) {
-        this.entityData.set(IS_PREGNANT, true);
-        this.pregnancyTimer = GESTATION_PERIOD;
-        this.fatherBreed = fatherBreedInput;
-    }
-
-    private void giveBirth() {
-        if (this.level() instanceof ServerLevel serverLevel) {
-            CattleEntity baby = ModEntities.CATTLE.get().create(serverLevel);
-            if (baby != null) {
-                baby.setBreed(this.random.nextBoolean() ? this.getBreed() : this.fatherBreed);
-                baby.setWeight(25.0F); baby.setAgeDays(0); baby.setAge(-24000);
-                baby.moveTo(this.getX(), this.getY(), this.getZ(), 0.0F, 0.0F);
-                serverLevel.addFreshEntity(baby);
-                this.entityData.set(IS_PREGNANT, false);
-                this.pregnancyTimer = 0;
-                this.breedingCooldown = POST_BIRTH_COOLDOWN;
-                this.setBirthCount(this.getBirthCount() + 1);
-            }
-        }
-    }
-
-    private String generateEarTag() { return "TR" + (this.random.nextInt(900000) + 100000); }
-
+    // --- YAPAY ZEKA (AI) AYARLARI ---
     @Override
     protected void registerGoals() {
+        this.eatBlockGoal = new EatBlockGoal(this); // Hedefi oluştur
+
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(1, new PanicGoal(this, 2.0D));
+
+        // ÖNCELİK 2: YEMLİK (Kaliteli Yem)
+        // Eğer yemlik varsa önce ona gitmeye çalışır.
         this.goalSelector.addGoal(2, new EatFromTroughGoal(this, 1.0D));
+
         this.goalSelector.addGoal(3, new NaturalBreedingGoal(this, 1.0D));
-        this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 1.0D));
-        this.goalSelector.addGoal(5, new LookAtPlayerGoal(this, Player.class, 6.0F));
+
+        // ÖNCELİK 5: OTLATMA (Sıradan Çimen)
+        // Yemlik bulamazsa veya işi yoksa ot yer.
+        this.goalSelector.addGoal(5, this.eatBlockGoal);
+
+        this.goalSelector.addGoal(6, new WaterAvoidingRandomStrollGoal(this, 1.0D));
+        this.goalSelector.addGoal(7, new LookAtPlayerGoal(this, Player.class, 6.0F));
+    }
+
+    // Otlatma Hedefinin güncellenmesi için gerekli
+    @Override
+    protected void customServerAiStep() {
+        super.customServerAiStep();
+    }
+
+    // --- YERDEN OT YEDİĞİNDE ÇALIŞIR ---
+    @Override
+    public void ate() {
+        super.ate(); // Ses ve partikül çıkarır
+
+        if (!this.level().isClientSide) {
+            // Çimen için sanal bir yem oluşturuyoruz
+            FeedData grassFeed = new FeedData(
+                    "grass",    // ID
+                    "Çayır Otu", // İsim
+                    15,         // Besin: Düşük (Sadece açlığı bastırır)
+                    true,       // Kuru Madde: Evet (pH dengeler)
+                    0.0f        // Protein: İhmal edilebilir
+            );
+
+            // Metabolizmaya işle
+            this.metabolismSystem.feed(grassFeed);
+        }
     }
 
     @Override
@@ -621,11 +621,36 @@ public class CattleEntity extends Animal {
         super.die(damageSource);
     }
 
-    @Override
-    public void onAddedToWorld() {
-        super.onAddedToWorld();
-        if (!this.level().isClientSide() && this.getEarTag().equals("TR000000")) this.setEarTag(generateEarTag());
-    }
+    // --- GETTERS & SETTERS (STANDART) ---
+    public String getDisease() { return this.entityData.get(DISEASE); }
+    public void setDisease(String disease) { this.entityData.set(DISEASE, disease); }
+    public int getHunger() { return this.entityData.get(HUNGER); }
+    public void setHunger(int h) { this.entityData.set(HUNGER, Math.max(0, Math.min(100, h))); }
+    public int getBirthCount() { return this.entityData.get(BIRTH_COUNT); }
+    public void setBirthCount(int count) { this.entityData.set(BIRTH_COUNT, count); }
+    public boolean isPregnant() { return this.entityData.get(IS_PREGNANT); }
+    public void setPregnant(boolean isPregnant) { this.entityData.set(IS_PREGNANT, isPregnant); }
+    public String getEarTag() { return this.entityData.get(EAR_TAG); }
+    public void setEarTag(String tag) { this.entityData.set(EAR_TAG, tag); this.setCustomName(Component.literal("Küpe: " + tag)); this.setCustomNameVisible(true); }
+    public String getBreed() { return this.entityData.get(BREED); }
+    public void setBreed(String breed) { this.entityData.set(BREED, breed); }
+    public boolean isMale() { return this.entityData.get(IS_MALE); }
+    public void setMale(boolean isMale) { this.entityData.set(IS_MALE, isMale); }
+    public float getWeight() { return this.entityData.get(WEIGHT); }
+    public void setWeight(float weight) { this.entityData.set(WEIGHT, weight); }
+    public int getAgeDays() { return this.entityData.get(AGE_DAYS); }
+    public void setAgeDays(int days) { this.entityData.set(AGE_DAYS, days); }
+
+    // --- KÖPRÜ METODLAR (AI HEDEFLERİ İÇİN) ---
+    // NaturalBreedingGoal gibi eski sınıfların yeni sistemle konuşmasını sağlar
+    public int getBreedingCooldown() { return this.reproductionSystem.getBreedingCooldown(); }
+    public void setBreedingCooldown(int cd) { this.reproductionSystem.setBreedingCooldown(cd); }
+    public void startPregnancy(String fatherBreed) { this.reproductionSystem.startPregnancy(fatherBreed); }
+
+    // --- SİSTEMLERE ERİŞİM ---
+    public CattleReproduction getReproductionSystem() { return reproductionSystem; }
+    public CattleMetabolism getMetabolismSystem() { return metabolismSystem; }
+    public CattleHealth getHealthSystem() { return healthSystem; }
 
     @Nullable @Override public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob otherParent) { return null; }
     @Override public boolean isFood(ItemStack stack) { return false; }

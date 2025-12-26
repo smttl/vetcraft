@@ -1,22 +1,51 @@
-[
-  {
-    "itemId": "minecraft:wheat",
-    "nutrition": 10,
-    "isDryFood": false
-  },
-  {
-    "itemId": "minecraft:hay_block",
-    "nutrition": 50,
-    "isDryFood": true
-  },
-  {
-    "itemId": "minecraft:apple",
-    "nutrition": 5,
-    "isDryFood": false
-  },
-  {
-    "itemId": "vetsim:multivitamin",
-    "nutrition": 2,
-    "isDryFood": false
-  }
-]
+{
+  "feeds": [
+    {
+      "id": "minecraft:wheat",
+      "name": "Buğday",
+      "nutrition": 20,
+      "is_dry": false,
+      "protein": 0.12,
+      "//": "Buğday nişastalıdır (is_dry: false), asidoz riski yaratır ama iyi enerji verir."
+    },
+    {
+      "id": "minecraft:hay_block",
+      "name": "Saman Balyası",
+      "nutrition": 45,
+      "is_dry": true,
+      "protein": 0.08,
+      "//": "Saman liflidir (is_dry: true), pH dengeler ama proteini düşüktür."
+    },
+    {
+      "id": "minecraft:apple",
+      "name": "Elma",
+      "nutrition": 10,
+      "is_dry": false,
+      "protein": 0.02,
+      "//": "Şekerli olduğu için asidoz riski taşır, vitamin amaçlıdır."
+    },
+    {
+      "id": "minecraft:carrot",
+      "name": "Havuç",
+      "nutrition": 15,
+      "is_dry": false,
+      "protein": 0.05
+    },
+    {
+      "id": "vetsim:alfalfa",
+      "name": "Yonca",
+      "nutrition": 35,
+      "is_dry": true,
+      "protein": 0.18,
+      "//": "Yonca süper yemdir. Hem pH dengeler hem proteini çok yüksektir."
+    },
+    {
+      "id": "vetsim:trough_mix",
+      "name": "TMR (Tam Karışım)",
+      "nutrition": 50,
+      "is_dry": true,
+      "protein": 0.16,
+      "//": "Yemlikten yenen ideal dengeli karışım."
+    }
+  ]
+}

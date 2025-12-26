@@ -1,49 +1,74 @@
 package com.vetsim.vetcraft.util;
 
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import net.minecraft.server.packs.resources.ResourceManager;
-import net.minecraft.server.packs.resources.SimpleJsonResourceReloadListener;
-import net.minecraft.util.profiling.ProfilerFiller;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.core.registries.BuiltInRegistries;
-
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.Reader;
-import java.lang.reflect.Type;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class FeedManager {
-
-    // Eşya ID'sine göre Yem Verisini saklayan harita
+    // Hafızadaki Yem Listesi
     private static final Map<String, FeedData> FEED_MAP = new HashMap<>();
 
-    // Verileri Yükle (Manuel veya otomatik çağrılabilir)
     public static void loadFeeds() {
         FEED_MAP.clear();
+        try {
+            // Dosya yolunu kontrol et
+            String path = "/assets/vetsim/data/feeds.json";
+            InputStream stream = FeedManager.class.getResourceAsStream(path);
 
-        // Şimdilik test için hardcoded yüklüyoruz.
-        // İleride burayı gerçek dosya okuma sistemiyle değiştirebiliriz.
-        // Ama simülasyon mantığı için bu yöntem en güvenlisidir.
+            if (stream == null) {
+                System.out.println("VetCraft: Yem dosyası bulunamadı! (" + path + ")");
+                // Dosya yoksa bile kod çökmesin diye varsayılanları elle ekle
+                loadDefaults();
+                return;
+            }
 
-        registerFeed("minecraft:wheat", 10, false);
-        registerFeed("minecraft:hay_block", 50, true);
-        registerFeed("minecraft:apple", 5, false);
+            Gson gson = new Gson();
+            JsonObject json = gson.fromJson(new InputStreamReader(stream), JsonObject.class);
+            JsonArray feeds = json.getAsJsonArray("feeds");
 
-        System.out.println("VetCraft: Yem veritabanı yüklendi.");
+            for (JsonElement element : feeds) {
+                JsonObject obj = element.getAsJsonObject();
+
+                String id = obj.get("id").getAsString();
+                String name = obj.has("name") ? obj.get("name").getAsString() : "Bilinmeyen Yem";
+                int nutrition = obj.get("nutrition").getAsInt();
+                boolean isDry = obj.get("is_dry").getAsBoolean();
+                float protein = obj.has("protein") ? obj.get("protein").getAsFloat() : 0.0f;
+
+                FEED_MAP.put(id, new FeedData(id, name, nutrition, isDry, protein));
+            }
+            System.out.println("VetCraft: " + FEED_MAP.size() + " çeşit yem yüklendi.");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            loadDefaults();
+        }
     }
 
-    private static void registerFeed(String id, int nutrition, boolean isDry) {
-        FEED_MAP.put(id, new FeedData(id, nutrition, isDry));
+    // JSON okuyamazsa oyun çökmesin diye acil durum yemleri
+    private static void loadDefaults() {
+        FEED_MAP.put("minecraft:wheat", new FeedData("minecraft:wheat", "Buğday", 20, false, 0.12f));
+        FEED_MAP.put("minecraft:hay_block", new FeedData("minecraft:hay_block", "Saman", 40, true, 0.08f));
     }
 
-    // Bu eşya bir yem mi?
+    // ItemStack (Eşya) verince Yem Verisini döndürür
     public static FeedData getFeedData(ItemStack stack) {
-        // Eşyanın ID'sini al (minecraft:wheat gibi)
+        if (stack.isEmpty()) return null;
+
         String itemId = BuiltInRegistries.ITEM.getKey(stack.getItem()).toString();
+        return FEED_MAP.get(itemId);
+    }
+
+    // String ID (Yazı) verince Yem Verisini döndürür (AI için gerekli)
+    public static FeedData getFeedData(String itemId) {
+        if (!itemId.contains(":")) itemId = "minecraft:" + itemId;
         return FEED_MAP.get(itemId);
     }
 }

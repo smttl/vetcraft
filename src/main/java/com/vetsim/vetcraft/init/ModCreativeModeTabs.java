@@ -37,6 +37,11 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.FLUNIXIN.get());
                         pOutput.accept(ModItems.MULTIVITAMIN.get());
 
+                        // --- 3. HORMONLAR ---
+                        pOutput.accept(ModItems.HORMONE_PGF2A.get());
+                        pOutput.accept(ModItems.HORMONE_GNRH.get());
+                        pOutput.accept(ModItems.HORMONE_OXYTOCIN.get());
+
                         // --- 4. EKONOMİ VE TİCARET (YENİ) ---
                         pOutput.accept(ModItems.DEBIT_CARD.get());     // Banka Kartı
                         pOutput.accept(ModItems.CELEP_WHISTLE.get());  // Celep Düdüğü
