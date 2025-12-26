@@ -2,6 +2,7 @@ package com.vetsim.vetcraft.event;
 
 import com.vetsim.vetcraft.VetCraft;
 import com.vetsim.vetcraft.entity.CattleEntity;
+import com.vetsim.vetcraft.entity.CelepEntity;
 import com.vetsim.vetcraft.entity.ModEntities;
 import com.vetsim.vetcraft.renderer.CattleRenderer;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -17,6 +18,8 @@ public class ModEvents {
     public static void registerAttributes(EntityAttributeCreationEvent event) {
         // Can, Hız gibi özellikleri kaydeder
         event.put(ModEntities.CATTLE.get(), CattleEntity.createAttributes().build());
+
+        event.put(ModEntities.CELEP.get(), CelepEntity.createAttributes().build());
     }
 
     @SubscribeEvent

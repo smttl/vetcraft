@@ -7,13 +7,17 @@
   "creativetab.vet_tab": "VetCraft Ekipmanları",
 
   "entity.vetsim.cattle": "Sığır",
+  "item.vetsim.halter": "Yular",
   "item.vetsim.stethoscope": "Stetoskop",
   "item.vetsim.vet_clipboard": "Veteriner Kayıt Defteri",
   "item.vetsim.thermometer": "Dijital Termometre",
   "item.vetsim.empty_blood_tube": "Boş Kan Tüpü (Vakum)",
   "item.vetsim.filled_blood_tube": "Kan Numunesi",
-  "item.vetcraft.empty_semen_straw": "Boş Payet",
-  "item.vetcraft.semen_straw_holstein": "Holstein Payeti",
-  "item.vetcraft.EMPTY_STRAW": "Angus Payeti",
-  "item.vetcraft.FILLED_STRAW": "Simental Payeti"
+  "item.vetsim.empty_straw": "Boş Payet",
+  "item.vetsim.filled_straw": "Dolu Payet",
+  "block.vetsim.market_block": "Köy Pazarı (Satış Noktası)",
+  "item.vetsim.market_block": "Köy Pazarı (Satış Noktası)",
+  "item.vetsim.debit_card": "Ziraat Banka Kartı",
+  "item.vetsim.celep_whistle": "Tuccar Çağırma Düdüğü",
+  "item.vetsim.smart_phone": "Telefon"
 }
