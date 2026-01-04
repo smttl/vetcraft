@@ -4,12 +4,13 @@ import com.vetsim.vetcraft.entity.CattleEntity;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.particles.ParticleTypes;
-import com.vetsim.vetcraft.entity.ModEntities; // ModEntities importuna dikkat et (init paketinde olmalı)
+import com.vetsim.vetcraft.entity.ModEntities;
 
 public class CattleReproduction {
     private final CattleEntity cow;
 
-    private int breedingCooldown = 0;
+    private int recoveryTimer = 0;   // Doğum sonrası veya düşük sonrası iyileşme süresi
+    private int gestationTimer = 0;  // Gebelik süresi sayacı
     private int estrusCycleTimer = 0;
     private float progesteroneLevel = 1.0f;
     private String fatherBreed = "Bilinmiyor";
@@ -21,35 +22,38 @@ public class CattleReproduction {
     public void tick() {
         if (cow.level().isClientSide) return;
 
-        // Sayaç her zaman düşmeli
-        if (breedingCooldown > 0) {
-            breedingCooldown--;
+        // 1. İyileşme (Recovery) Sayacı
+        if (recoveryTimer > 0) {
+            recoveryTimer--;
         }
 
-        // DURUM 1: NORMAL DÖNGÜ (Gebe Değil, Bebek Değil, Lohusa Değil)
-        if (!cow.isPregnant() && !cow.isBaby() && breedingCooldown <= 0) {
-            estrusCycleTimer++;
-            if (estrusCycleTimer >= 12000) estrusCycleTimer = 0;
+        // 2. GEBELİK DURUMU
+        if (cow.isPregnant()) {
+            progesteroneLevel = 8.0f; // Gebelikte progesteron yüksek kalır
 
-            // Östrus (Kızgınlık) Dönemi: Döngünün sonları
-            if (estrusCycleTimer > 9600) {
-                progesteroneLevel = Math.max(0.5f, progesteroneLevel - 0.05f);
+            if (gestationTimer > 0) {
+                gestationTimer--;
             } else {
-                progesteroneLevel = Math.min(8.0f, progesteroneLevel + 0.1f);
-            }
-        }
-        // DURUM 2: GEBE
-        else if (cow.isPregnant()) {
-            progesteroneLevel = 8.0f; // Progesteron yüksek
-
-            // Doğum vakti geldi mi?
-            if (breedingCooldown <= 0) {
                 giveBirth();
             }
         }
-        // DURUM 3: LOHUSA (Doğum Sonrası Dinlenme)
-        else if (breedingCooldown > 0) {
-            progesteroneLevel = 5.0f; // Güvenli bölge (Sakin)
+        // 3. NORMAL DÖNGÜ (Gebe Değil, Bebek Değil, İyileşme Sürecinde Değil)
+        else if (!cow.isBaby() && recoveryTimer <= 0) {
+            estrusCycleTimer++;
+            if (estrusCycleTimer >= 12000) estrusCycleTimer = 0;
+
+            // Östrus (Kızgınlık) Dönemi: Döngünün sonları (9600 - 12000 arası)
+            if (estrusCycleTimer > 9600) {
+                // Kızgınlıkta progesteron düşer (Östradiol artar)
+                progesteroneLevel = Math.max(0.5f, progesteroneLevel - 0.05f);
+            } else {
+                // Diöstrus (Sarı Cisim) evresi: Progesteron yüksek
+                progesteroneLevel = Math.min(8.0f, progesteroneLevel + 0.1f);
+            }
+        }
+        // 4. LOHUSA / İYİLEŞME
+        else if (recoveryTimer > 0) {
+            progesteroneLevel = 5.0f; // Güvenli, sakin seviye
         }
     }
 
@@ -57,16 +61,15 @@ public class CattleReproduction {
         // Kızgınlıkta değilse (Progesteron yüksekse) tutmaz
         if (progesteroneLevel > 2.5f) return false;
 
-        cow.setPregnant(true);
-        this.fatherBreed = fatherBreed;
-        this.breedingCooldown = CattleEntity.GESTATION_PERIOD; // Gebelik süresi başlat
+        startPregnancy(fatherBreed);
         return true;
     }
 
     public void startPregnancy(String fatherBreed) {
         cow.setPregnant(true);
         this.fatherBreed = fatherBreed;
-        this.breedingCooldown = CattleEntity.GESTATION_PERIOD;
+        this.gestationTimer = CattleEntity.GESTATION_PERIOD; // Gebelik süresini başlat
+        this.recoveryTimer = 0; // İyileşme süresini sıfırla
     }
 
     private void giveBirth() {
@@ -87,16 +90,15 @@ public class CattleReproduction {
 
                 // --- DOĞUM SONRASI AYARLAR ---
                 cow.setPregnant(false);
-                this.breedingCooldown = CattleEntity.POST_BIRTH_COOLDOWN; // Lohusalık süresi
+                this.gestationTimer = 0;
+                this.recoveryTimer = CattleEntity.POST_BIRTH_COOLDOWN; // Lohusalık süresi başlar
 
-                // Hormonları ve Döngüyü RESETLE (Doğurur doğurmaz kızgınlığa girmesin diye)
-                this.progesteroneLevel = 5.0f; // Sakin moda al
-                this.estrusCycleTimer = 0;     // Döngüyü başa sar
+                // Hormonları ve Döngüyü RESETLE
+                this.progesteroneLevel = 5.0f; // Sakin mod
+                this.estrusCycleTimer = 0;     // Döngü başa döner
 
-                // --- DÜZELTME: LAKTASYONU BAŞLAT ---
-                // Artık süt, reprodüksiyon sayacından bağımsız işleyecek!
+                // Laktasyonu Başlat
                 cow.getMetabolismSystem().startLactation();
-                // -----------------------------------
 
                 cow.setBirthCount(cow.getBirthCount() + 1);
                 serverLevel.sendParticles(ParticleTypes.HEART, cow.getX(), cow.getY()+1, cow.getZ(), 10, 0.5, 0.5, 0.5, 0.1);
@@ -106,23 +108,19 @@ public class CattleReproduction {
 
     // --- ÖNEMLİ METODLAR ---
 
-    // 1. Kuru Dönem Kontrolü (Süt vermeyi kesmek için)
     public boolean isInDryPeriod() {
         if (!cow.isPregnant()) return false;
-        // Doğuma 600 tick (yaklaşık 30 saniye) kala sütü kes
-        return this.breedingCooldown < 600;
+        // Doğuma 600 tick kala sütü kes (gestationTimer kontrolü)
+        return this.gestationTimer < 600;
     }
 
-    // 2. Düşük Yaptırma (Abort)
     public void forceAbortion() {
         if (cow.isPregnant()) {
             cow.setPregnant(false);
-            cow.startPregnancy("Melez"); // Genetiği sıfırla (teknik reset)
-            cow.setPregnant(false); // Tekrar false yap
-
-            this.progesteroneLevel = 0.5f;
-            this.breedingCooldown = 24000; // 1 gün dinlenme
+            this.gestationTimer = 0;
+            this.recoveryTimer = 24000; // 1 gün iyileşme/ceza
             this.estrusCycleTimer = 0;
+            this.progesteroneLevel = 0.5f;
 
             cow.getHealthSystem().increaseStress(40);
             cow.getMetabolismSystem().reduceBcs(0.2f);
@@ -135,12 +133,11 @@ public class CattleReproduction {
         }
     }
 
-    // 3. Kızgınlık Başlatma (Induce Estrus)
     public void induceEstrus() {
         if (!cow.isPregnant() && !cow.isBaby()) {
             this.estrusCycleTimer = 10000; // Döngüyü sona sar (Kızgınlığa getir)
             this.progesteroneLevel = 1.0f; // Hormonu düşür
-            this.breedingCooldown = 0;     // Lohusalığı iptal et
+            this.recoveryTimer = 0;        // Lohusalığı iptal et
 
             cow.playSound(net.minecraft.sounds.SoundEvents.EXPERIENCE_ORB_PICKUP, 1.0F, 1.0F);
             if (cow.level() instanceof ServerLevel sl) {
@@ -151,20 +148,42 @@ public class CattleReproduction {
     }
 
     public void save(CompoundTag tag) {
-        tag.putInt("Repro_Cooldown", breedingCooldown);
+        tag.putInt("Repro_RecoveryTimer", recoveryTimer);
+        tag.putInt("Repro_GestationTimer", gestationTimer);
         tag.putInt("Repro_EstrusTimer", estrusCycleTimer);
         tag.putFloat("Repro_Progesterone", progesteroneLevel);
         tag.putString("Repro_Father", fatherBreed);
     }
 
     public void load(CompoundTag tag) {
-        if(tag.contains("Repro_Cooldown")) breedingCooldown = tag.getInt("Repro_Cooldown");
+        // Eski sürüm uyumluluğu (Migration)
+        int legacyCooldown = 0;
+        if(tag.contains("Repro_Cooldown")) legacyCooldown = tag.getInt("Repro_Cooldown");
+
+        if(tag.contains("Repro_RecoveryTimer")) {
+            recoveryTimer = tag.getInt("Repro_RecoveryTimer");
+        } else {
+            recoveryTimer = legacyCooldown;
+        }
+
+        if(tag.contains("Repro_GestationTimer")) {
+            gestationTimer = tag.getInt("Repro_GestationTimer");
+        } else {
+            // Eğer yeni veri yoksa ama hayvan hamileyse, eski cooldown aslında gestationTimer'dır.
+            if (cow.isPregnant()) {
+                gestationTimer = legacyCooldown;
+                recoveryTimer = 0;
+            }
+        }
+
         if(tag.contains("Repro_EstrusTimer")) estrusCycleTimer = tag.getInt("Repro_EstrusTimer");
         if(tag.contains("Repro_Progesterone")) progesteroneLevel = tag.getFloat("Repro_Progesterone");
         if(tag.contains("Repro_Father")) fatherBreed = tag.getString("Repro_Father");
     }
 
     public float getProgesterone() { return progesteroneLevel; }
-    public int getBreedingCooldown() { return breedingCooldown; }
-    public void setBreedingCooldown(int cd) { this.breedingCooldown = cd; }
+
+    // API Uyumluluğu için (CattleEntity ve NaturalBreedingGoal kullanıyor)
+    public int getBreedingCooldown() { return recoveryTimer; }
+    public void setBreedingCooldown(int cd) { this.recoveryTimer = cd; }
 }

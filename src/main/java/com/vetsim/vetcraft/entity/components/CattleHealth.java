@@ -52,7 +52,7 @@ public class CattleHealth {
 
                 // 2. BULAŞTIRMA
                 if (data.contagious && cow.tickCount % 200 == 0) {
-                    spreadDisease(currentDisease);
+                    spreadDisease(currentDisease, data);
                 }
 
                 // 3. ABORT RİSKİ
@@ -84,10 +84,11 @@ public class CattleHealth {
         stressLevel = Math.min(100, stressLevel);
     }
 
-    private void spreadDisease(String diseaseId) {
+    private void spreadDisease(String diseaseId, DiseaseData data) {
         List<CattleEntity> nearby = cow.level().getEntitiesOfClass(CattleEntity.class, cow.getBoundingBox().inflate(3.0D));
         for (CattleEntity nearbyCow : nearby) {
-            float infectionChance = 0.15F + (nearbyCow.getHealthSystem().getStressLevel() * 0.005F);
+            // Yeni Formül: Hastalığın kendi bulaşma oranı + Hedefin stresi
+            float infectionChance = data.contagionRate + (nearbyCow.getHealthSystem().getStressLevel() * 0.005F);
 
             if (nearbyCow != cow && nearbyCow.getDisease().equals("NONE") && cow.getRandom().nextFloat() < infectionChance) {
                 nearbyCow.setDisease(diseaseId);
