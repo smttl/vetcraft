@@ -1,118 +1,77 @@
-# 🩺 VetCraft - Advanced Veterinary Simulation Mod
+# VetCraft 🐮🩺
+**Minecraft için Gelişmiş Veterinerlik ve Hayvancılık Simülasyonu**
 
-**VetCraft**, Minecraft dünyasına gerçekçi veterinerlik, genetik ve hayvancılık mekanikleri ekleyen kapsamlı bir moddur. Standart Minecraft hayvancılığının ötesine geçerek; hastalık teşhisi, laboratuvar testleri, ilaç tedavileri ve detaylı genetik takibi sunar.
+VetCraft, Minecraft'taki hayvancılık mekaniklerini tamamen değiştirerek **gerçekçi bir veteriner hekimlik ve çiftlik yönetimi** deneyimi sunar. Sadece inekleri besleyip çoğaltmak yerine; onların metabolizmasını, hormon döngülerini, genetik kalitesini ve hastalıklarını yönetmeniz gerekir.
 
 ---
 
 ## 🌟 Temel Özellikler
 
-### 1. Gelişmiş Sığır Genetiği (Cattle Entity)
-Oyundaki standart ineklerin yerini alan, tamamen özelleştirilmiş **VetSim Cattle** varlığı:
-- **Kimlik Sistemi:** Her hayvanın kendine özel, görsel olarak tepesinde ve veritabanında görünen bir Küpe Numarası (Ear Tag) vardır (Örn: `TR45129`).
-- **Irk ve Cinsiyet:** Holstein, Simmental, Angus, Jersey gibi gerçek ırklar. Boğa (Erkek) ve İnek (Dişi) ayrımı mevcuttur.
-- **Fiziksel Özellikler:** Dinamik ağırlık sistemi (kg), yaş takibi (gün bazlı büyüme) ve açlık/metabolizma döngüsü.
-- **Üreme ve Büyüme:** yetişkin dişi ve erkek bir araya geldiğinde otomatik çiftleşir yavrularda bu özellik yoktur çiftleşen dişi bir süre süt droplar erkeklerde de çiftleşme için dinlenme süresi vardır.
+### 1. 🧬 Gelişmiş Fizyoloji ve Metabolizma
+Her hayvanın yaşayan bir metabolizması vardır:
+*   **Rumen pH Dengesi:** Yanlış besleme (sadece buğday/kesif yem) **Asidoz**'a, aşırı kaba yem **Alkaloz**'a neden olabilir.
+*   **Su ve Hidrasyon:** Hayvanlar susar ve su içmelidir. Susuzluk süt verimini düşürür.
+*   **Gaz (Bloat):** Yonca gibi riskli yemler gaz sıkışmasına (Timpani) ve ölüme yol açabilir.
+*   **Kondisyon (BCS):** Hayvanların zayıflığı veya şişmanlığı üremeyi doğrudan etkiler.
 
-### 2. Gerçekçi Sağlık ve Hastalık Sistemi
-Hayvanlar sadece can barından ibaret değildir. Çevresel faktörlere ve beslenmeye göre hastalanabilirler.
+### 2. 💉 Veteriner Hekimlik Sistemi
+Gerçek hayattaki teşhis ve tedavi yöntemlerini uygulayın:
+*   **Teşhis Araçları:**
+    *   🩺 **Stetoskop:** Nabız ve solunum dinleme.
+    *   🌡️ **Termometre:** Vücut sıcaklığı ölçümü (Ateş tespiti).
+    *   🩸 **Kan Tüpleri & Laboratuvar:** Kan alıp analiz ederek WBC (Lökosit), pH ve Enfeksiyon değerlerini laboratuvar ekranında görün.
+*   **İlaçlar ve Aşılar:**
+    *   **Antibiyotikler:** Enfeksiyonları tedavi eder.
+    *   **PGF2a (Hormon):** Kızgınlık (Östrus) başlatır veya İstenmeyen gebelikleri sonlandırır (Abort).
+    *   **Şap Aşısı (FMD):** Salgınlara karşı koruma sağlar.
+    *   **Sirke & Yağ:** Metabolik sorunlar (Asidoz/Gaz) için doğal tedaviler.
 
-**Hastalıklar:**
-- **🦠 Pnömoni (Zatürre):** Bulaşıcıdır. Hapşırma efekti ve hırıltılı solunum yapar. Lökosit (WBC) değerlerini fırlatır.
-- **🧪 Rumen Asidozu:** Yanlış beslenme sonucu oluşur. Hayvanın kan pH değeri düşer, hareketleri yavaşlar.
+### 3. 🧬 Genetik ve Islah (Breeding)
+Basit çiftleştirme yerine bilimsel ıslah yapın:
+*   **Suni Tohumlama:** Boğalardan **Sperma Payeti (Straw)** alın.
+*   **Genetik Değerler (PTA):** Her payetin ve hayvanın Süt Verimi (`MilkPTA`) ve Sağlık Direnci (`HealthPTA`) genetiği vardır.
+*   **Kalıtım:** Yavrular, anne ve babanın genetik ortalamasını (varyasyonlarla) alır.
+*   **Östrus Döngüsü:** İnekler sadece kızgınlık döneminde (**Östrus - Yaklaşık 30sn**) gebe kalabilir. Döngüyü takip edin veya hormonla yönetin.
 
-**Belirtiler:** Kilo kaybı, hareket yavaşlaması, parçacık efektleri (duman, hapşırık) ve sesli tepkiler.
-
-### 3. Tanı ve Laboratuvar Sistemi 🔬
-Hastalıkları teşhis etmek için gerçekçi veteriner aletleri:
-- **🩺 Stetoskop:** Kalp ve akciğer seslerini dinler (Örn: "Akciğerlerde yaş hırıltı/Ral").
-- **🌡️ Termometre:** Vücut ısısını ölçer (Yüksek ateş enfeksiyon belirtisidir).
-- **📋 Vet Kayıt Defteri (Anamnez):** Hayvanın genel durumunu ve geçmişini raporlar.
-- **🩸 Laboratuvar (Kan Tahlili):**
-    - Hayvandan **Boş Tüp** ile kan alınır.
-    - **Kan Numunesi** envanterde incelendiğinde WBC (Lökosit) ve pH değerlerini gösterir.
-    - Oyuncu bu değerlere bakarak (Yüksek WBC = Enfeksiyon vb.) teşhis koymalıdır.
-
-### 4. Farmakoloji ve Tedavi 💊
-Her hastalığın spesifik bir ilacı veya tedavi yöntemi vardır:
-- **Penisilin & Antibiyotikler:** Bakteriyel enfeksiyonlar (Pnömoni) için.
-- **Flunixin:** Ağrı kesici ve ateş düşürücü.
-- **Multivitamin:** Bağışıklık desteği.
-- **Diyet Tedavisi:** Asidoz geçiren hayvanlar için Kuru Ot (Saman) diyeti.
-
----
-
-## 🎮 Oynanış ve Kontroller
-
-Mod, sağ tıklama etkileşimleri üzerine kuruludur. Çift el karışıklığını önlemek için özel bir etkileşim sistemi kodlanmıştır.
-
-| Eşya / Durum | Eylem | Sonuç |
-| :--- | :--- | :--- |
-| **Boş El** | İneğe Sağ Tık | **Detaylı Bilgi Ekranı** (Irk, yaş, kilo, gebelik durumu). |
-| **Boş El + Shift** | Eğilerek Sağ Tık | **Gözle Muayene** (Tüylerin durumu, duruş bozukluğu). |
-| **Stetoskop** | İneğe Sağ Tık | Kalp ritmi ve akciğer seslerini sohbete yazar. |
-| **Boş Kan Tüpü** | İneğe Sağ Tık | Kan alır ve envantere etiketli bir numune verir. |
-| **İlaçlar** | İneğe Sağ Tık | İlacı uygular (Doğru ilaçsa iyileştirir). |
-
-### 🩸 Laboratuvar Sonuçlarını Okuma
-Envanterinizdeki kanlı tüpün üzerine geldiğinizde:
-- **WBC (Lökosit):** `> 12.0` ise **Kırmızı** yanar (Enfeksiyon/Pnömoni Var).
-- **pH:** `< 7.30` ise **Kırmızı** yanar (Asidoz Var).
-- **Normal:** Değerler beyaz renktedir.
+### 4. 📱 Teknoloji ve Ekonomi
+Çiftliğinizi modern araçlarla yönetin:
+*   **VetPhone (Akıllı Telefon):**
+    *   **🏦 Banka:** Kredi çekme, bakiye sorgulama, hibe takibi.
+    *   **🧬 Genetik Market:** Sertifikalı boğa spermalarını (Commercial, Superior, Elite) satın alma.
+    *   **💰 Hızlı Satış:** Ürettiğiniz süt, gübre ve diğer ürünleri anında piyasaya satma.
+*   **Celep Sistemi:** Hayvan ticareti yapan tüccarlar.
 
 ---
 
-## 🛠️ Teknik Detaylar
-Minecraft Sürümü: 1.20.4 (NeoForge)
+## 🛠️ Eşyalar ve Kullanımı
 
-Dil Desteği: Türkçe (tr_tr), İngilizce (en_us)
+| Eşya | Görevi |
+| :--- | :--- |
+| **Boş Kan Tüpü** | Hayvana sağ tıklayarak kan örneği alır. |
+| **Dolu Kan Tüpü** | Sağ tıklayarak detaylı **Laboratuvar Raporunu** açar. |
+| **Stetoskop** | Hayvanın sağlık durumunu özetler. |
+| **PGF2a İğnesi** | Kızgınlığı tetikler (veya düşüğe sebep olur). |
+| **Boş Payet** | Boğadan genetik materyal toplar. |
+| **Dolu Payet** | Kızgınlıktaki ineği tohumlamak için kullanılır. |
+| **VetPhone** | Market ve Banka işlemlerini yönetir. |
+| **Gübre (Manure)** | İneklerden düşer, telefondan satılarak gelir elde edilir. |
 
-Veri Kaydı: Tüm veriler (Hastalık, Genetik, Küpe No) NBT tagları ile sunucu tarafında saklanır ve dünya kapatılıp açılsa bile korunur.
+---
 
-## 🧬 JSON Tabanlı Hastalık Sistemi (Data-Driven)
-Mod, hard-coded yerine Veri Odaklı bir yapı kullanır. Yeni hastalıklar kod yazmadan, sadece JSON düzenleyerek eklenebilir.
+## 🎮 Nasıl Oynanır?
 
-Dosya Yolu: assets/vetsim/diseases/cattle.json
+1.  **Başlangıç:** Bir inek bulun ve stetoskopla sağlık durumuna bakın.
+2.  **Teşhis:** Eğer hasta görünüyorsa kan alıp laboratuvar sonuçlarına bakın.
+3.  **Üretim:** İneğinizin kızgınlık (Östrus) döngüsünü takip edin (`Sağ Tık -> Info`).
+4.  **Islah:** Telefondan kaliteli bir "Elite" sperma satın alın veya kendi boğanızdan alın.
+5.  **Tohumlama:** Doğru zamanda (Progesteron < 2.0 ng/mL) tohumlama yapın.
+6.  **Ekonomi:** Süt ve gübre satarak parayla ilaç ve daha iyi genetikler alın.
 
-## 🛠️ Etkileşim Mantığı (Interaction Logic)
-Minecraft'ın "Çift El" (Main Hand / Off Hand) sorununu çözmek için mobInteract metodunda katı bir hiyerarşi uygulanmıştır:
+---
 
-OFF_HAND (Sol el) etkileşimleri iptal edilir (InteractionResult.PASS).
+## 🔧 Teknik Bilgi
+*   **Mod Yükleyici:** NeoForge
+*   **Minecraft Sürümü:** 1.20.4
 
-Sunucu tarafında (!level.isClientSide) işlem yapılır.
-
-Öncelik sırası: Aletler > İlaçlar > Yemler > Boş El.
-
-## 🧪 Genetik Algoritması
-Buzağı doğduğunda (giveBirth metodu):
-
-Annenin ırkını ve babanın ırkını (VetSim_FatherBreed) alır.
-
-%50 ihtimalle anneden, %50 ihtimalle babadan ırk özelliğini miras alır.
-
-Rastgele bir küpe numarası (TR + 6 hane) atanır.
-
-## 💻 Komutlar (Geliştirici/Test)
-
-Test ortamında hızlıca senaryo oluşturmak için özel NBT verileriyle çağırma komutları:
-
-**1. Hasta İnek (Pnömoni - Enfeksiyonlu):**
-```mcfunction
-/summon vetsim:cattle ~ ~ ~ {VetSim_Disease:"pneumonia", VetSim_AgeDays:20}
-
-2. Hasta İnek (Asidoz - Mide Rahatsızlığı):
-
-/summon vetsim:cattle ~ ~ ~ {VetSim_Disease:"acidosis", VetSim_AgeDays:20}
-
-3. Damızlık Boğa (Simmental, 900kg):
-
-/summon vetsim:cattle ~ ~ ~ {VetSim_IsMale:1b, VetSim_Weight:900.0f, VetSim_Breed:"Simmental", VetSim_AgeDays:20}
-
-4. Damızlık inek
-
-/summon vetsim:cattle ~ ~ ~ {VetSim_IsMale:0b, VetSim_IsPregnant:0b, VetSim_Weight:650.0f, VetSim_Breed:"Simmental", VetSim_AgeDays:1000}
-
-5. Gebe İnek (Doğuma Yakın):
-
-/summon vetsim:cattle ~ ~ ~ {VetSim_IsPregnant:1b, VetSim_PregnancyTimer:200, VetSim_AgeDays:20}
-
-
+---
+*VetCraft, gerçek veterinerlik prosedürlerini oyunlaştırmayı amaçlayan bir simülasyon projesidir.*
