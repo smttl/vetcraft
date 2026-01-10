@@ -43,3 +43,27 @@ json
     ...
 }
 cattle
+
+
+
+
+
+İlaç Resimlerini (Textures) Koyacağınız Konum:
+
+Tüm ilaçların resimlerini (.png formatında) şu klasöre koymalısınız: src/main/resources/assets/vetcraft/textures/item/
+
+Gerekli Dosya İsimleri (drugs.json içindeki ID'lere göre):
+
+antibiotics.png (Genel Antibiyotik)
+penicillin.png (Penisilin)
+fmd_vaccine.png (Şap Aşısı)
+flunixin.png (Flunixin)
+multivitamin.png (Vitamin)
+hormone_pgf2a.png (Prostaglandin İğnesi)
+hormone_oxytocin.png (Oksitosin İğnesi)
+oil_bottle.png (Yağ Şişesi)
+vinegar.png (Sirke)
+Ek Not: Eğer bu klasör (.../textures/item/) yoksa oluşturmanız yeterlidir. Oyun otomatik olarak bu isimleri arayacaktır. Başka bir sorunuz var mı?
+
+
+
