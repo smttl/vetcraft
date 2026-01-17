@@ -1,6 +1,3 @@
-/summon vetsim:cattle
-/data merge entity @e[type=vetsim:cattle,limit=1,sort=nearest] {VetSim_Breed:"Angus"}
-/summon ve
 /summon vet
 /summon vetsim:cattle ~ ~ ~ {Age:-24000, VetSim_Breed:"Holstein", VetSim_EarTag:"TR-BEBEK", VetSim_Weight:18.0f, VetSim_AgeDays:0}
 /summon vetsim:cattle ~ ~ ~ {Age:-24000, VetSim_Breed:"Angus", VetSim_EarTag:"TR-ANGUS-B", VetSim_Weight:22.0f, VetSim_AgeDays:0}
@@ -48,3 +45,6 @@
 /summon vetsim:cattle ~ ~ ~ {VetSim_IsMale:0b, VetSim_Breed:"Holstein", VetSim_IsPregnant:0b, VetSim_AgeDays:30, Repro_Progesterone:0.1f, Repro_EstrusTimer:480000, Repro_Cooldown:0, Meta_BCS:3.5f}
 /summon vetsim:cattle ~ ~ ~ {VetSim_IsMale:1b, VetSim_Weight:900.0f, VetSim_Breed:"Simmental", VetSim_AgeDays:20}
 /summon vetsim:cattle ~ ~ ~ {VetSim_IsMale:0b, VetSim_IsPregnant:0b, VetSim_Weight:650.0f, VetSim_Breed:"Simmental", VetSim_AgeDays:1000}
+/summon vetcraft:cattle -10.99 67.00 -111.59
+/summon vetcraft:cattle
+/summon vetcraft:cattle ~ ~ ~ {VetSim_Breed:"native"}

@@ -1,0 +1,246 @@
+[
+  {
+    "id": "pneumonia",
+    "displayName": "Pnömoni (Zatürre)",
+    "triggerHungerBelow": 40,
+    "triggerChance": 0.15,
+    "weightLossPerTick": 0.08,
+    "damagePerTick": 0.10,
+    "abortChance": 0.25,
+    "contagious": true,
+    "randomOccurrenceChance": 0.002,
+    "visualEffect": "SNEEZE",
+    "slowness": true,
+    "cureType": "ITEM",
+    "cureTarget": [
+      "vetcraft:penicillin"
+    ],
+    "symptoms": {
+      "anamnesis": "Hayvanın solunumu güçleşmiş ve sık sık öksürüyor.",
+      "visual": "Burun akıntısı var, başını öne uzatmış şekilde duruyor.",
+      "stethoscope": "Akciğerlerde hırıltı (Ral) ve sürtünme sesleri var.",
+      "temperature": 41.2
+    }
+  },
+  {
+    "id": "acidosis",
+    "displayName": "Rumen Asidozu",
+    "triggerHungerBelow": 100,
+    "triggerChance": 0.0,
+    "weightLossPerTick": 0.12,
+    "damagePerTick": 0.05,
+    "abortChance": 0.05,
+    "contagious": false,
+    "visualEffect": "NONE",
+    "slowness": true,
+    "bcsLoss": 0.0005,
+    "stopMilk": true,
+    "cureType": "FEED",
+    "cureTarget": [
+      "minecraft:hay_block"
+    ],
+    "risky_items": [
+      {
+        "item": "minecraft:wheat",
+        "chance": 0.35
+      },
+      {
+        "item": "minecraft:bread",
+        "chance": 0.50
+      }
+    ],
+    "symptoms": {
+      "anamnesis": "Yem yemeyi kesti, dışkısı sulu ve kötü kokulu.",
+      "visual": "Sürekli dişlerini gıcırdatıyor, karnına bakıyor.",
+      "stethoscope": "Rumen hareketleri (mide kasılması) durmuş.",
+      "temperature": 38.0
+    }
+  },
+  {
+    "id": "bloat",
+    "displayName": "Gazlı Şişkinlik (Bloat)",
+    "triggerHungerBelow": 0,
+    "triggerChance": 0.0,
+    "weightLossPerTick": 0.0,
+    "damagePerTick": 2.0,
+    "abortChance": 0.60,
+    "contagious": false,
+    "visualEffect": "SMOKE",
+    "slowness": true,
+    "cureType": "ITEM",
+    "cureTarget": [
+      "vetcraft:oil_bottle",
+      "minecraft:apple"
+    ],
+    "risky_items": [
+      {
+        "item": "minecraft:rotten_flesh",
+        "chance": 0.90
+      },
+      {
+        "item": "minecraft:poisonous_potato",
+        "chance": 0.80
+      }
+    ],
+    "symptoms": {
+      "anamnesis": "Aniden şişmeye başladı, nefes darlığı çekiyor.",
+      "visual": "Sol karın boşliği (açlık çukuru) davul gibi gerilmiş.",
+      "stethoscope": "Kalp atışları aşırı hızlı, solunum sesleri duyulmuyor.",
+      "temperature": 39.2
+    }
+  },
+  {
+    "id": "mastitis",
+    "displayName": "Mastitis (Meme İltihabı)",
+    "triggerHungerBelow": 30,
+    "triggerChance": 0.15,
+    "weightLossPerTick": 0.05,
+    "damagePerTick": 0.05,
+    "abortChance": 0.0,
+    "contagious": false,
+    "randomOccurrenceChance": 0.005,
+    "visualEffect": "NONE",
+    "slowness": false,
+    "cureType": "ITEM",
+    "cureTarget": [
+      "vetcraft:penicillin"
+    ],
+    "symptoms": {
+      "anamnesis": "Süt verimi düştü, sütte sarı pıhtılar görülüyor.",
+      "visual": "Meme loblarından biri aşırı şişmiş ve kızarık.",
+      "stethoscope": "Nabız normalin üzerinde, genel durum bitkin.",
+      "temperature": 40.8
+    }
+  },
+  {
+    "id": "fmd",
+    "displayName": "Şap Hastalığı (FMD)",
+    "triggerHungerBelow": 20,
+    "triggerChance": 0.20,
+    "weightLossPerTick": 0.15,
+    "damagePerTick": 0.20,
+    "abortChance": 0.80,
+    "contagious": true,
+    "randomOccurrenceChance": 0.001,
+    "visualEffect": "SNEEZE",
+    "slowness": true,
+    "cureType": "ITEM",
+    "cureTarget": [
+      "vetcraft:fmd_vaccine"
+    ],
+    "symptoms": {
+      "anamnesis": "Ağızdan salya akıtıyor, tırnak aralarında yaralar var.",
+      "visual": "Ağzında şapırtı sesi var, sürekli yatmak istiyor.",
+      "stethoscope": "Kalp ritminde düzensizlik (Miyokardit) riski.",
+      "temperature": 41.8
+    },
+    "vectors": [
+      {
+        "entity": "minecraft:sheep",
+        "chance": 0.10,
+        "radius": 5
+      },
+      {
+        "entity": "minecraft:pig",
+        "chance": 0.15,
+        "radius": 5
+      }
+    ]
+  },
+  {
+    "id": "alkalosis",
+    "displayName": "Rumen Alkalozu",
+    "triggerHungerBelow": 100,
+    "triggerChance": 0.0,
+    "weightLossPerTick": 0.10,
+    "damagePerTick": 0.01,
+    "abortChance": 0.05,
+    "contagious": false,
+    "visualEffect": "NONE",
+    "slowness": true,
+    "bcsLoss": 0.0005,
+    "stopMilk": true,
+    "cureType": "ITEM",
+    "cureTarget": [
+      "vetcraft:vinegar"
+    ],
+    "symptoms": {
+      "anamnesis": "Yem yemiyor, sürekli su içmeye çalışıyor.",
+      "visual": "Hafif titreme var, idrarı koyu renkli.",
+      "stethoscope": "Rumen pH > 7.5 (Yüksek Alkali).",
+      "temperature": 38.8
+    }
+  },
+  {
+    "id": "calf_scours",
+    "displayName": "Buzağı İshali (Scours)",
+    "triggerHungerBelow": 50,
+    "triggerChance": 0.0,
+    "targetAge": "BABY",
+    "weightLossPerTick": 0.20,
+    "damagePerTick": 0.15,
+    "abortChance": 0.0,
+    "contagious": true,
+    "visualEffect": "NONE",
+    "slowness": true,
+    "cureType": "ITEM",
+    "cureTarget": [
+      "vetcraft:antibiotics",
+      "vetcraft:calf_formula"
+    ],
+    "symptoms": {
+      "anamnesis": "İştahsız, şiddetli sulu ishal ve dehidrasyon var.",
+      "visual": "Arkası dışkı ile kirlenmiş, sürekli yatıyor, gözleri çukurlaşmış.",
+      "stethoscope": "Bağırsak sesleri (borborygmus) aşırı artmış.",
+      "temperature": 39.5
+    }
+  },
+  {
+    "id": "ketosis",
+    "displayName": "Ketozis",
+    "triggerHungerBelow": 10,
+    "triggerChance": 0.50,
+    "weightLossPerTick": 0.25,
+    "damagePerTick": 0.05,
+    "abortChance": 0.10,
+    "contagious": false,
+    "visualEffect": "NONE",
+    "slowness": true,
+    "bcsLoss": 0.002,
+    "stopMilk": true,
+    "cureType": "ITEM",
+    "cureTarget": [
+      "vetcraft:dextrose_serum",
+      "minecraft:sugar"
+    ],
+    "symptoms": {
+      "anamnesis": "Hızla zayıflıyor, süt verimi aniden kesildi.",
+      "visual": "Nefesinde aseton (çürük elma) kokusu var, sendeliyor.",
+      "stethoscope": "Nabız zayıf, enerji eksikliği belirgin.",
+      "temperature": 38.5
+    }
+  },
+  {
+    "id": "dehydration",
+    "displayName": "Dehidrasyon (Susuzluk)",
+    "triggerHungerBelow": 0,
+    "triggerChance": 0.0,
+    "weightLossPerTick": 0.10,
+    "damagePerTick": 0.20,
+    "abortChance": 0.30,
+    "contagious": false,
+    "visualEffect": "SMOKE",
+    "slowness": true,
+    "cureType": "ITEM",
+    "cureTarget": [
+      "vetcraft:salt_lick",
+      "minecraft:water_bucket"
+    ],
+    "symptoms": {
+      "anamnesis": "Uzun süredir su içmedi, deri elastikiyetini kaybetmiş.",
+      "visual": "Gözleri çukurlaşmış, burnu kuru ve çatlak.",
+      "stethoscope": "Kalp atışları çok hızlı (Taşikardi).",
+      "temperature": 39.0
+    }
+  }
+]

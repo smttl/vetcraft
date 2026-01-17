@@ -1,0 +1,22 @@
+[
+    {
+        "itemId": "minecraft:wheat",
+        "price": 10
+    },
+    {
+        "itemId": "minecraft:milk_bucket",
+        "price": 50
+    },
+    {
+        "itemId": "vetcraft:manure",
+        "price": 5
+    },
+    {
+        "itemId": "minecraft:leather",
+        "price": 20
+    },
+    {
+        "itemId": "vetcraft:colostrum_bucket",
+        "price": 25
+    }
+]

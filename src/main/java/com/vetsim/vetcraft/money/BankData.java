@@ -23,11 +23,17 @@ public class BankData extends SavedData {
     public static double getBalance(ServerLevel level, Player player) {
         return getServerData(level).balances.getOrDefault(player.getUUID(), 0.0);
     }
+
     public static void deposit(ServerLevel level, Player player, double amount) {
+        deposit(level, player.getUUID(), amount);
+    }
+
+    public static void deposit(ServerLevel level, UUID uuid, double amount) {
         BankData data = getServerData(level);
-        data.balances.put(player.getUUID(), data.balances.getOrDefault(player.getUUID(), 0.0) + amount);
+        data.balances.put(uuid, data.balances.getOrDefault(uuid, 0.0) + amount);
         data.setDirty();
     }
+
     public static boolean withdraw(ServerLevel level, Player player, double amount) {
         BankData data = getServerData(level);
         double current = data.balances.getOrDefault(player.getUUID(), 0.0);
@@ -91,6 +97,7 @@ public class BankData extends SavedData {
     public static boolean hasClaimedGrant(ServerLevel level, Player player, String grantId) {
         return getServerData(level).claimedGrants.getOrDefault(player.getUUID(), new ArrayList<>()).contains(grantId);
     }
+
     public static void claimGrant(ServerLevel level, Player player, String grantId) {
         BankData data = getServerData(level);
         List<String> list = data.claimedGrants.computeIfAbsent(player.getUUID(), k -> new ArrayList<>());
@@ -102,23 +109,28 @@ public class BankData extends SavedData {
 
     // --- SAVE & LOAD ---
     public static BankData getServerData(ServerLevel level) {
-        return level.getDataStorage().computeIfAbsent(new SavedData.Factory<>(BankData::new, BankData::load, DataFixTypes.LEVEL), "vetsim_bank_data");
+        return level.getDataStorage().computeIfAbsent(
+                new SavedData.Factory<>(BankData::new, BankData::load, DataFixTypes.LEVEL), "vetsim_bank_data");
     }
 
     public static BankData load(CompoundTag tag) {
         BankData data = new BankData();
         // Balances
         ListTag balanceList = tag.getList("Balances", Tag.TAG_COMPOUND);
-        for (int i = 0; i < balanceList.size(); i++) data.balances.put(balanceList.getCompound(i).getUUID("UUID"), balanceList.getCompound(i).getDouble("Amount"));
+        for (int i = 0; i < balanceList.size(); i++)
+            data.balances.put(balanceList.getCompound(i).getUUID("UUID"),
+                    balanceList.getCompound(i).getDouble("Amount"));
         // Loans
         ListTag loanList = tag.getList("Loans", Tag.TAG_COMPOUND);
-        for (int i = 0; i < loanList.size(); i++) data.loans.put(loanList.getCompound(i).getUUID("UUID"), loanList.getCompound(i).getDouble("Amount"));
+        for (int i = 0; i < loanList.size(); i++)
+            data.loans.put(loanList.getCompound(i).getUUID("UUID"), loanList.getCompound(i).getDouble("Amount"));
         // Grants
         ListTag grantListTag = tag.getList("Grants", Tag.TAG_COMPOUND);
         for (int i = 0; i < grantListTag.size(); i++) {
             ListTag strList = grantListTag.getCompound(i).getList("List", Tag.TAG_STRING);
             List<String> g = new ArrayList<>();
-            for(int j=0; j<strList.size(); j++) g.add(strList.getString(j));
+            for (int j = 0; j < strList.size(); j++)
+                g.add(strList.getString(j));
             data.claimedGrants.put(grantListTag.getCompound(i).getUUID("UUID"), g);
         }
 
@@ -135,20 +147,33 @@ public class BankData extends SavedData {
     public CompoundTag save(CompoundTag tag) {
         // Balances
         ListTag balanceList = new ListTag();
-        balances.forEach((k, v) -> { CompoundTag t = new CompoundTag(); t.putUUID("UUID", k); t.putDouble("Amount", v); balanceList.add(t); });
+        balances.forEach((k, v) -> {
+            CompoundTag t = new CompoundTag();
+            t.putUUID("UUID", k);
+            t.putDouble("Amount", v);
+            balanceList.add(t);
+        });
         tag.put("Balances", balanceList);
 
         // Loans
         ListTag loanList = new ListTag();
-        loans.forEach((k, v) -> { CompoundTag t = new CompoundTag(); t.putUUID("UUID", k); t.putDouble("Amount", v); loanList.add(t); });
+        loans.forEach((k, v) -> {
+            CompoundTag t = new CompoundTag();
+            t.putUUID("UUID", k);
+            t.putDouble("Amount", v);
+            loanList.add(t);
+        });
         tag.put("Loans", loanList);
 
         // Grants
         ListTag grantList = new ListTag();
         claimedGrants.forEach((k, v) -> {
-            CompoundTag t = new CompoundTag(); t.putUUID("UUID", k);
-            ListTag sl = new ListTag(); v.forEach(s -> sl.add(StringTag.valueOf(s)));
-            t.put("List", sl); grantList.add(t);
+            CompoundTag t = new CompoundTag();
+            t.putUUID("UUID", k);
+            ListTag sl = new ListTag();
+            v.forEach(s -> sl.add(StringTag.valueOf(s)));
+            t.put("List", sl);
+            grantList.add(t);
         });
         tag.put("Grants", grantList);
 

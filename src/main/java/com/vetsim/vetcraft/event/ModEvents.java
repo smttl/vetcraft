@@ -5,6 +5,8 @@ import com.vetsim.vetcraft.entity.CattleEntity;
 import com.vetsim.vetcraft.entity.CelepEntity;
 import com.vetsim.vetcraft.entity.ModEntities;
 import com.vetsim.vetcraft.renderer.CattleRenderer;
+import com.vetsim.vetcraft.renderer.CelepRenderer;
+import com.vetsim.vetcraft.renderer.WorkerRenderer;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
@@ -18,13 +20,15 @@ public class ModEvents {
     public static void registerAttributes(EntityAttributeCreationEvent event) {
         // Can, Hız gibi özellikleri kaydeder
         event.put(ModEntities.CATTLE.get(), CattleEntity.createAttributes().build());
-
         event.put(ModEntities.CELEP.get(), CelepEntity.createAttributes().build());
+        event.put(ModEntities.WORKER.get(), com.vetsim.vetcraft.entity.worker.WorkerEntity.createAttributes().build());
     }
 
     @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
         // Görünümü (Render) kaydeder
         event.registerEntityRenderer(ModEntities.CATTLE.get(), CattleRenderer::new);
+        event.registerEntityRenderer(ModEntities.CELEP.get(), CelepRenderer::new); // CELEP RENDERER EKSİKTİ
+        event.registerEntityRenderer(ModEntities.WORKER.get(), com.vetsim.vetcraft.renderer.WorkerRenderer::new);
     }
 }

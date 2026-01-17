@@ -94,7 +94,31 @@ Basit çiftleştirme yerine bilimsel ıslah yapın.
 ## 🔧 Teknik Bilgi
 *   **Mod Yükleyici:** NeoForge
 *   **Minecraft Sürümü:** 1.20.4
-
+*   **Geliştirici:** VetSim Ekibi
 
 ---
-*VetCraft, gerçek veterinerlik prosedürlerini oyunlaştırmayı amaçlayan bir simülasyon projesidir.*
+
+## 📂 Proje Dokümantasyonu (Project Documentation)
+
+Projenin farklı modülleri hakkında detaylı bilgi için aşağıdaki dokümanları inceleyebilirsiniz:
+
+### ⚙️ Konfigürasyon ve Varlıklar (Assets & Config)
+*   [🐄 Irklar (Breeds)](src/main/resources/assets/vetcraft/breeds/README.md) - Irk özellikleri, genetik ve varyasyonlar.
+*   [🦠 Hastalıklar (Diseases)](src/main/resources/assets/vetcraft/diseases/README.md) - Hastalık tanımları, belirtiler ve tedavi.
+*   [🏥 İlaçlar (Medicines)](src/main/resources/assets/vetcraft/medicines/README.md) - İlaç etkileri, yan etkiler ve kullanım.
+*   [🌾 Yemler (Feeds)](src/main/resources/assets/vetcraft/data/README.md) - Yem değerleri ve besleme.
+*   [🎨 Dokular (Textures)](src/main/resources/assets/vetcraft/textures/README.md) - Görsel kaynaklar ve modelleme.
+
+### 💻 Kaynak Kod Modülleri (Source Code)
+*   [🧱 Bloklar (Block)](src/main/java/com/vetsim/vetcraft/block/README.md)
+*   [⚙️ Ayarlar (Config)](src/main/java/com/vetsim/vetcraft/config/README.md)
+*   [animals Varlıklar (Entity)](src/main/java/com/vetsim/vetcraft/entity/README.md) - Yapay zeka, genetik ve fizyoloji.
+*   [🔔 Olaylar (Event)](src/main/java/com/vetsim/vetcraft/event/README.md)
+*   [🖥️ Arayüz (GUI)](src/main/java/com/vetsim/vetcraft/gui/README.md)
+*   [🚀 Başlatma (Init)](src/main/java/com/vetsim/vetcraft/init/README.md)
+*   [🧪 Eşyalar (Item)](src/main/java/com/vetsim/vetcraft/item/README.md)
+*   [📡 Ağ (Network)](src/main/java/com/vetsim/vetcraft/network/README.md) - Paketler ve Client-Server senkronizasyonu.
+*   [🎨 Render (Renderer)](src/main/java/com/vetsim/vetcraft/renderer/README.md)
+*   [💼 Servisler (Service)](src/main/java/com/vetsim/vetcraft/service/README.md) - Market, Banka ve İş mantığı.
+*   [🛠️ Araçlar (Util)](src/main/java/com/vetsim/vetcraft/util/README.md)
+

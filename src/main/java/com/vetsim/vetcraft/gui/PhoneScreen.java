@@ -15,7 +15,8 @@ import static com.vetsim.vetcraft.money.BankData.claimGrant;
 import static com.vetsim.vetcraft.money.BankData.payLoan;
 
 public class PhoneScreen extends AbstractContainerScreen<PhoneMenu> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation("minecraft", "textures/gui/container/creative_inventory/tab_items.png");
+    private static final ResourceLocation TEXTURE = new ResourceLocation("minecraft",
+            "textures/gui/container/creative_inventory/tab_items.png");
 
     // Hangi sekmedeyiz? (0: Ziraat, 1: Hayvan, 2: Market, 3: Satış)
     private int currentTab = 0;
@@ -23,7 +24,7 @@ public class PhoneScreen extends AbstractContainerScreen<PhoneMenu> {
     public PhoneScreen(PhoneMenu menu, Inventory inventory, Component title) {
         super(menu, inventory, title);
         this.imageWidth = 195;
-        this.imageHeight = 136;
+        this.imageHeight = 170; // Genişletildi (Hizmet sekmesi için)
         this.inventoryLabelY = 1000; // Yazıları gizle
         this.titleLabelY = 1000;
     }
@@ -40,7 +41,7 @@ public class PhoneScreen extends AbstractContainerScreen<PhoneMenu> {
         int x = (width - imageWidth) / 2;
         int y = (height - imageHeight) / 2;
 
-        // --- SOL TARAFTAKİ 4 ANA BUTON (NAVİGASYON) ---
+        // --- SOL TARAFTAKİ ANA BUTONLAR (NAVİGASYON) ---
         int btnW = 50;
         int btnH = 20;
 
@@ -60,43 +61,45 @@ public class PhoneScreen extends AbstractContainerScreen<PhoneMenu> {
         addRenderableWidget(Button.builder(Component.literal("Satış"), b -> changeTab(3))
                 .bounds(x - 55, y + 85, btnW, btnH).build());
 
+        // 5. GENETİK
+        addRenderableWidget(Button.builder(Component.literal("Genetik"), b -> changeTab(4))
+                .bounds(x - 55, y + 110, btnW, btnH).build());
+
+        // 6. HİZMETLER (YENİ)
+        addRenderableWidget(Button.builder(Component.literal("Hizmet"), b -> changeTab(5))
+                .bounds(x - 55, y + 135, btnW, btnH).build());
 
         // --- ORTA ALAN (SEKMEYE GÖRE DEĞİŞİR) ---
 
         if (currentTab == 0) { // ZİRAAT EKRANI (KREDİ VE HİBE)
-
-            // --- ÜST KISIM: BİLGİ VE KREDİ ---
-            // "Kredi Çek (10.000 TL)" Butonu
+            // ... (Eski kodlar aynı)
             addRenderableWidget(Button.builder(Component.literal("Kredi Çek (+10k)"), b -> takeLoan(10000))
                     .bounds(x + 10, y + 20, 80, 20)
-                    .tooltip(net.minecraft.client.gui.components.Tooltip.create(Component.literal("Faizsiz 10.000 TL borç al.\nLimit: 50.000 TL")))
+                    .tooltip(net.minecraft.client.gui.components.Tooltip
+                            .create(Component.literal("Faizsiz 10.000 TL borç al.\nLimit: 50.000 TL")))
                     .build());
 
-            // "Borç Öde (5.000 TL)" Butonu
             addRenderableWidget(Button.builder(Component.literal("Borç Öde (-5k)"), b -> payLoan(5000))
                     .bounds(x + 10, y + 45, 80, 20)
                     .build());
 
-            // "Bakiye Sorgula" Butonu
             addRenderableWidget(Button.builder(Component.literal("Hesap Özeti"), b -> checkBalance())
                     .bounds(x + 10, y + 70, 80, 20).build());
 
+            addRenderableWidget(
+                    Button.builder(Component.literal("Genç Çiftçi\nHibesi (5k)"), b -> claimGrant("genc_ciftci", 5000))
+                            .bounds(x + 100, y + 20, 80, 30)
+                            .tooltip(net.minecraft.client.gui.components.Tooltip
+                                    .create(Component.literal("Yeni başlayanlar için devlet desteği.\nTek seferlik.")))
+                            .build());
 
-            // --- SAĞ KISIM: HİBELER (GRANTS) ---
-
-            // Hibe 1: Genç Çiftçi (Başlangıç Desteği)
-            addRenderableWidget(Button.builder(Component.literal("Genç Çiftçi\nHibesi (5k)"), b -> claimGrant("genc_ciftci", 5000))
-                    .bounds(x + 100, y + 20, 80, 30)
-                    .tooltip(net.minecraft.client.gui.components.Tooltip.create(Component.literal("Yeni başlayanlar için devlet desteği.\nTek seferlik.")))
-                    .build());
-
-            // Hibe 2: Ekipman Desteği
-            addRenderableWidget(Button.builder(Component.literal("Ekipman\nDesteği (2k)"), b -> claimGrant("ekipman", 2000))
-                    .bounds(x + 100, y + 55, 80, 30)
-                    .tooltip(net.minecraft.client.gui.components.Tooltip.create(Component.literal("Tıbbi malzeme alımı için destek.\nTek seferlik.")))
-                    .build());
-        }
-        else if (currentTab == 1) { // HAYVAN PAZARI
+            addRenderableWidget(
+                    Button.builder(Component.literal("Ekipman\nDesteği (2k)"), b -> claimGrant("ekipman", 2000))
+                            .bounds(x + 100, y + 55, 80, 30)
+                            .tooltip(net.minecraft.client.gui.components.Tooltip
+                                    .create(Component.literal("Tıbbi malzeme alımı için destek.\nTek seferlik.")))
+                            .build());
+        } else if (currentTab == 1) { // HAYVAN PAZARI
             addRenderableWidget(Button.builder(Component.literal("Holstein (15k)"), b -> buyAnimal("Holstein", 15000))
                     .bounds(x + 10, y + 20, 80, 20).build());
             addRenderableWidget(Button.builder(Component.literal("Angus (25k)"), b -> buyAnimal("Angus", 25000))
@@ -105,52 +108,87 @@ public class PhoneScreen extends AbstractContainerScreen<PhoneMenu> {
                     .bounds(x + 10, y + 50, 80, 20).build());
             addRenderableWidget(Button.builder(Component.literal("Jersey (18k)"), b -> buyAnimal("Jersey", 18000))
                     .bounds(x + 100, y + 50, 80, 20).build());
-        }
-        else if (currentTab == 2) { // MARKET (JSON'dan gelenler)
+        } else if (currentTab == 2) { // MARKET
             int i = 0;
             for (MarketManager.MarketItem item : MarketManager.BUY_LIST) {
-                if (i >= 6) break; // Ekrana sığacak kadar
-                int col = i % 2; // 2 sütunlu
+                if (i >= 6)
+                    break;
+                int col = i % 2;
                 int row = i / 2;
-                addRenderableWidget(Button.builder(Component.literal(item.name + " (" + item.price + ")"), b -> buyItem(item.itemId, item.price))
+                addRenderableWidget(Button
+                        .builder(Component.literal(item.name + " (" + item.price + ")"),
+                                b -> buyItem(item.itemId, item.price))
                         .bounds(x + 10 + (col * 90), y + 20 + (row * 25), 85, 20).build());
                 i++;
             }
-        }
-        else if (currentTab == 3) { // SATIŞ EKRANI
+        } else if (currentTab == 3) { // SATIŞ EKRANI
             addRenderableWidget(Button.builder(Component.literal("§2TÜMÜNÜ NAKİTE ÇEVİR"), b -> sellAll())
                     .bounds(x + 25, y + 40, 150, 40).build());
+        } else if (currentTab == 4) { // GENETİK MARKET
+            addRenderableWidget(Button
+                    .builder(Component.literal("Holstein (Ticari) - 2k"), b -> buyStraw("Holstein", "Commercial", 2000))
+                    .bounds(x + 10, y + 20, 160, 20).build());
+
+            addRenderableWidget(Button
+                    .builder(Component.literal("Holstein (Üstün) - 8k"), b -> buyStraw("Holstein", "Superior", 8000))
+                    .bounds(x + 10, y + 45, 160, 20).build());
+
+            addRenderableWidget(Button
+                    .builder(Component.literal("§dHolstein (ELİT) - 20k"), b -> buyStraw("Holstein", "Elite", 20000))
+                    .bounds(x + 10, y + 70, 160, 20).build());
+        } else if (currentTab == 5) { // HİZMETLER (YENİ)
+            // Kiralık İşçi Butonu
+            addRenderableWidget(Button
+                    .builder(Component.literal("Kiralık İşçi (Afghan) - 100 TL/Gün"), b -> hireWorker(100))
+                    .bounds(x + 10, y + 20, 175, 20)
+                    .tooltip(net.minecraft.client.gui.components.Tooltip
+                            .create(Component.literal("Otomatik süt sağar.\nHer gün yenilenmelidir.")))
+                    .build());
         }
     }
 
     private void changeTab(int tabId) {
         this.currentTab = tabId;
         rebuildMenu();
+        if (tabId == 0) {
+            checkBalance(); // Auto-refresh balance
+        }
     }
 
     // --- İŞLEMLER ---
     private void checkBalance() {
         PacketDistributor.SERVER.noArg().send(new PhonePacket("CHECK_BALANCE", "", 0));
-        this.onClose();
+        // this.onClose(); // REMOVED: Keep screen open to see update
     }
+
     private void buyAnimal(String breed, int price) {
         PacketDistributor.SERVER.noArg().send(new PhonePacket("BUY_ANIMAL", breed, price));
     }
+
     private void buyItem(String itemId, int price) {
         PacketDistributor.SERVER.noArg().send(new PhonePacket("BUY_ITEM", itemId, price));
     }
+
     private void sellAll() {
         PacketDistributor.SERVER.noArg().send(new PhonePacket("SELL_ALL", "", 0));
         this.onClose();
     }
 
-    // --- BU METOD EKSİKTİ, BU YÜZDEN HATA VERİYORDU ---
+    private void buyStraw(String breed, String quality, int price) {
+        PacketDistributor.SERVER.noArg().send(new PhonePacket("BUY_STRAW", breed + ":" + quality, price));
+    }
+
+    // YENİ
+    private void hireWorker(int price) {
+        PacketDistributor.SERVER.noArg().send(new PhonePacket("HIRE_WORKER", "", price));
+        this.onClose();
+    }
+
     @Override
     protected void renderBg(GuiGraphics graphics, float partialTick, int mouseX, int mouseY) {
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
         int x = (width - imageWidth) / 2;
         int y = (height - imageHeight) / 2;
-        // Arka planı çiz
         graphics.blit(TEXTURE, x, y, 0, 0, imageWidth, imageHeight);
     }
 
@@ -163,28 +201,33 @@ public class PhoneScreen extends AbstractContainerScreen<PhoneMenu> {
         int x = (width - imageWidth) / 2;
         int y = (height - imageHeight) / 2;
 
-        // --- BAŞLIKLAR ---
         String title = switch (currentTab) {
             case 0 -> "Ziraat Bankası Mobil";
             case 1 -> "Canlı Hayvan Borsası";
             case 2 -> "Veteriner Market";
             case 3 -> "Hızlı Satış Noktası";
+            case 4 -> "Genetik Bankası";
+            case 5 -> "Çiftlik Hizmetleri";
             default -> "VetPhone";
         };
         graphics.drawCenteredString(this.font, "§l" + title, x + (imageWidth / 2), y + 6, 0x404040);
 
-        // ZİRAAT LOGOSU VEYA YAZISI
         if (currentTab == 0) {
-            graphics.drawCenteredString(this.font, "", x + (imageWidth / 2), y + 40, 0xFFFFFF);
-            graphics.drawCenteredString(this.font, "", x + (imageWidth / 2), y + 65, 0xA0A0A0);
-        }
-        else if (currentTab == 3) {
+            double balance = com.vetsim.vetcraft.client.ClientBankData.getBalance();
+            graphics.drawCenteredString(this.font, "Bakiye: " + balance + " TL", x + (imageWidth / 2), y + 40,
+                    0xFFFFFF);
+            graphics.drawCenteredString(this.font, "Ziraat Bankası", x + (imageWidth / 2), y + 25, 0xA0A0A0);
+        } else if (currentTab == 3) {
             graphics.drawCenteredString(this.font, "Süt, Et ve Derileriniz", x + (imageWidth / 2), y + 90, 0x505050);
             graphics.drawCenteredString(this.font, "anında paraya çevrilir.", x + (imageWidth / 2), y + 100, 0x505050);
+        } else if (currentTab == 4) {
+            graphics.drawCenteredString(this.font, "Sertifikalı Boğa Spermaları", x + (imageWidth / 2), y + 95,
+                    0x505050);
+        } else if (currentTab == 5) {
+            graphics.drawCenteredString(this.font, "Personel Kiralama", x + (imageWidth / 2), y + 95, 0x505050);
         }
     }
 
-    // --- YENİ İŞLEMLER ---
     private void takeLoan(int amount) {
         PacketDistributor.SERVER.noArg().send(new PhonePacket("TAKE_LOAN", "", amount));
         this.onClose();

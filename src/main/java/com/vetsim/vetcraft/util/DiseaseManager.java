@@ -27,8 +27,8 @@ public class DiseaseManager {
     public static void loadDiseases() {
         try {
             Gson gson = new Gson();
-            // Dosya yolunu güncelledik (Tür spesifik)
-            InputStream stream = DiseaseManager.class.getResourceAsStream("/assets/vetsim/diseases/cattle.json");
+            // Dosya yolunu güncelledik (Mod ID: vetcraft)
+            InputStream stream = DiseaseManager.class.getResourceAsStream("/assets/vetcraft/diseases/cattle.json");
 
             if (stream == null) {
                 VetCraft.LOGGER.error("Sığır hastalık dosyası (cattle.json) bulunamadı!");
@@ -36,7 +36,8 @@ public class DiseaseManager {
             }
 
             Reader reader = new InputStreamReader(stream);
-            Type listType = new TypeToken<ArrayList<DiseaseData>>(){}.getType();
+            Type listType = new TypeToken<ArrayList<DiseaseData>>() {
+            }.getType();
 
             loadedDiseases.clear();
             List<DiseaseData> cattleDiseases = gson.fromJson(reader, listType);
@@ -61,14 +62,34 @@ public class DiseaseManager {
 
     public static DiseaseData getDiseaseById(String id) {
         for (DiseaseData d : loadedDiseases) {
-            if (d.id.equals(id)) return d;
+            if (d.id.equals(id))
+                return d;
         }
         return null;
     }
 
+    public static String getDiseaseName(String id) {
+        if ("NONE".equals(id))
+            return "Temiz";
+        DiseaseData data = getDiseaseById(id);
+        if (data != null) {
+            return data.displayName;
+        }
+
+        // Debugging
+        StringBuilder sb = new StringBuilder();
+        for (DiseaseData d : loadedDiseases) {
+            sb.append(d.id).append(", ");
+        }
+        VetCraft.LOGGER.error("Hastalık bulunamadı: " + id + ". Yüklü olanlar: " + sb.toString());
+
+        return "Bilinmiyor (" + id + ")";
+    }
+
     // --- YENİ EKLENEN METOT: YEMEK RİSK HESAPLAMA ---
     public static String calculateRisk(ItemStack stack, RandomSource random) {
-        if (stack.isEmpty()) return null;
+        if (stack.isEmpty())
+            return null;
 
         // Yenen eşyanın string ID'sini al (örn: "minecraft:rotten_flesh")
         String itemId = BuiltInRegistries.ITEM.getKey(stack.getItem()).toString();
@@ -90,5 +111,9 @@ public class DiseaseManager {
             }
         }
         return null; // Risk yok
+    }
+
+    public static List<DiseaseData> getDiseases() {
+        return loadedDiseases;
     }
 }

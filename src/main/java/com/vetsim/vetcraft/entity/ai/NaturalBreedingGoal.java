@@ -33,6 +33,14 @@ public class NaturalBreedingGoal extends Goal {
             return false;
         }
 
+        // --- DÜZELTME (Fix Uncontrolled Breeding) ---
+        // Eğer bu hayvan Dişiyse ve KIZGINLIKTA DEĞİLSE (Progesteron > 2.5) eş
+        // aramasın!
+        if (!this.animal.isMale() && this.animal.getReproductionSystem().getProgesterone() >= 2.5f) {
+            return false;
+        }
+        // ---------------------------------------------
+
         // 3. Performans için rastgele çalıştır (%0.5 şans - her tick değil)
         if (this.animal.getRandom().nextInt(200) != 0) {
             return false;
@@ -69,7 +77,7 @@ public class NaturalBreedingGoal extends Goal {
     // --- HER TICK (OYUN DÖNGÜSÜ) ---
     @Override
     public void tick() {
-        this.animal.getLookControl().setLookAt(this.partner, 10.0F, (float)this.animal.getMaxHeadXRot());
+        this.animal.getLookControl().setLookAt(this.partner, 10.0F, (float) this.animal.getMaxHeadXRot());
         this.animal.getNavigation().moveTo(this.partner, this.speedModifier);
 
         // Yakınlaşma Kontrolü (2 blok mesafe)
@@ -84,8 +92,10 @@ public class NaturalBreedingGoal extends Goal {
 
     // --- ÇİFTLEŞME MANTIĞI (GÜNCELLENDİ) ---
     private void breed() {
-        // Sadece sunucuda işlem yap (Client tarafında yaparsan hayalet entityler oluşur)
-        if (!(this.animal.level() instanceof ServerLevel)) return;
+        // Sadece sunucuda işlem yap (Client tarafında yaparsan hayalet entityler
+        // oluşur)
+        if (!(this.animal.level() instanceof ServerLevel))
+            return;
 
         CattleEntity male = null;
         CattleEntity female = null;
@@ -113,7 +123,8 @@ public class NaturalBreedingGoal extends Goal {
         // Erkek 1 gün (24000 tick) boyunca tekrar çiftleşemesin
         male.setBreedingCooldown(24000);
 
-        // Not: Dişiye cooldown vermiyoruz çünkü "isPregnant" kontrolü onu zaten engelliyor.
+        // Not: Dişiye cooldown vermiyoruz çünkü "isPregnant" kontrolü onu zaten
+        // engelliyor.
         // Doğum yaptıktan sonra kendi kodunda cooldown alacak.
 
         // Opsiyonel: Kalp efektleri veya ses eklenebilir ama şu an sade kalsın.
@@ -122,21 +133,40 @@ public class NaturalBreedingGoal extends Goal {
     // --- PARTNER BULMA ---
     private CattleEntity findPartner() {
         // 8 blok yarıçapındaki diğer sığırları listele
-        List<CattleEntity> list = this.animal.level().getEntitiesOfClass(CattleEntity.class, this.animal.getBoundingBox().inflate(8.0D));
+        List<CattleEntity> list = this.animal.level().getEntitiesOfClass(CattleEntity.class,
+                this.animal.getBoundingBox().inflate(8.0D));
 
         for (CattleEntity potentialPartner : list) {
             // Kendisi olmasın
-            if (this.animal == potentialPartner) continue;
-
+            if (this.animal == potentialPartner)
+                continue;
+            if (potentialPartner.getReproductionSystem().getProgesterone() >= 2.5f) {
+                continue; // Kızgınlıkta değilse bu ineği es geç
+            }
             // Partner bebek olmamalı
-            if (potentialPartner.isBaby()) continue;
+            if (potentialPartner.isBaby())
+                continue;
 
             // Cinsiyetler ZIT olmalı (Biri Erkek, Biri Dişi)
-            if (this.animal.isMale() == potentialPartner.isMale()) continue;
+            if (this.animal.isMale() == potentialPartner.isMale())
+                continue;
 
             // Partnerin de çiftleşmeye uygun olması lazım (Cooldown yok, Hamile değil)
-            if (potentialPartner.getBreedingCooldown() > 0) continue;
-            if (!potentialPartner.isMale() && potentialPartner.isPregnant()) continue; // Dişiyse ve hamileyse seçme
+            if (potentialPartner.getBreedingCooldown() > 0)
+                continue;
+            if (!potentialPartner.isMale() && potentialPartner.isPregnant())
+                continue; // Dişiyse ve hamileyse seçme
+
+            // --- YENİ: FİZYOLOJİK KONTROLLER (AI) ---
+            // 1. BCS Kontrolü (2.5 - 4.5 arası olmalı)
+            float partnerBcs = potentialPartner.getMetabolismSystem().getBcs();
+            if (partnerBcs < 2.5f || partnerBcs > 4.5f)
+                continue;
+
+            // 2. Stres Kontrolü (%60 altı olmalı)
+            if (potentialPartner.getHealthSystem().getStressLevel() > 60)
+                continue;
+            // ----------------------------------------
 
             // Tüm şartlar uydu, partner bulundu!
             return potentialPartner;

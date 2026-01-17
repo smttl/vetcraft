@@ -1,0 +1,57 @@
+[
+    {
+        "id": "holstein",
+        "displayName": "Holstein",
+        "milkMultiplier": 2.0,
+        "diseaseResistance": 0.4,
+        "heatTolerance": "NEUTRAL",
+        "minBcs": 2.5,
+        "maxBcs": 4.0,
+        "texturePath": "textures/entity/cattle/holstein.png",
+        "scale": 1.0
+    },
+    {
+        "id": "jersey",
+        "displayName": "Jersey",
+        "milkMultiplier": 1.6,
+        "diseaseResistance": 0.6,
+        "heatTolerance": "HEAT",
+        "minBcs": 3.0,
+        "maxBcs": 4.5,
+        "texturePath": "textures/entity/cattle/jersey.png",
+        "scale": 0.8
+    },
+    {
+        "id": "angus",
+        "displayName": "Angus",
+        "milkMultiplier": 0.5,
+        "diseaseResistance": 0.9,
+        "heatTolerance": "COLD",
+        "minBcs": 3.5,
+        "maxBcs": 5.0,
+        "texturePath": "textures/entity/cattle/angus.png",
+        "scale": 1.2
+    },
+    {
+        "id": "simmental",
+        "displayName": "Simmental",
+        "milkMultiplier": 1.2,
+        "diseaseResistance": 0.7,
+        "heatTolerance": "COLD",
+        "minBcs": 3.0,
+        "maxBcs": 4.5,
+        "texturePath": "textures/entity/cattle/simmental.png",
+        "scale": 1.2
+    },
+    {
+        "id": "native",
+        "displayName": "Yerli (Native)",
+        "milkMultiplier": 0.8,
+        "diseaseResistance": 1.0,
+        "heatTolerance": "HEAT",
+        "minBcs": 2.0,
+        "maxBcs": 4.0,
+        "texturePath": "textures/entity/cattle/default.png",
+        "scale": 0.6
+    }
+]

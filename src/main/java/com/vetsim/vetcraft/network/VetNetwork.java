@@ -15,5 +15,9 @@ public class VetNetwork {
                 .versioned("1.0");
 
         registrar.play(PhonePacket.ID, PhonePacket::new, handler -> handler.server(PhonePacket::handle));
+        registrar.play(BalanceSyncPacket.ID, BalanceSyncPacket::new,
+                handler -> handler.client(BalanceSyncPacket::handle));
+        registrar.play(VetDiagnosisPacket.ID, VetDiagnosisPacket::new,
+                handler -> handler.client(VetDiagnosisPacket::handle));
     }
 }

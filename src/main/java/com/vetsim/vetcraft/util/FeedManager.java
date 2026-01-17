@@ -19,7 +19,7 @@ public class FeedManager {
         FEED_MAP.clear();
         try {
             // Dosya yolunu kontrol et
-            String path = "/assets/vetsim/data/feeds.json";
+            String path = "/assets/vetcraft/data/feeds.json";
             InputStream stream = FeedManager.class.getResourceAsStream(path);
 
             if (stream == null) {
@@ -60,7 +60,8 @@ public class FeedManager {
 
     // ItemStack (Eşya) verince Yem Verisini döndürür
     public static FeedData getFeedData(ItemStack stack) {
-        if (stack.isEmpty()) return null;
+        if (stack.isEmpty())
+            return null;
 
         String itemId = BuiltInRegistries.ITEM.getKey(stack.getItem()).toString();
         return FEED_MAP.get(itemId);
@@ -68,7 +69,8 @@ public class FeedManager {
 
     // String ID (Yazı) verince Yem Verisini döndürür (AI için gerekli)
     public static FeedData getFeedData(String itemId) {
-        if (!itemId.contains(":")) itemId = "minecraft:" + itemId;
+        if (!itemId.contains(":"))
+            itemId = "minecraft:" + itemId;
         return FEED_MAP.get(itemId);
     }
 }

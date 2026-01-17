@@ -1,0 +1,79 @@
+{
+    "drugs": [
+        {
+            "id": "vetcraft:antibiotics",
+            "category": "CURE",
+            "stress_impact": 10,
+            "bcs_impact": -0.05,
+            "toxicity": 5.0,
+            "withdrawal_days": 3
+        },
+        {
+            "id": "vetcraft:penicillin",
+            "category": "CURE",
+            "stress_impact": 15,
+            "bcs_impact": -0.10,
+            "toxicity": 8.0,
+            "withdrawal_days": 7
+        },
+        {
+            "id": "vetcraft:fmd_vaccine",
+            "category": "FUNCTIONAL",
+            "action": "VACCINE",
+            "stress_impact": 20,
+            "bcs_impact": 0.0,
+            "toxicity": 2.0,
+            "withdrawal_days": 0
+        },
+        {
+            "id": "vetcraft:flunixin",
+            "category": "CURE",
+            "stress_impact": -10,
+            "bcs_impact": 0.0,
+            "toxicity": 3.0,
+            "withdrawal_days": 4
+        },
+        {
+            "id": "vetcraft:multivitamin",
+            "category": "FUNCTIONAL",
+            "stress_impact": -5,
+            "bcs_impact": 0.05,
+            "toxicity": 0.0,
+            "withdrawal_days": 0
+        },
+        {
+            "id": "vetcraft:hormone_pgf2a",
+            "category": "FUNCTIONAL",
+            "action": "ABORT_OR_ESTRUS",
+            "stress_impact": 50,
+            "bcs_impact": -0.5,
+            "toxicity": 10.0,
+            "withdrawal_days": 5
+        },
+        {
+            "id": "vetcraft:hormone_oxytocin",
+            "category": "FUNCTIONAL",
+            "action": "MILK_LETDOWN",
+            "stress_impact": 5,
+            "bcs_impact": 0.0,
+            "toxicity": 1.0,
+            "withdrawal_days": 0
+        },
+        {
+            "id": "vetcraft:oil_bottle",
+            "category": "CURE",
+            "stress_impact": 5,
+            "bcs_impact": 0.0,
+            "toxicity": 0.0,
+            "withdrawal_days": 0
+        },
+        {
+            "id": "vetcraft:vinegar",
+            "category": "CURE",
+            "stress_impact": 10,
+            "bcs_impact": -0.05,
+            "toxicity": 0.5,
+            "withdrawal_days": 0
+        }
+    ]
+}

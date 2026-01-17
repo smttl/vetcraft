@@ -18,7 +18,7 @@ public class DrugManager {
         DRUG_MAP.clear();
         try {
             // Tek bir dev dosya: drugs.json
-            String path = "/assets/vetsim/medicines/drugs.json";
+            String path = "/assets/vetcraft/medicines/drugs.json";
             InputStream stream = DrugManager.class.getResourceAsStream(path);
 
             if (stream == null) {
@@ -39,8 +39,11 @@ public class DrugManager {
                 String action = obj.has("action") ? obj.get("action").getAsString() : "NONE";
                 int stress = obj.has("stress_impact") ? obj.get("stress_impact").getAsInt() : 0;
                 float bcs = obj.has("bcs_impact") ? obj.get("bcs_impact").getAsFloat() : 0.0f;
+                // Yeni Özellikler (Phase 18)
+                float toxicity = obj.has("toxicity") ? obj.get("toxicity").getAsFloat() : 0.0f;
+                int withdrawal = obj.has("withdrawal_days") ? obj.get("withdrawal_days").getAsInt() : 0;
 
-                DRUG_MAP.put(id, new DrugData(id, cat, action, stress, bcs));
+                DRUG_MAP.put(id, new DrugData(id, cat, action, stress, bcs, toxicity, withdrawal));
             }
             System.out.println("VetCraft: " + DRUG_MAP.size() + " farmakolojik ürün yüklendi.");
 

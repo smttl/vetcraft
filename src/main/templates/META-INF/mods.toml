@@ -4,25 +4,25 @@ license="All Rights Reserved"
 issueTrackerURL="https://github.com/vetsim/issues"
 
 [[mods]]
-modId="vetsim" # İŞTE EKSİK OLAN KISIM BUYDU
-version="1.0.0"
+modId="vetcraft" # Fixed to match VetCraft.MOD_ID
+version="2.0.3"
 displayName="VetCraft"
 displayURL="https://vetsim.com"
-logoFile="icon.png" # Eğer logon yoksa hata vermez, boş geçer
+logoFile="icon.png"
 credits="Veteriner Simulasyonu Ekibi"
 authors="SeninAdin"
 description='''
     Gerçekçi veterinerlik ve hayvancılık simülasyonu.
     '''
 
-[[dependencies.vetsim]]
+[[dependencies.vetcraft]]
 modId="neoforge"
 type="required"
 versionRange="[20.4,)"
 ordering="NONE"
 side="BOTH"
 
-[[dependencies.vetsim]]
+[[dependencies.vetcraft]]
 modId="minecraft"
 type="required"
 versionRange="[1.20.4,)"

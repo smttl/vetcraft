@@ -1,0 +1,90 @@
+[
+    {
+        "itemId": "minecraft:wheat_seeds",
+        "price": 2
+    },
+    {
+        "itemId": "vetcraft:stethoscope",
+        "price": 250
+    },
+    {
+        "itemId": "vetcraft:vet_clipboard",
+        "price": 100
+    },
+    {
+        "itemId": "vetcraft:thermometer",
+        "price": 150
+    },
+    {
+        "itemId": "vetcraft:halter",
+        "price": 50
+    },
+    {
+        "itemId": "vetcraft:feed_trough",
+        "price": 300
+    },
+    {
+        "itemId": "vetcraft:empty_blood_tube",
+        "price": 5
+    },
+    {
+        "itemId": "vetcraft:empty_straw",
+        "price": 2
+    },
+    {
+        "itemId": "vetcraft:antibiotics",
+        "price": 120
+    },
+    {
+        "itemId": "vetcraft:penicillin",
+        "price": 150
+    },
+    {
+        "itemId": "vetcraft:flunixin",
+        "price": 180
+    },
+    {
+        "itemId": "vetcraft:fmd_vaccine",
+        "price": 500
+    },
+    {
+        "itemId": "vetcraft:multivitamin",
+        "price": 80
+    },
+    {
+        "itemId": "vetcraft:vinegar",
+        "price": 20
+    },
+    {
+        "itemId": "vetcraft:oil_bottle",
+        "price": 60
+    },
+    {
+        "itemId": "vetcraft:hormone_pgf2a",
+        "price": 200
+    },
+    {
+        "itemId": "vetcraft:hormone_gnrh",
+        "price": 250
+    },
+    {
+        "itemId": "vetcraft:hormone_oxytocin",
+        "price": 100
+    },
+    {
+        "itemId": "vetcraft:celep_whistle",
+        "price": 1000
+    },
+    {
+        "itemId": "vetcraft:smart_phone",
+        "price": 1500
+    },
+    {
+        "itemId": "vetcraft:debit_card",
+        "price": 0
+    },
+    {
+        "itemId": "vetcraft:calf_formula",
+        "price": 50
+    }
+]

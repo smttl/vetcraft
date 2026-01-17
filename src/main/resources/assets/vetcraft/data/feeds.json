@@ -1,0 +1,60 @@
+{
+    "feeds": [
+        {
+            "id": "minecraft:wheat",
+            "name": "Buğday",
+            "nutrition": 20,
+            "is_dry": false,
+            "protein": 0.12
+        },
+        {
+            "id": "minecraft:hay_block",
+            "name": "Saman Balyası",
+            "nutrition": 50,
+            "is_dry": true,
+            "protein": 0.08
+        },
+        {
+            "id": "vetcraft:alfalfa",
+            "name": "Yonca",
+            "nutrition": 30,
+            "is_dry": true,
+            "protein": 0.18
+        },
+        {
+            "id": "minecraft:carrot",
+            "name": "Havuç",
+            "nutrition": 15,
+            "is_dry": false,
+            "protein": 0.09
+        },
+        {
+            "id": "minecraft:apple",
+            "name": "Elma",
+            "nutrition": 10,
+            "is_dry": false,
+            "protein": 0.05
+        },
+        {
+            "id": "minecraft:beetroot",
+            "name": "Pancar",
+            "nutrition": 15,
+            "is_dry": false,
+            "protein": 0.08
+        },
+        {
+            "id": "minecraft:golden_carrot",
+            "name": "Enerji Yemi (Altın Havuç)",
+            "nutrition": 60,
+            "is_dry": false,
+            "protein": 0.20
+        },
+        {
+            "id": "minecraft:bread",
+            "name": "Ekmek",
+            "nutrition": 25,
+            "is_dry": true,
+            "protein": 0.10
+        }
+    ]
+}

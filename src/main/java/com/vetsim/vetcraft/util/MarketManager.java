@@ -37,26 +37,44 @@ public class MarketManager {
 
         try {
             // 1. ALIM LİSTESİ (Tedarik)
-            InputStream streamBuy = MarketManager.class.getResourceAsStream("/assets/vetsim/data/shop_buy.json");
+            InputStream streamBuy = MarketManager.class.getResourceAsStream("/assets/vetcraft/data/shop_buy.json");
             if (streamBuy != null) {
                 Reader reader = new InputStreamReader(streamBuy);
-                Type listType = new TypeToken<ArrayList<MarketItem>>(){}.getType();
+                Type listType = new TypeToken<ArrayList<MarketItem>>() {
+                }.getType();
                 List<MarketItem> list = gson.fromJson(reader, listType);
+
+                // İsimleri Otomatik Doldur (Eksikse)
+                for (MarketItem item : list) {
+                    if (item.name == null || item.name.isEmpty()) {
+                        try {
+                            Item regItem = BuiltInRegistries.ITEM.get(new ResourceLocation(item.itemId));
+                            item.name = regItem.getDescription().getString();
+                            // Eğer hala boşsa (Bazen server-client senkronu yoksa) ID kullan
+                            if (item.name.isEmpty())
+                                item.name = item.itemId;
+                        } catch (Exception e) {
+                            item.name = item.itemId;
+                        }
+                    }
+                }
                 BUY_LIST.addAll(list);
             }
 
             // 2. SATIM LİSTESİ (Ürünler)
-            InputStream streamSell = MarketManager.class.getResourceAsStream("/assets/vetsim/data/shop_sell.json");
+            InputStream streamSell = MarketManager.class.getResourceAsStream("/assets/vetcraft/data/shop_sell.json");
             if (streamSell != null) {
                 Reader reader = new InputStreamReader(streamSell);
-                Type listType = new TypeToken<ArrayList<MarketItem>>(){}.getType();
+                Type listType = new TypeToken<ArrayList<MarketItem>>() {
+                }.getType();
                 List<MarketItem> list = gson.fromJson(reader, listType);
                 for (MarketItem item : list) {
                     SELL_MAP.put(item.itemId, item.price);
                 }
             }
 
-            VetCraft.LOGGER.info("Market verileri yüklendi. Alınabilir: " + BUY_LIST.size() + ", Satılabilir: " + SELL_MAP.size());
+            VetCraft.LOGGER.info(
+                    "Market verileri yüklendi. Alınabilir: " + BUY_LIST.size() + ", Satılabilir: " + SELL_MAP.size());
 
         } catch (Exception e) {
             e.printStackTrace();

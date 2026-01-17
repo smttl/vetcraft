@@ -10,10 +10,11 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class ModCreativeModeTabs {
-    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
-            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, VetCraft.MOD_ID);
+    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister
+            .create(Registries.CREATIVE_MODE_TAB, VetCraft.MOD_ID);
 
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> VET_TAB = CREATIVE_MODE_TABS.register("vet_tab",
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> VET_TAB = CREATIVE_MODE_TABS.register(
+            "vet_tab",
             () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup.vetsim_tab")) // Dil dosyasındaki isim
                     .icon(() -> new ItemStack(ModItems.STETHOSCOPE.get())) // Sekme ikonu (Stetoskop)
@@ -36,6 +37,10 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.PENICILLIN.get());
                         pOutput.accept(ModItems.FLUNIXIN.get());
                         pOutput.accept(ModItems.MULTIVITAMIN.get());
+                        pOutput.accept(ModItems.FMD_VACCINE.get()); // Yeni
+                        pOutput.accept(ModItems.VINEGAR.get()); // Yeni
+                        pOutput.accept(ModItems.OIL_BOTTLE.get()); // Yeni
+                        pOutput.accept(ModItems.DEXTROSE_SERUM.get()); // Yeni
 
                         // --- 3. HORMONLAR ---
                         pOutput.accept(ModItems.HORMONE_PGF2A.get());
@@ -43,15 +48,19 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.HORMONE_OXYTOCIN.get());
 
                         // --- 4. EKONOMİ VE TİCARET (YENİ) ---
-                        pOutput.accept(ModItems.DEBIT_CARD.get());     // Banka Kartı
-                        pOutput.accept(ModItems.CELEP_WHISTLE.get());  // Celep Düdüğü
-                        pOutput.accept(ModItems.CELEP_SPAWN_EGG.get());// Celep Yumurtası
-                        //pOutput.accept(ModItems.MARKET_BLOCK_ITEM.get()); // Pazar Bloğu (Varsa)
+                        pOutput.accept(ModItems.DEBIT_CARD.get()); // Banka Kartı
+                        pOutput.accept(ModItems.CELEP_WHISTLE.get()); // Celep Düdüğü
+                        pOutput.accept(ModItems.CATTLE_SPAWN_EGG.get());// Sığır Yumurtası
+                        // pOutput.accept(ModItems.MARKET_BLOCK_ITEM.get()); // Pazar Bloğu (Varsa)
                         pOutput.accept(ModItems.SMART_PHONE.get());
 
                         // --- 5. BLOKLAR VE YEMLER ---
                         pOutput.accept(ModItems.FEED_TROUGH_ITEM.get());
                         pOutput.accept(ModItems.MANURE.get());
+                        pOutput.accept(ModItems.SALT_LICK.get()); // Yeni
+                        pOutput.accept(ModItems.ALFALFA.get()); // Yeni
+                        pOutput.accept(ModItems.COLOSTRUM_BUCKET.get()); // Yeni
+                        pOutput.accept(ModItems.CALF_FORMULA.get()); // Yeni
 
                     })
                     .build());
