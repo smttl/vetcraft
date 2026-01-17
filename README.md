@@ -94,7 +94,7 @@ Basit çiftleştirme yerine bilimsel ıslah yapın.
 ## 🔧 Teknik Bilgi
 *   **Mod Yükleyici:** NeoForge
 *   **Minecraft Sürümü:** 1.20.4
-*   **Geliştirici:** VetSim Ekibi
+*   **Geliştirici:** smtl
 
 ---
 
