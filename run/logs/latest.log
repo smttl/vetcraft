@@ -1,62 +1,58 @@
-[18Oca2026 01:49:34.043] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeclientuserdev, --version, 20.4.251, --assetIndex, 12, --assetsDir, /Users/smtl/.gradle/caches/neoformruntime/assets, --gameDir, ., --fml.neoForgeVersion, 20.4.251, --fml.fmlVersion, 2.0.17, --fml.mcVersion, 1.20.4, --fml.neoFormVersion, 20240627.114801]
-[18Oca2026 01:49:34.045] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.17 by Microsoft; OS Mac OS X arch aarch64 version 26.3
-[18Oca2026 01:49:34.096] [main/INFO] [net.neoforged.fml.loading.ImmediateWindowHandler/]: Loading ImmediateWindowProvider fmlearlywindow
-[18Oca2026 01:49:34.739] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.6
-[18Oca2026 01:49:34.884] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.5
-[18Oca2026 01:49:34.900] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.4
-[18Oca2026 01:49:34.915] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.3
-[18Oca2026 01:49:34.925] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.2
-[18Oca2026 01:49:34.934] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.1
-[18Oca2026 01:49:34.951] [main/INFO] [EARLYDISPLAY/]: Requested GL version 4.1 got version 4.1
-[18Oca2026 01:49:35.118] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/Users/smtl/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.13.4+mixin.0.8.5/8adf0cff1795a169141b9e16ad7b9f6e2527a990/sponge-mixin-0.13.4+mixin.0.8.5.jar%23123!/ Service=ModLauncher Env=CLIENT
-[18Oca2026 01:49:35.161] [pool-2-thread-1/INFO] [EARLYDISPLAY/]: GL info: Apple M2 GL version 4.1 Metal - 90.5, Apple
-[18Oca2026 01:49:35.238] [main/WARN] [net.neoforged.jarjar.selection.JarSelector/]: Attempted to select a dependency jar for JarJar which was passed in as source: mixinextras-neoforge-0.4.1.jar. Using Mod File: /Users/smtl/.gradle/caches/modules-2/files-2.1/io.github.llamalad7/mixinextras-neoforge/0.4.1/eff97772ecd0dcf8e52cdbafd3b3ccec425f8314/mixinextras-neoforge-0.4.1.jar
-[18Oca2026 01:49:35.238] [main/INFO] [net.neoforged.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
-[18Oca2026 01:49:36.059] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeclientuserdev' with arguments [--version, 20.4.251, --gameDir, ., --assetsDir, /Users/smtl/.gradle/caches/neoformruntime/assets, --assetIndex, 12]
-[18Oca2026 01:49:39.689] [Datafixer Bootstrap/INFO] [com.mojang.datafixers.DataFixerBuilder/]: 198 Datafixer optimizations took 86 milliseconds
-[18Oca2026 01:49:40.979] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
-[18Oca2026 01:49:40.979] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
-[18Oca2026 01:49:40.982] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
-[18Oca2026 01:49:40.982] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
-[18Oca2026 01:49:40.983] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
-[18Oca2026 01:49:41.045] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/Users/smtl/Downloads/vetcraft%202/build/moddev/artifacts/neoforge-20.4.251.jar%23175!/assets/.mcassetsroot' uses unexpected schema
-[18Oca2026 01:49:41.045] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/Users/smtl/Downloads/vetcraft%202/build/moddev/artifacts/neoforge-20.4.251.jar%23175!/data/.mcassetsroot' uses unexpected schema
-[18Oca2026 01:49:41.056] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
-[18Oca2026 01:49:41.060] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: Dev
-[18Oca2026 01:49:41.094] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.3.2+13
-[18Oca2026 01:49:41.481] [modloading-worker-0/INFO] [net.neoforged.neoforge.common.NeoForgeMod/NEOFORGE-MOD]: NeoForge mod loading, version 20.4.251, for MC 1.20.4 with MCP 20240627.114801
-[18Oca2026 01:49:41.996] [Render thread/INFO] [net.neoforged.neoforge.gametest.GameTestHooks/]: Enabled Gametest Namespaces: [vetcraft]
-[18Oca2026 01:49:42.744] [Render thread/INFO] [net.minecraft.server.packs.resources.ReloadableResourceManager/]: Reloading ResourceManager: mod_resources, mod:vetcraft, mod:neoforge, vanilla
-[18Oca2026 01:49:42.744] [Render thread/WARN] [net.minecraft.server.packs.PathPackResources/]: Non [a-z0-9_.-] character in namespace .DS_Store in pack , ignoring
-[18Oca2026 01:49:42.745] [Render thread/WARN] [net.minecraft.server.packs.PathPackResources/]: Non [a-z0-9_.-] character in namespace .DS_Store in pack , ignoring
-[18Oca2026 01:49:42.830] [Worker-Main-5/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_all_no_pua-15.1.04.hex, loading
-[18Oca2026 01:49:43.020] [Render thread/INFO] [com.vetsim.vetcraft.VetCraft/]: Market verileri yüklendi. Alınabilir: 22, Satılabilir: 5
-[18Oca2026 01:49:43.026] [Render thread/INFO] [com.vetsim.vetcraft.VetCraft/]: Sığır Hastalıkları Yüklendi: 9 adet.
-[18Oca2026 01:49:43.027] [Render thread/INFO] [com.vetsim.vetcraft.VetCraft/]: Sığır Irkları Yüklendi: 5 adet.
-[18Oca2026 01:49:43.028] [Render thread/INFO] [com.vetsim.vetcraft.VetCraft/]: VetCraft: Hastalık ve Irk veritabanı yüklendi.
-[18Oca2026 01:49:43.522] [Worker-Main-6/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'minecraft:block/cauldron_level0' referenced from: vetcraft:feed_trough#level=0: java.io.FileNotFoundException: minecraft:models/block/cauldron_level0.json
-[18Oca2026 01:49:43.907] [Worker-Main-6/WARN] [net.minecraft.client.resources.model.ModelManager/]: Missing textures in model vetcraft:salt_lick#:
+[19Oca2026 23:59:02.544] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeclientuserdev, --version, 20.4.251, --assetIndex, 12, --assetsDir, C:\\Users\\samet\\.gradle\\caches\\neoformruntime\\assets, --gameDir, ., --fml.neoForgeVersion, 20.4.251, --fml.fmlVersion, 2.0.17, --fml.mcVersion, 1.20.4, --fml.neoFormVersion, 20240627.114801]
+[19Oca2026 23:59:02.548] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.17 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
+[19Oca2026 23:59:02.664] [main/INFO] [net.neoforged.fml.loading.ImmediateWindowHandler/]: Loading ImmediateWindowProvider fmlearlywindow
+[19Oca2026 23:59:02.876] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.6
+[19Oca2026 23:59:03.069] [main/INFO] [EARLYDISPLAY/]: Requested GL version 4.6 got version 4.6
+[19Oca2026 23:59:03.260] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/samet/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.13.4+mixin.0.8.5/8adf0cff1795a169141b9e16ad7b9f6e2527a990/sponge-mixin-0.13.4+mixin.0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
+[19Oca2026 23:59:03.394] [pool-2-thread-1/INFO] [EARLYDISPLAY/]: GL info: NVIDIA GeForce RTX 4060/PCIe/SSE2 GL version 4.6.0 NVIDIA 581.57, NVIDIA Corporation
+[19Oca2026 23:59:03.582] [main/INFO] [net.neoforged.fml.loading.moddiscovery.JarInJarDependencyLocator/]: Found 1 dependencies adding them to mods collection
+[19Oca2026 23:59:05.418] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeclientuserdev' with arguments [--version, 20.4.251, --gameDir, ., --assetsDir, C:\Users\samet\.gradle\caches\neoformruntime\assets, --assetIndex, 12]
+[19Oca2026 23:59:06.443] [main/WARN] [oshi.driver.windows.perfmon.PerfmonDisabled/]: Invalid registry value type detected for PerfOS counters. Should be REG_DWORD. Ignoring: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PerfOS\Performance\Disable Performance Counters.
+[19Oca2026 23:59:09.602] [Datafixer Bootstrap/INFO] [com.mojang.datafixers.DataFixerBuilder/]: 198 Datafixer optimizations took 157 milliseconds
+[19Oca2026 23:59:11.974] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[19Oca2026 23:59:11.976] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
+[19Oca2026 23:59:11.978] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[19Oca2026 23:59:11.978] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[19Oca2026 23:59:11.980] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[19Oca2026 23:59:12.103] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/samet/Pictures/vetcraft/build/moddev/artifacts/neoforge-20.4.251.jar%23180!/assets/.mcassetsroot' uses unexpected schema
+[19Oca2026 23:59:12.104] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/samet/Pictures/vetcraft/build/moddev/artifacts/neoforge-20.4.251.jar%23180!/data/.mcassetsroot' uses unexpected schema
+[19Oca2026 23:59:12.141] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[19Oca2026 23:59:12.156] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: Dev
+[19Oca2026 23:59:12.241] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.3.2+13
+[19Oca2026 23:59:12.471] [modloading-worker-0/INFO] [net.neoforged.neoforge.common.NeoForgeMod/NEOFORGE-MOD]: NeoForge mod loading, version 20.4.251, for MC 1.20.4 with MCP 20240627.114801
+[19Oca2026 23:59:13.238] [Render thread/INFO] [net.neoforged.neoforge.gametest.GameTestHooks/]: Enabled Gametest Namespaces: [vetcraft]
+[19Oca2026 23:59:13.496] [Render thread/INFO] [net.minecraft.server.packs.resources.ReloadableResourceManager/]: Reloading ResourceManager: mod_resources, mod:vetcraft, mod:neoforge, vanilla
+[19Oca2026 23:59:13.643] [Worker-Main-12/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_all_no_pua-15.1.04.hex, loading
+[19Oca2026 23:59:13.781] [Render thread/INFO] [com.vetsim.vetcraft.VetCraft/]: Market verileri yüklendi. Alınabilir: 22, Satılabilir: 5
+[19Oca2026 23:59:13.858] [Render thread/INFO] [com.vetsim.vetcraft.VetCraft/]: Sığır Hastalıkları Yüklendi: 9 adet.
+[19Oca2026 23:59:13.885] [Render thread/INFO] [com.vetsim.vetcraft.VetCraft/]: Sığır Irkları Yüklendi: 5 adet.
+[19Oca2026 23:59:13.885] [Render thread/INFO] [com.vetsim.vetcraft.VetCraft/]: VetCraft: Hastalık ve Irk veritabanı yüklendi.
+[19Oca2026 23:59:14.540] [Worker-Main-4/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'minecraft:block/cauldron_level0' referenced from: vetcraft:feed_trough#level=0: java.io.FileNotFoundException: minecraft:models/block/cauldron_level0.json
+[19Oca2026 23:59:15.022] [Worker-Main-4/WARN] [net.minecraft.client.resources.model.ModelManager/]: Missing textures in model vetcraft:salt_lick#:
     minecraft:textures/atlas/blocks.png:minecraft:block/brick
-[18Oca2026 01:49:44.100] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:item.goat_horn.play
-[18Oca2026 01:49:44.100] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:entity.goat.screaming.horn_break
-[18Oca2026 01:49:44.100] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:entity.generic.wind_burst
-[18Oca2026 01:49:46.220] [Render thread/INFO] [com.mojang.blaze3d.audio.Library/]: OpenAL initialized on device R25f-30
-[18Oca2026 01:49:46.223] [Render thread/INFO] [net.minecraft.client.sounds.SoundEngine/SOUNDS]: Sound engine started
-[18Oca2026 01:49:46.290] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
-[18Oca2026 01:49:46.304] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
-[18Oca2026 01:49:46.304] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
-[18Oca2026 01:49:46.305] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
-[18Oca2026 01:49:46.306] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
-[18Oca2026 01:49:46.310] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
-[18Oca2026 01:49:46.311] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
-[18Oca2026 01:49:46.311] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
-[18Oca2026 01:49:46.312] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
-[18Oca2026 01:49:46.408] [Render thread/WARN] [net.minecraft.client.renderer.ShaderInstance/]: Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
-[18Oca2026 01:49:46.481] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
-[18Oca2026 01:49:46.482] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
-[18Oca2026 01:49:46.482] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
-[18Oca2026 01:49:46.482] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x512x0 minecraft:textures/atlas/gui.png-atlas
-[18Oca2026 01:49:58.133] [Render thread/ERROR] [net.minecraft.world.item.crafting.RecipeManager/]: Parsing error loading recipe vetcraft:halter
+[19Oca2026 23:59:15.319] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:item.goat_horn.play
+[19Oca2026 23:59:15.320] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:entity.goat.screaming.horn_break
+[19Oca2026 23:59:15.321] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:entity.generic.wind_burst
+[19Oca2026 23:59:15.413] [Render thread/INFO] [com.mojang.blaze3d.audio.Library/]: OpenAL initialized on device OpenAL Soft on R25f-30 (NVIDIA High Definition Audio)
+[19Oca2026 23:59:15.414] [Render thread/INFO] [net.minecraft.client.sounds.SoundEngine/SOUNDS]: Sound engine started
+[19Oca2026 23:59:15.537] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
+[19Oca2026 23:59:15.544] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
+[19Oca2026 23:59:15.545] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[19Oca2026 23:59:15.545] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[19Oca2026 23:59:15.545] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
+[19Oca2026 23:59:15.549] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
+[19Oca2026 23:59:15.549] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
+[19Oca2026 23:59:15.549] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[19Oca2026 23:59:15.549] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[19Oca2026 23:59:15.868] [Render thread/WARN] [net.minecraft.client.renderer.ShaderInstance/]: Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
+[19Oca2026 23:59:16.237] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
+[19Oca2026 23:59:16.238] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
+[19Oca2026 23:59:16.239] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[19Oca2026 23:59:16.239] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x512x0 minecraft:textures/atlas/gui.png-atlas
+[19Oca2026 23:59:21.162] [Render thread/WARN] [net.neoforged.neoforge.common.CommonHooks/WP]: The following mods have version differences that were not resolved:
+vetsim (version 1.0.0 -> MISSING)
+Things may not work well.
+[19Oca2026 23:59:21.873] [Render thread/ERROR] [net.minecraft.world.item.crafting.RecipeManager/]: Parsing error loading recipe vetcraft:halter
 com.google.gson.JsonParseException: Item must not be minecraft:air
 	at net.minecraft.Util.getOrThrow(Util.java:839) ~[neoforge-20.4.251.jar:?]
 	at net.neoforged.neoforge.common.conditions.ICondition.getWithWithConditionsCodec(ICondition.java:46) ~[neoforge-20.4.251.jar:?]
@@ -115,7 +111,7 @@ com.google.gson.JsonParseException: Item must not be minecraft:air
 	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
 	at java.lang.reflect.Method.invoke(Method.java:569) ~[?:?]
 	at net.neoforged.devlaunch.Main.main(Main.java:57) ~[?:?]
-[18Oca2026 01:49:58.209] [Render thread/ERROR] [net.minecraft.world.item.crafting.RecipeManager/]: Parsing error loading recipe vetcraft:celep_whistle
+[19Oca2026 23:59:21.929] [Render thread/ERROR] [net.minecraft.world.item.crafting.RecipeManager/]: Parsing error loading recipe vetsim:smart_phone
 com.google.gson.JsonParseException: Item must not be minecraft:air
 	at net.minecraft.Util.getOrThrow(Util.java:839) ~[neoforge-20.4.251.jar:?]
 	at net.neoforged.neoforge.common.conditions.ICondition.getWithWithConditionsCodec(ICondition.java:46) ~[neoforge-20.4.251.jar:?]
@@ -174,7 +170,7 @@ com.google.gson.JsonParseException: Item must not be minecraft:air
 	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
 	at java.lang.reflect.Method.invoke(Method.java:569) ~[?:?]
 	at net.neoforged.devlaunch.Main.main(Main.java:57) ~[?:?]
-[18Oca2026 01:49:58.219] [Render thread/ERROR] [net.minecraft.world.item.crafting.RecipeManager/]: Parsing error loading recipe vetcraft:smart_phone
+[19Oca2026 23:59:21.939] [Render thread/ERROR] [net.minecraft.world.item.crafting.RecipeManager/]: Parsing error loading recipe vetsim:stethoscope
 com.google.gson.JsonParseException: Item must not be minecraft:air
 	at net.minecraft.Util.getOrThrow(Util.java:839) ~[neoforge-20.4.251.jar:?]
 	at net.neoforged.neoforge.common.conditions.ICondition.getWithWithConditionsCodec(ICondition.java:46) ~[neoforge-20.4.251.jar:?]
@@ -233,7 +229,7 @@ com.google.gson.JsonParseException: Item must not be minecraft:air
 	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
 	at java.lang.reflect.Method.invoke(Method.java:569) ~[?:?]
 	at net.neoforged.devlaunch.Main.main(Main.java:57) ~[?:?]
-[18Oca2026 01:49:58.221] [Render thread/ERROR] [net.minecraft.world.item.crafting.RecipeManager/]: Parsing error loading recipe vetcraft:stethoscope
+[19Oca2026 23:59:21.944] [Render thread/ERROR] [net.minecraft.world.item.crafting.RecipeManager/]: Parsing error loading recipe vetsim:celep_whistle
 com.google.gson.JsonParseException: Item must not be minecraft:air
 	at net.minecraft.Util.getOrThrow(Util.java:839) ~[neoforge-20.4.251.jar:?]
 	at net.neoforged.neoforge.common.conditions.ICondition.getWithWithConditionsCodec(ICondition.java:46) ~[neoforge-20.4.251.jar:?]
@@ -292,122 +288,275 @@ com.google.gson.JsonParseException: Item must not be minecraft:air
 	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
 	at java.lang.reflect.Method.invoke(Method.java:569) ~[?:?]
 	at net.neoforged.devlaunch.Main.main(Main.java:57) ~[?:?]
-[18Oca2026 01:49:58.228] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 7 recipes
-[18Oca2026 01:49:58.349] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 1271 advancements
-[18Oca2026 01:49:58.665] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Starting integrated minecraft server version 1.20.4
-[18Oca2026 01:49:58.666] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
-[18Oca2026 01:49:59.825] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld
-[18Oca2026 01:50:01.767] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[18Oca2026 01:50:01.786] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[18Oca2026 01:50:01.786] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[18Oca2026 01:50:01.786] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[18Oca2026 01:50:01.837] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[18Oca2026 01:50:02.253] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Simmental, Pos: BlockPos{x=0, y=0, z=0}
-[18Oca2026 01:50:02.307] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Angus, Pos: BlockPos{x=0, y=0, z=0}
-[18Oca2026 01:50:02.329] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Simmental, Pos: BlockPos{x=0, y=0, z=0}
-[18Oca2026 01:50:02.331] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Jersey, Pos: BlockPos{x=0, y=0, z=0}
-[18Oca2026 01:50:02.334] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Jersey, Pos: BlockPos{x=0, y=0, z=0}
-[18Oca2026 01:50:02.350] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 23%
-[18Oca2026 01:50:02.363] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Simmental, Pos: BlockPos{x=0, y=0, z=0}
-[18Oca2026 01:50:02.363] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Yerli (Native), Pos: BlockPos{x=0, y=0, z=0}
-[18Oca2026 01:50:02.364] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Holstein, Pos: BlockPos{x=0, y=0, z=0}
-[18Oca2026 01:50:02.365] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Simmental, Pos: BlockPos{x=0, y=0, z=0}
-[18Oca2026 01:50:02.365] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Jersey, Pos: BlockPos{x=0, y=0, z=0}
-[18Oca2026 01:50:02.365] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Jersey, Pos: BlockPos{x=0, y=0, z=0}
-[18Oca2026 01:50:02.378] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Jersey, Pos: BlockPos{x=0, y=0, z=0}
-[18Oca2026 01:50:02.402] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Angus, Pos: BlockPos{x=0, y=0, z=0}
-[18Oca2026 01:50:02.418] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Holstein, Pos: BlockPos{x=0, y=0, z=0}
-[18Oca2026 01:50:02.420] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Simmental, Pos: BlockPos{x=0, y=0, z=0}
-[18Oca2026 01:50:02.425] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Jersey, Pos: BlockPos{x=0, y=0, z=0}
-[18Oca2026 01:50:02.426] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Simmental, Pos: BlockPos{x=0, y=0, z=0}
-[18Oca2026 01:50:02.427] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Yerli (Native), Pos: BlockPos{x=0, y=0, z=0}
-[18Oca2026 01:50:02.429] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Jersey, Pos: BlockPos{x=0, y=0, z=0}
-[18Oca2026 01:50:02.457] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Angus, Pos: BlockPos{x=0, y=0, z=0}
-[18Oca2026 01:50:02.467] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Holstein, Pos: BlockPos{x=0, y=0, z=0}
-[18Oca2026 01:50:02.467] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Holstein, Pos: BlockPos{x=0, y=0, z=0}
-[18Oca2026 01:50:02.468] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Simmental, Pos: BlockPos{x=0, y=0, z=0}
-[18Oca2026 01:50:02.468] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Yerli (Native), Pos: BlockPos{x=0, y=0, z=0}
-[18Oca2026 01:50:02.481] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Angus, Pos: BlockPos{x=0, y=0, z=0}
-[18Oca2026 01:50:02.510] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Yerli (Native), Pos: BlockPos{x=0, y=0, z=0}
-[18Oca2026 01:50:02.512] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Yerli (Native), Pos: BlockPos{x=0, y=0, z=0}
-[18Oca2026 01:50:02.577] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Yerli (Native), Pos: BlockPos{x=0, y=0, z=0}
-[18Oca2026 01:50:02.578] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Jersey, Pos: BlockPos{x=0, y=0, z=0}
-[18Oca2026 01:50:02.631] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Jersey, Pos: BlockPos{x=0, y=0, z=0}
-[18Oca2026 01:50:02.709] [Server thread/INFO] [net.neoforged.neoforge.server.permission.PermissionAPI/]: Successfully initialized permission handler neoforge:default_handler
-[18Oca2026 01:50:02.709] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Time elapsed: 2875 ms
-[18Oca2026 01:50:02.841] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing view distance to 12, from 10
-[18Oca2026 01:50:02.841] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing simulation distance to 12, from 0
-[18Oca2026 01:50:03.156] [Server thread/INFO] [net.minecraft.server.players.PlayerList/]: Dev[local:E:db1e3734] logged in with entity id 294 at (-11.83411024816713, 69.37429331309657, -110.72737561434344)
-[18Oca2026 01:50:03.205] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev joined the game
-[18Oca2026 01:50:03.334] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 58 advancements
-[18Oca2026 01:50:03.399] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Yerli (Native), Pos: BlockPos{x=0, y=0, z=0}
-[18Oca2026 01:50:08.841] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💧 Hidrasyon: % 88 (✔)
-[18Oca2026 01:50:08.846] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💨 Gaz Seviyesi: % 0
-[18Oca2026 01:50:20.186] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💧 Hidrasyon: % 88 (✔)
-[18Oca2026 01:50:20.187] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💨 Gaz Seviyesi: % 0
-[18Oca2026 01:50:25.738] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💧 Hidrasyon: % 99 (✔)
-[18Oca2026 01:50:25.739] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💨 Gaz Seviyesi: % 0
-[18Oca2026 01:50:30.787] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💧 Hidrasyon: % 99 (✔)
-[18Oca2026 01:50:30.793] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💨 Gaz Seviyesi: % 0
-[18Oca2026 01:50:35.359] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
-[18Oca2026 01:50:35.376] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[18Oca2026 01:50:35.400] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[18Oca2026 01:50:35.402] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[18Oca2026 01:50:41.089] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💧 Hidrasyon: % 96 (✔)
-[18Oca2026 01:50:41.090] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💨 Gaz Seviyesi: % 0
-[18Oca2026 01:50:51.685] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💧 Hidrasyon: % 99 (✔)
-[18Oca2026 01:50:51.691] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💨 Gaz Seviyesi: % 0
-[18Oca2026 01:50:57.382] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ❌ Başarısız: Hayvan aşırı stresli! (Gebeliği reddediyor)
-[18Oca2026 01:50:57.383] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] (Stres: 100.0/100)
-[18Oca2026 01:50:57.383] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] İpucu: PGF2a veya GnRH kullanarak döngüyü düzenleyin.
-[18Oca2026 01:50:58.079] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ❌ Başarısız: Hayvan aşırı stresli! (Gebeliği reddediyor)
-[18Oca2026 01:50:58.079] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] (Stres: 100.0/100)
-[18Oca2026 01:50:58.079] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] İpucu: PGF2a veya GnRH kullanarak döngüyü düzenleyin.
-[18Oca2026 01:50:59.409] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
-[18Oca2026 01:50:59.414] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[18Oca2026 01:50:59.430] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[18Oca2026 01:50:59.430] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[18Oca2026 01:51:04.001] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💧 Hidrasyon: % 99 (✔)
-[18Oca2026 01:51:04.003] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💨 Gaz Seviyesi: % 0
-[18Oca2026 01:51:06.443] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT]  ✓ Pnömoni (Zatürre) tedavisi tamamlandı.
-[18Oca2026 01:51:06.454] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT]  ❌ Tedavi başarısız! Yanıt vermedi (Pnömoni (Zatürre)).
-[18Oca2026 01:51:07.988] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT]  ⏳ Hayvan şu an nekahet (iyileşme) döneminde.
-[18Oca2026 01:51:07.998] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT]  ✓ Pnömoni (Zatürre) tedavisi tamamlandı.
-[18Oca2026 01:51:11.790] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT]  ✓ Pnömoni (Zatürre) tedavisi tamamlandı.
-[18Oca2026 01:51:11.801] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT]  ✓ Pnömoni (Zatürre) tedavisi tamamlandı.
-[18Oca2026 01:51:17.183] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT]  ⏳ Hayvan şu an nekahet (iyileşme) döneminde.
-[18Oca2026 01:51:17.195] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ❌ Başarısız: Hayvan aşırı stresli! (Gebeliği reddediyor)
-[18Oca2026 01:51:17.195] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] (Stres: 100.0/100)
-[18Oca2026 01:51:17.195] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] İpucu: PGF2a veya GnRH kullanarak döngüyü düzenleyin.
-[18Oca2026 01:51:23.340] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT]  ⏳ Hayvan şu an nekahet (iyileşme) döneminde.
-[18Oca2026 01:51:23.351] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ❌ Başarısız: Hayvan aşırı stresli! (Gebeliği reddediyor)
-[18Oca2026 01:51:23.352] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] (Stres: 100.0/100)
-[18Oca2026 01:51:23.352] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] İpucu: PGF2a veya GnRH kullanarak döngüyü düzenleyin.
-[18Oca2026 01:51:26.909] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
-[18Oca2026 01:51:26.922] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[18Oca2026 01:51:26.937] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[18Oca2026 01:51:26.938] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[18Oca2026 01:51:59.409] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
-[18Oca2026 01:51:59.420] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[18Oca2026 01:51:59.433] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[18Oca2026 01:51:59.434] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[18Oca2026 01:52:14.611] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT]  ⏳ Hayvan şu an nekahet (iyileşme) döneminde.
-[18Oca2026 01:52:14.623] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💧 Hidrasyon: % 98 (✔)
-[18Oca2026 01:52:14.623] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💨 Gaz Seviyesi: % 0
-[18Oca2026 01:52:17.411] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT]  ⏳ Hayvan şu an nekahet (iyileşme) döneminde.
-[18Oca2026 01:52:17.422] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💧 Hidrasyon: % 97 (✔)
-[18Oca2026 01:52:17.423] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💨 Gaz Seviyesi: % 0
-[18Oca2026 01:52:19.413] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💧 Hidrasyon: % 85 (✔)
-[18Oca2026 01:52:19.413] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💨 Gaz Seviyesi: % 0
-[18Oca2026 01:52:21.573] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💧 Hidrasyon: % 97 (✔)
-[18Oca2026 01:52:21.573] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💨 Gaz Seviyesi: % 0
-[18Oca2026 01:52:23.807] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT]  ⏳ Hayvan şu an nekahet (iyileşme) döneminde.
-[18Oca2026 01:52:23.819] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💧 Hidrasyon: % 99 (✔)
-[18Oca2026 01:52:23.819] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💨 Gaz Seviyesi: % 0
-[18Oca2026 01:52:37.258] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT]  ⏳ Hayvan şu an nekahet (iyileşme) döneminde.
-[18Oca2026 01:52:37.270] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💧 Hidrasyon: % 95 (✔)
-[18Oca2026 01:52:37.270] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💨 Gaz Seviyesi: % 0
-[18Oca2026 01:52:41.059] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
-[18Oca2026 01:52:41.071] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[18Oca2026 01:52:41.083] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[18Oca2026 01:52:41.083] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[19Oca2026 23:59:21.956] [Render thread/ERROR] [net.minecraft.world.item.crafting.RecipeManager/]: Parsing error loading recipe vetcraft:celep_whistle
+com.google.gson.JsonParseException: Item must not be minecraft:air
+	at net.minecraft.Util.getOrThrow(Util.java:839) ~[neoforge-20.4.251.jar:?]
+	at net.neoforged.neoforge.common.conditions.ICondition.getWithWithConditionsCodec(ICondition.java:46) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.world.item.crafting.RecipeManager.fromJson(RecipeManager.java:155) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.world.item.crafting.RecipeManager.apply(RecipeManager.java:58) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.world.item.crafting.RecipeManager.apply(RecipeManager.java:36) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.server.packs.resources.SimplePreparableReloadListener.lambda$reload$1(SimplePreparableReloadListener.java:19) ~[neoforge-20.4.251.jar:?]
+	at java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718) ~[?:?]
+	at java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482) ~[?:?]
+	at net.minecraft.server.packs.resources.SimpleReloadInstance.lambda$new$3(SimpleReloadInstance.java:79) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:149) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:120) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.util.thread.BlockableEventLoop.managedBlock(BlockableEventLoop.java:133) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.screens.worldselection.WorldOpenFlows.loadWorldDataBlocking(WorldOpenFlows.java:199) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.screens.worldselection.WorldOpenFlows.loadWorldStem(WorldOpenFlows.java:141) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.screens.worldselection.WorldOpenFlows.loadLevel(WorldOpenFlows.java:351) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.screens.worldselection.WorldOpenFlows.loadLevel(WorldOpenFlows.java:342) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.screens.worldselection.WorldOpenFlows.checkForBackupAndLoad(WorldOpenFlows.java:323) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.screens.worldselection.WorldOpenFlows.checkForBackupAndLoad(WorldOpenFlows.java:256) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.screens.worldselection.WorldSelectionList$WorldListEntry.joinWorld(WorldSelectionList.java:522) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.screens.worldselection.WorldSelectionList$WorldListEntry.mouseClicked(WorldSelectionList.java:505) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.components.AbstractSelectionList.mouseClicked(AbstractSelectionList.java:276) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.components.events.ContainerEventHandler.mouseClicked(ContainerEventHandler.java:52) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.MouseHandler.lambda$onPress$0(MouseHandler.java:98) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.screens.Screen.wrapScreenError(Screen.java:446) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.MouseHandler.onPress(MouseHandler.java:95) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.MouseHandler.lambda$setup$4(MouseHandler.java:203) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.util.thread.BlockableEventLoop.execute(BlockableEventLoop.java:96) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.MouseHandler.lambda$setup$5(MouseHandler.java:203) ~[neoforge-20.4.251.jar:?]
+	at org.lwjgl.glfw.GLFWMouseButtonCallbackI.callback(GLFWMouseButtonCallbackI.java:43) ~[lwjgl-glfw-3.3.2.jar:build 13]
+	at org.lwjgl.system.JNI.invokeV(Native Method) ~[lwjgl-3.3.2.jar:build 13]
+	at org.lwjgl.glfw.GLFW.glfwWaitEventsTimeout(GLFW.java:3509) ~[lwjgl-glfw-3.3.2.jar:build 13]
+	at com.mojang.blaze3d.systems.RenderSystem.limitDisplayFPS(RenderSystem.java:207) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1294) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.Minecraft.run(Minecraft.java:824) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.main.Main.main(Main.java:244) ~[neoforge-20.4.251.jar:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:569) ~[?:?]
+	at net.neoforged.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:136) ~[loader-2.0.17.jar:2.0]
+	at net.neoforged.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:124) ~[loader-2.0.17.jar:2.0]
+	at net.neoforged.fml.loading.targets.ForgeClientUserdevLaunchHandler.runService(ForgeClientUserdevLaunchHandler.java:19) ~[loader-2.0.17.jar:2.0]
+	at net.neoforged.fml.loading.targets.CommonLaunchHandler.lambda$launchService$4(CommonLaunchHandler.java:118) ~[loader-2.0.17.jar:2.0]
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:108) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:78) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:141) ~[bootstraplauncher-1.1.2.jar:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:569) ~[?:?]
+	at net.neoforged.devlaunch.Main.main(Main.java:57) ~[?:?]
+[19Oca2026 23:59:21.965] [Render thread/ERROR] [net.minecraft.world.item.crafting.RecipeManager/]: Parsing error loading recipe vetcraft:smart_phone
+com.google.gson.JsonParseException: Item must not be minecraft:air
+	at net.minecraft.Util.getOrThrow(Util.java:839) ~[neoforge-20.4.251.jar:?]
+	at net.neoforged.neoforge.common.conditions.ICondition.getWithWithConditionsCodec(ICondition.java:46) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.world.item.crafting.RecipeManager.fromJson(RecipeManager.java:155) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.world.item.crafting.RecipeManager.apply(RecipeManager.java:58) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.world.item.crafting.RecipeManager.apply(RecipeManager.java:36) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.server.packs.resources.SimplePreparableReloadListener.lambda$reload$1(SimplePreparableReloadListener.java:19) ~[neoforge-20.4.251.jar:?]
+	at java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718) ~[?:?]
+	at java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482) ~[?:?]
+	at net.minecraft.server.packs.resources.SimpleReloadInstance.lambda$new$3(SimpleReloadInstance.java:79) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:149) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:120) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.util.thread.BlockableEventLoop.managedBlock(BlockableEventLoop.java:133) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.screens.worldselection.WorldOpenFlows.loadWorldDataBlocking(WorldOpenFlows.java:199) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.screens.worldselection.WorldOpenFlows.loadWorldStem(WorldOpenFlows.java:141) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.screens.worldselection.WorldOpenFlows.loadLevel(WorldOpenFlows.java:351) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.screens.worldselection.WorldOpenFlows.loadLevel(WorldOpenFlows.java:342) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.screens.worldselection.WorldOpenFlows.checkForBackupAndLoad(WorldOpenFlows.java:323) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.screens.worldselection.WorldOpenFlows.checkForBackupAndLoad(WorldOpenFlows.java:256) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.screens.worldselection.WorldSelectionList$WorldListEntry.joinWorld(WorldSelectionList.java:522) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.screens.worldselection.WorldSelectionList$WorldListEntry.mouseClicked(WorldSelectionList.java:505) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.components.AbstractSelectionList.mouseClicked(AbstractSelectionList.java:276) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.components.events.ContainerEventHandler.mouseClicked(ContainerEventHandler.java:52) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.MouseHandler.lambda$onPress$0(MouseHandler.java:98) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.screens.Screen.wrapScreenError(Screen.java:446) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.MouseHandler.onPress(MouseHandler.java:95) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.MouseHandler.lambda$setup$4(MouseHandler.java:203) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.util.thread.BlockableEventLoop.execute(BlockableEventLoop.java:96) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.MouseHandler.lambda$setup$5(MouseHandler.java:203) ~[neoforge-20.4.251.jar:?]
+	at org.lwjgl.glfw.GLFWMouseButtonCallbackI.callback(GLFWMouseButtonCallbackI.java:43) ~[lwjgl-glfw-3.3.2.jar:build 13]
+	at org.lwjgl.system.JNI.invokeV(Native Method) ~[lwjgl-3.3.2.jar:build 13]
+	at org.lwjgl.glfw.GLFW.glfwWaitEventsTimeout(GLFW.java:3509) ~[lwjgl-glfw-3.3.2.jar:build 13]
+	at com.mojang.blaze3d.systems.RenderSystem.limitDisplayFPS(RenderSystem.java:207) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1294) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.Minecraft.run(Minecraft.java:824) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.main.Main.main(Main.java:244) ~[neoforge-20.4.251.jar:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:569) ~[?:?]
+	at net.neoforged.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:136) ~[loader-2.0.17.jar:2.0]
+	at net.neoforged.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:124) ~[loader-2.0.17.jar:2.0]
+	at net.neoforged.fml.loading.targets.ForgeClientUserdevLaunchHandler.runService(ForgeClientUserdevLaunchHandler.java:19) ~[loader-2.0.17.jar:2.0]
+	at net.neoforged.fml.loading.targets.CommonLaunchHandler.lambda$launchService$4(CommonLaunchHandler.java:118) ~[loader-2.0.17.jar:2.0]
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:108) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:78) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:141) ~[bootstraplauncher-1.1.2.jar:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:569) ~[?:?]
+	at net.neoforged.devlaunch.Main.main(Main.java:57) ~[?:?]
+[19Oca2026 23:59:21.968] [Render thread/ERROR] [net.minecraft.world.item.crafting.RecipeManager/]: Parsing error loading recipe vetcraft:stethoscope
+com.google.gson.JsonParseException: Item must not be minecraft:air
+	at net.minecraft.Util.getOrThrow(Util.java:839) ~[neoforge-20.4.251.jar:?]
+	at net.neoforged.neoforge.common.conditions.ICondition.getWithWithConditionsCodec(ICondition.java:46) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.world.item.crafting.RecipeManager.fromJson(RecipeManager.java:155) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.world.item.crafting.RecipeManager.apply(RecipeManager.java:58) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.world.item.crafting.RecipeManager.apply(RecipeManager.java:36) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.server.packs.resources.SimplePreparableReloadListener.lambda$reload$1(SimplePreparableReloadListener.java:19) ~[neoforge-20.4.251.jar:?]
+	at java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718) ~[?:?]
+	at java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482) ~[?:?]
+	at net.minecraft.server.packs.resources.SimpleReloadInstance.lambda$new$3(SimpleReloadInstance.java:79) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:149) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:120) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.util.thread.BlockableEventLoop.managedBlock(BlockableEventLoop.java:133) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.screens.worldselection.WorldOpenFlows.loadWorldDataBlocking(WorldOpenFlows.java:199) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.screens.worldselection.WorldOpenFlows.loadWorldStem(WorldOpenFlows.java:141) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.screens.worldselection.WorldOpenFlows.loadLevel(WorldOpenFlows.java:351) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.screens.worldselection.WorldOpenFlows.loadLevel(WorldOpenFlows.java:342) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.screens.worldselection.WorldOpenFlows.checkForBackupAndLoad(WorldOpenFlows.java:323) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.screens.worldselection.WorldOpenFlows.checkForBackupAndLoad(WorldOpenFlows.java:256) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.screens.worldselection.WorldSelectionList$WorldListEntry.joinWorld(WorldSelectionList.java:522) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.screens.worldselection.WorldSelectionList$WorldListEntry.mouseClicked(WorldSelectionList.java:505) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.components.AbstractSelectionList.mouseClicked(AbstractSelectionList.java:276) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.components.events.ContainerEventHandler.mouseClicked(ContainerEventHandler.java:52) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.MouseHandler.lambda$onPress$0(MouseHandler.java:98) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.screens.Screen.wrapScreenError(Screen.java:446) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.MouseHandler.onPress(MouseHandler.java:95) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.MouseHandler.lambda$setup$4(MouseHandler.java:203) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.util.thread.BlockableEventLoop.execute(BlockableEventLoop.java:96) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.MouseHandler.lambda$setup$5(MouseHandler.java:203) ~[neoforge-20.4.251.jar:?]
+	at org.lwjgl.glfw.GLFWMouseButtonCallbackI.callback(GLFWMouseButtonCallbackI.java:43) ~[lwjgl-glfw-3.3.2.jar:build 13]
+	at org.lwjgl.system.JNI.invokeV(Native Method) ~[lwjgl-3.3.2.jar:build 13]
+	at org.lwjgl.glfw.GLFW.glfwWaitEventsTimeout(GLFW.java:3509) ~[lwjgl-glfw-3.3.2.jar:build 13]
+	at com.mojang.blaze3d.systems.RenderSystem.limitDisplayFPS(RenderSystem.java:207) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1294) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.Minecraft.run(Minecraft.java:824) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.main.Main.main(Main.java:244) ~[neoforge-20.4.251.jar:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:569) ~[?:?]
+	at net.neoforged.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:136) ~[loader-2.0.17.jar:2.0]
+	at net.neoforged.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:124) ~[loader-2.0.17.jar:2.0]
+	at net.neoforged.fml.loading.targets.ForgeClientUserdevLaunchHandler.runService(ForgeClientUserdevLaunchHandler.java:19) ~[loader-2.0.17.jar:2.0]
+	at net.neoforged.fml.loading.targets.CommonLaunchHandler.lambda$launchService$4(CommonLaunchHandler.java:118) ~[loader-2.0.17.jar:2.0]
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:108) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:78) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:141) ~[bootstraplauncher-1.1.2.jar:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:569) ~[?:?]
+	at net.neoforged.devlaunch.Main.main(Main.java:57) ~[?:?]
+[19Oca2026 23:59:21.975] [Render thread/ERROR] [net.minecraft.world.item.crafting.RecipeManager/]: Parsing error loading recipe vetsim:halter
+com.google.gson.JsonParseException: Item must not be minecraft:air
+	at net.minecraft.Util.getOrThrow(Util.java:839) ~[neoforge-20.4.251.jar:?]
+	at net.neoforged.neoforge.common.conditions.ICondition.getWithWithConditionsCodec(ICondition.java:46) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.world.item.crafting.RecipeManager.fromJson(RecipeManager.java:155) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.world.item.crafting.RecipeManager.apply(RecipeManager.java:58) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.world.item.crafting.RecipeManager.apply(RecipeManager.java:36) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.server.packs.resources.SimplePreparableReloadListener.lambda$reload$1(SimplePreparableReloadListener.java:19) ~[neoforge-20.4.251.jar:?]
+	at java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718) ~[?:?]
+	at java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482) ~[?:?]
+	at net.minecraft.server.packs.resources.SimpleReloadInstance.lambda$new$3(SimpleReloadInstance.java:79) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:149) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:120) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.util.thread.BlockableEventLoop.managedBlock(BlockableEventLoop.java:133) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.screens.worldselection.WorldOpenFlows.loadWorldDataBlocking(WorldOpenFlows.java:199) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.screens.worldselection.WorldOpenFlows.loadWorldStem(WorldOpenFlows.java:141) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.screens.worldselection.WorldOpenFlows.loadLevel(WorldOpenFlows.java:351) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.screens.worldselection.WorldOpenFlows.loadLevel(WorldOpenFlows.java:342) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.screens.worldselection.WorldOpenFlows.checkForBackupAndLoad(WorldOpenFlows.java:323) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.screens.worldselection.WorldOpenFlows.checkForBackupAndLoad(WorldOpenFlows.java:256) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.screens.worldselection.WorldSelectionList$WorldListEntry.joinWorld(WorldSelectionList.java:522) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.screens.worldselection.WorldSelectionList$WorldListEntry.mouseClicked(WorldSelectionList.java:505) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.components.AbstractSelectionList.mouseClicked(AbstractSelectionList.java:276) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.components.events.ContainerEventHandler.mouseClicked(ContainerEventHandler.java:52) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.MouseHandler.lambda$onPress$0(MouseHandler.java:98) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.gui.screens.Screen.wrapScreenError(Screen.java:446) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.MouseHandler.onPress(MouseHandler.java:95) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.MouseHandler.lambda$setup$4(MouseHandler.java:203) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.util.thread.BlockableEventLoop.execute(BlockableEventLoop.java:96) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.MouseHandler.lambda$setup$5(MouseHandler.java:203) ~[neoforge-20.4.251.jar:?]
+	at org.lwjgl.glfw.GLFWMouseButtonCallbackI.callback(GLFWMouseButtonCallbackI.java:43) ~[lwjgl-glfw-3.3.2.jar:build 13]
+	at org.lwjgl.system.JNI.invokeV(Native Method) ~[lwjgl-3.3.2.jar:build 13]
+	at org.lwjgl.glfw.GLFW.glfwWaitEventsTimeout(GLFW.java:3509) ~[lwjgl-glfw-3.3.2.jar:build 13]
+	at com.mojang.blaze3d.systems.RenderSystem.limitDisplayFPS(RenderSystem.java:207) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1294) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.Minecraft.run(Minecraft.java:824) ~[neoforge-20.4.251.jar:?]
+	at net.minecraft.client.main.Main.main(Main.java:244) ~[neoforge-20.4.251.jar:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:569) ~[?:?]
+	at net.neoforged.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:136) ~[loader-2.0.17.jar:2.0]
+	at net.neoforged.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:124) ~[loader-2.0.17.jar:2.0]
+	at net.neoforged.fml.loading.targets.ForgeClientUserdevLaunchHandler.runService(ForgeClientUserdevLaunchHandler.java:19) ~[loader-2.0.17.jar:2.0]
+	at net.neoforged.fml.loading.targets.CommonLaunchHandler.lambda$launchService$4(CommonLaunchHandler.java:118) ~[loader-2.0.17.jar:2.0]
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:108) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:78) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:141) ~[bootstraplauncher-1.1.2.jar:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:569) ~[?:?]
+	at net.neoforged.devlaunch.Main.main(Main.java:57) ~[?:?]
+[19Oca2026 23:59:21.979] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 7 recipes
+[19Oca2026 23:59:22.160] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 1271 advancements
+[19Oca2026 23:59:22.540] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Starting integrated minecraft server version 1.20.4
+[19Oca2026 23:59:22.540] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
+[19Oca2026 23:59:23.347] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld
+[19Oca2026 23:59:25.147] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[19Oca2026 23:59:25.279] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[19Oca2026 23:59:25.298] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[19Oca2026 23:59:25.298] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[19Oca2026 23:59:25.371] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[19Oca2026 23:59:25.877] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 51%
+[19Oca2026 23:59:26.084] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Time elapsed: 2725 ms
+[19Oca2026 23:59:26.084] [Server thread/INFO] [net.neoforged.neoforge.server.permission.PermissionAPI/]: Successfully initialized permission handler neoforge:default_handler
+[19Oca2026 23:59:26.207] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing view distance to 12, from 10
+[19Oca2026 23:59:26.207] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing simulation distance to 12, from 0
+[19Oca2026 23:59:26.973] [Server thread/INFO] [net.minecraft.server.players.PlayerList/]: Dev[local:E:cbf43466] logged in with entity id 148 at (79.5, 74.0, -113.5)
+[19Oca2026 23:59:27.048] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev joined the game
+[19Oca2026 23:59:27.742] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 2 advancements
+[19Oca2026 23:59:53.585] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
+[19Oca2026 23:59:53.600] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[19Oca2026 23:59:53.630] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[19Oca2026 23:59:53.640] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[19Oca2026 23:59:55.606] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Stopping!
+[19Oca2026 23:59:55.652] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Dev lost connection: Disconnected
+[19Oca2026 23:59:55.653] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev left the game
+[19Oca2026 23:59:55.666] [Server thread/INFO] [net.minecraft.server.network.ServerCommonPacketListenerImpl/]: Stopping singleplayer server as player logged out
+[19Oca2026 23:59:55.696] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server
+[19Oca2026 23:59:55.696] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving players
+[19Oca2026 23:59:55.698] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving worlds
+[19Oca2026 23:59:56.195] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[19Oca2026 23:59:56.464] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[19Oca2026 23:59:56.470] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[19Oca2026 23:59:56.481] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (New World (1)): All chunks are saved
+[19Oca2026 23:59:56.481] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[19Oca2026 23:59:56.481] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[19Oca2026 23:59:56.481] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved

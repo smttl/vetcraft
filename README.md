@@ -102,6 +102,13 @@ Basit çiftleştirme yerine bilimsel ıslah yapın.
 
 Projenin farklı modülleri hakkında detaylı bilgi için aşağıdaki dokümanları inceleyebilirsiniz:
 
+### 📚 Oyun Sistemi Rehberleri (Game Mechanics)
+*   [🌾 Beslenme ve Sindirim Sistemi](docs/Besleme_Sistemi.md)
+*   [💰 Ekonomi ve İşletme Sistemi](docs/Ekonomi_ve_İşletme_Sistemi.md)
+*   [🧪 Genetik ve Islah Sistemi](docs/Genetik_ve_Islah_Sistemi.md)
+*   [🦠 Hastalık ve Metabolizma Sistemi](docs/Hastalık_ve_Metabolizma_Sistemi.md)
+*   [🧬 Reprodüktif Sistem](docs/Reprodüktif_Sistem.md)
+
 ### ⚙️ Konfigürasyon ve Varlıklar (Assets & Config)
 *   [🐄 Irklar (Breeds)](src/main/resources/assets/vetcraft/breeds/README.md) - Irk özellikleri, genetik ve varyasyonlar.
 *   [🦠 Hastalıklar (Diseases)](src/main/resources/assets/vetcraft/diseases/README.md) - Hastalık tanımları, belirtiler ve tedavi.
