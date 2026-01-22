@@ -25,7 +25,8 @@ public class FeedTroughBlock extends Block {
     public static final IntegerProperty LEVEL = IntegerProperty.create("level", 0, 3);
 
     // Bloğun Şekli (Yarım blok yüksekliğinde olsun)
-    protected static final VoxelShape SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D);
+    // Bloğun Şekli (Kazan gibi yaklaşık tam blok)
+    protected static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 16.0D, 14.0D);
 
     public FeedTroughBlock(BlockBehaviour.Properties properties) {
         super(properties);
@@ -39,7 +40,8 @@ public class FeedTroughBlock extends Block {
 
     // SAĞ TIKLAMA İŞLEMİ (DOLDURMA)
     @Override
-    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand,
+            BlockHitResult hit) {
         ItemStack itemstack = player.getItemInHand(hand);
         int currentLevel = state.getValue(LEVEL);
 

@@ -11,7 +11,7 @@ VetCraft, Minecraft'taki hayvancılık mekaniklerini tamamen değiştirerek **ge
 Her hayvanın yaşayan, dinamik bir metabolizması vardır.
 
 *   **Rumen pH Dengesi:** 
-    *   **Asidoz (pH < 5.8):** Çok fazla tahıl (Buğday, Mısır) ve az kaba yem verilirse oluşur. Süt yağı düşer, hayvan topallar. Tedavisi: Saman .
+    *   **Asidoz (pH < 5.8):** Çok fazla tahıl (Buğday, Mısır) ve az kaba yem verilirse oluşur. Süt yağı düşer, hayvan topallar. Tedavisi: Saman + Sirke.
     *   **Alkaloz (pH > 7.5):** Çok fazla kaba yem veya protein kaynaklı. Tedavisi: Dengeli rasyon.
 *   **Hidrasyon ve Su:** 
     *   Süt veren inekler günde ~100L su içer. Susuzluk süt verimini anında keser.

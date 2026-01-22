@@ -11,5 +11,17 @@
     },
     "done": false
   },
+  "minecraft:recipes/misc/wheat": {
+    "criteria": {
+      "has_hay_block": "2026-01-22 22:13:15 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/target": {
+    "criteria": {
+      "has_hay_block": "2026-01-22 22:13:15 +0300"
+    },
+    "done": true
+  },
   "DataVersion": 3700
 }

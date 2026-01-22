@@ -1,58 +1,54 @@
-[19Oca2026 23:59:02.544] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeclientuserdev, --version, 20.4.251, --assetIndex, 12, --assetsDir, C:\\Users\\samet\\.gradle\\caches\\neoformruntime\\assets, --gameDir, ., --fml.neoForgeVersion, 20.4.251, --fml.fmlVersion, 2.0.17, --fml.mcVersion, 1.20.4, --fml.neoFormVersion, 20240627.114801]
-[19Oca2026 23:59:02.548] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.17 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
-[19Oca2026 23:59:02.664] [main/INFO] [net.neoforged.fml.loading.ImmediateWindowHandler/]: Loading ImmediateWindowProvider fmlearlywindow
-[19Oca2026 23:59:02.876] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.6
-[19Oca2026 23:59:03.069] [main/INFO] [EARLYDISPLAY/]: Requested GL version 4.6 got version 4.6
-[19Oca2026 23:59:03.260] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/samet/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.13.4+mixin.0.8.5/8adf0cff1795a169141b9e16ad7b9f6e2527a990/sponge-mixin-0.13.4+mixin.0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
-[19Oca2026 23:59:03.394] [pool-2-thread-1/INFO] [EARLYDISPLAY/]: GL info: NVIDIA GeForce RTX 4060/PCIe/SSE2 GL version 4.6.0 NVIDIA 581.57, NVIDIA Corporation
-[19Oca2026 23:59:03.582] [main/INFO] [net.neoforged.fml.loading.moddiscovery.JarInJarDependencyLocator/]: Found 1 dependencies adding them to mods collection
-[19Oca2026 23:59:05.418] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeclientuserdev' with arguments [--version, 20.4.251, --gameDir, ., --assetsDir, C:\Users\samet\.gradle\caches\neoformruntime\assets, --assetIndex, 12]
-[19Oca2026 23:59:06.443] [main/WARN] [oshi.driver.windows.perfmon.PerfmonDisabled/]: Invalid registry value type detected for PerfOS counters. Should be REG_DWORD. Ignoring: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PerfOS\Performance\Disable Performance Counters.
-[19Oca2026 23:59:09.602] [Datafixer Bootstrap/INFO] [com.mojang.datafixers.DataFixerBuilder/]: 198 Datafixer optimizations took 157 milliseconds
-[19Oca2026 23:59:11.974] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
-[19Oca2026 23:59:11.976] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
-[19Oca2026 23:59:11.978] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
-[19Oca2026 23:59:11.978] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
-[19Oca2026 23:59:11.980] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
-[19Oca2026 23:59:12.103] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/samet/Pictures/vetcraft/build/moddev/artifacts/neoforge-20.4.251.jar%23180!/assets/.mcassetsroot' uses unexpected schema
-[19Oca2026 23:59:12.104] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/samet/Pictures/vetcraft/build/moddev/artifacts/neoforge-20.4.251.jar%23180!/data/.mcassetsroot' uses unexpected schema
-[19Oca2026 23:59:12.141] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
-[19Oca2026 23:59:12.156] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: Dev
-[19Oca2026 23:59:12.241] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.3.2+13
-[19Oca2026 23:59:12.471] [modloading-worker-0/INFO] [net.neoforged.neoforge.common.NeoForgeMod/NEOFORGE-MOD]: NeoForge mod loading, version 20.4.251, for MC 1.20.4 with MCP 20240627.114801
-[19Oca2026 23:59:13.238] [Render thread/INFO] [net.neoforged.neoforge.gametest.GameTestHooks/]: Enabled Gametest Namespaces: [vetcraft]
-[19Oca2026 23:59:13.496] [Render thread/INFO] [net.minecraft.server.packs.resources.ReloadableResourceManager/]: Reloading ResourceManager: mod_resources, mod:vetcraft, mod:neoforge, vanilla
-[19Oca2026 23:59:13.643] [Worker-Main-12/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_all_no_pua-15.1.04.hex, loading
-[19Oca2026 23:59:13.781] [Render thread/INFO] [com.vetsim.vetcraft.VetCraft/]: Market verileri yüklendi. Alınabilir: 22, Satılabilir: 5
-[19Oca2026 23:59:13.858] [Render thread/INFO] [com.vetsim.vetcraft.VetCraft/]: Sığır Hastalıkları Yüklendi: 9 adet.
-[19Oca2026 23:59:13.885] [Render thread/INFO] [com.vetsim.vetcraft.VetCraft/]: Sığır Irkları Yüklendi: 5 adet.
-[19Oca2026 23:59:13.885] [Render thread/INFO] [com.vetsim.vetcraft.VetCraft/]: VetCraft: Hastalık ve Irk veritabanı yüklendi.
-[19Oca2026 23:59:14.540] [Worker-Main-4/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'minecraft:block/cauldron_level0' referenced from: vetcraft:feed_trough#level=0: java.io.FileNotFoundException: minecraft:models/block/cauldron_level0.json
-[19Oca2026 23:59:15.022] [Worker-Main-4/WARN] [net.minecraft.client.resources.model.ModelManager/]: Missing textures in model vetcraft:salt_lick#:
+[22Oca2026 22:54:05.445] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeclientuserdev, --version, 20.4.251, --assetIndex, 12, --assetsDir, C:\\Users\\samet\\.gradle\\caches\\neoformruntime\\assets, --gameDir, ., --fml.neoForgeVersion, 20.4.251, --fml.fmlVersion, 2.0.17, --fml.mcVersion, 1.20.4, --fml.neoFormVersion, 20240627.114801]
+[22Oca2026 22:54:05.450] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.17 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
+[22Oca2026 22:54:05.607] [main/INFO] [net.neoforged.fml.loading.ImmediateWindowHandler/]: Loading ImmediateWindowProvider fmlearlywindow
+[22Oca2026 22:54:05.743] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.6
+[22Oca2026 22:54:05.947] [main/INFO] [EARLYDISPLAY/]: Requested GL version 4.6 got version 4.6
+[22Oca2026 22:54:06.098] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/samet/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.13.4+mixin.0.8.5/8adf0cff1795a169141b9e16ad7b9f6e2527a990/sponge-mixin-0.13.4+mixin.0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
+[22Oca2026 22:54:06.169] [pool-2-thread-1/INFO] [EARLYDISPLAY/]: GL info: NVIDIA GeForce RTX 4060/PCIe/SSE2 GL version 4.6.0 NVIDIA 581.57, NVIDIA Corporation
+[22Oca2026 22:54:06.511] [main/INFO] [net.neoforged.fml.loading.moddiscovery.JarInJarDependencyLocator/]: Found 1 dependencies adding them to mods collection
+[22Oca2026 22:54:08.802] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeclientuserdev' with arguments [--version, 20.4.251, --gameDir, ., --assetsDir, C:\Users\samet\.gradle\caches\neoformruntime\assets, --assetIndex, 12]
+[22Oca2026 22:54:09.998] [main/WARN] [oshi.driver.windows.perfmon.PerfmonDisabled/]: Invalid registry value type detected for PerfOS counters. Should be REG_DWORD. Ignoring: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PerfOS\Performance\Disable Performance Counters.
+[22Oca2026 22:54:13.774] [Datafixer Bootstrap/INFO] [com.mojang.datafixers.DataFixerBuilder/]: 198 Datafixer optimizations took 147 milliseconds
+[22Oca2026 22:54:16.424] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[22Oca2026 22:54:16.427] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
+[22Oca2026 22:54:16.430] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[22Oca2026 22:54:16.432] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[22Oca2026 22:54:16.434] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[22Oca2026 22:54:16.618] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/samet/Pictures/vetcraft/build/moddev/artifacts/neoforge-20.4.251.jar%23180!/assets/.mcassetsroot' uses unexpected schema
+[22Oca2026 22:54:16.618] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/samet/Pictures/vetcraft/build/moddev/artifacts/neoforge-20.4.251.jar%23180!/data/.mcassetsroot' uses unexpected schema
+[22Oca2026 22:54:16.647] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[22Oca2026 22:54:16.658] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: Dev
+[22Oca2026 22:54:16.789] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.3.2+13
+[22Oca2026 22:54:17.117] [modloading-worker-0/INFO] [net.neoforged.neoforge.common.NeoForgeMod/NEOFORGE-MOD]: NeoForge mod loading, version 20.4.251, for MC 1.20.4 with MCP 20240627.114801
+[22Oca2026 22:54:17.923] [Render thread/INFO] [net.neoforged.neoforge.gametest.GameTestHooks/]: Enabled Gametest Namespaces: [vetcraft]
+[22Oca2026 22:54:18.130] [Render thread/INFO] [net.minecraft.server.packs.resources.ReloadableResourceManager/]: Reloading ResourceManager: mod_resources, mod:vetcraft, mod:neoforge, vanilla
+[22Oca2026 22:54:18.269] [Worker-Main-12/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_all_no_pua-15.1.04.hex, loading
+[22Oca2026 22:54:18.379] [Render thread/INFO] [com.vetsim.vetcraft.VetCraft/]: Market verileri yüklendi. Alınabilir: 22, Satılabilir: 5
+[22Oca2026 22:54:18.398] [Render thread/INFO] [com.vetsim.vetcraft.VetCraft/]: Sığır Hastalıkları Yüklendi: 9 adet.
+[22Oca2026 22:54:18.402] [Render thread/INFO] [com.vetsim.vetcraft.VetCraft/]: Sığır Irkları Yüklendi: 5 adet.
+[22Oca2026 22:54:18.404] [Render thread/INFO] [com.vetsim.vetcraft.VetCraft/]: VetCraft: Hastalık ve Irk veritabanı yüklendi.
+[22Oca2026 22:54:19.660] [Worker-Main-13/WARN] [net.minecraft.client.resources.model.ModelManager/]: Missing textures in model vetcraft:salt_lick#:
     minecraft:textures/atlas/blocks.png:minecraft:block/brick
-[19Oca2026 23:59:15.319] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:item.goat_horn.play
-[19Oca2026 23:59:15.320] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:entity.goat.screaming.horn_break
-[19Oca2026 23:59:15.321] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:entity.generic.wind_burst
-[19Oca2026 23:59:15.413] [Render thread/INFO] [com.mojang.blaze3d.audio.Library/]: OpenAL initialized on device OpenAL Soft on R25f-30 (NVIDIA High Definition Audio)
-[19Oca2026 23:59:15.414] [Render thread/INFO] [net.minecraft.client.sounds.SoundEngine/SOUNDS]: Sound engine started
-[19Oca2026 23:59:15.537] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
-[19Oca2026 23:59:15.544] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
-[19Oca2026 23:59:15.545] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
-[19Oca2026 23:59:15.545] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
-[19Oca2026 23:59:15.545] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
-[19Oca2026 23:59:15.549] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
-[19Oca2026 23:59:15.549] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
-[19Oca2026 23:59:15.549] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
-[19Oca2026 23:59:15.549] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
-[19Oca2026 23:59:15.868] [Render thread/WARN] [net.minecraft.client.renderer.ShaderInstance/]: Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
-[19Oca2026 23:59:16.237] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
-[19Oca2026 23:59:16.238] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
-[19Oca2026 23:59:16.239] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
-[19Oca2026 23:59:16.239] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x512x0 minecraft:textures/atlas/gui.png-atlas
-[19Oca2026 23:59:21.162] [Render thread/WARN] [net.neoforged.neoforge.common.CommonHooks/WP]: The following mods have version differences that were not resolved:
-vetsim (version 1.0.0 -> MISSING)
-Things may not work well.
-[19Oca2026 23:59:21.873] [Render thread/ERROR] [net.minecraft.world.item.crafting.RecipeManager/]: Parsing error loading recipe vetcraft:halter
+[22Oca2026 22:54:19.914] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:item.goat_horn.play
+[22Oca2026 22:54:19.915] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:entity.goat.screaming.horn_break
+[22Oca2026 22:54:19.915] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:entity.generic.wind_burst
+[22Oca2026 22:54:19.966] [Render thread/INFO] [com.mojang.blaze3d.audio.Library/]: OpenAL initialized on device OpenAL Soft on R25f-30 (NVIDIA High Definition Audio)
+[22Oca2026 22:54:19.967] [Render thread/INFO] [net.minecraft.client.sounds.SoundEngine/SOUNDS]: Sound engine started
+[22Oca2026 22:54:20.100] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
+[22Oca2026 22:54:20.107] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
+[22Oca2026 22:54:20.107] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[22Oca2026 22:54:20.108] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[22Oca2026 22:54:20.108] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
+[22Oca2026 22:54:20.111] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
+[22Oca2026 22:54:20.111] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
+[22Oca2026 22:54:20.113] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[22Oca2026 22:54:20.113] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[22Oca2026 22:54:20.236] [Render thread/WARN] [net.minecraft.client.renderer.ShaderInstance/]: Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
+[22Oca2026 22:54:20.294] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
+[22Oca2026 22:54:20.296] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
+[22Oca2026 22:54:20.296] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[22Oca2026 22:54:20.296] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x512x0 minecraft:textures/atlas/gui.png-atlas
+[22Oca2026 22:57:18.249] [Render thread/ERROR] [net.minecraft.world.item.crafting.RecipeManager/]: Parsing error loading recipe vetcraft:halter
 com.google.gson.JsonParseException: Item must not be minecraft:air
 	at net.minecraft.Util.getOrThrow(Util.java:839) ~[neoforge-20.4.251.jar:?]
 	at net.neoforged.neoforge.common.conditions.ICondition.getWithWithConditionsCodec(ICondition.java:46) ~[neoforge-20.4.251.jar:?]
@@ -111,7 +107,7 @@ com.google.gson.JsonParseException: Item must not be minecraft:air
 	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
 	at java.lang.reflect.Method.invoke(Method.java:569) ~[?:?]
 	at net.neoforged.devlaunch.Main.main(Main.java:57) ~[?:?]
-[19Oca2026 23:59:21.929] [Render thread/ERROR] [net.minecraft.world.item.crafting.RecipeManager/]: Parsing error loading recipe vetsim:smart_phone
+[22Oca2026 22:57:18.305] [Render thread/ERROR] [net.minecraft.world.item.crafting.RecipeManager/]: Parsing error loading recipe vetsim:smart_phone
 com.google.gson.JsonParseException: Item must not be minecraft:air
 	at net.minecraft.Util.getOrThrow(Util.java:839) ~[neoforge-20.4.251.jar:?]
 	at net.neoforged.neoforge.common.conditions.ICondition.getWithWithConditionsCodec(ICondition.java:46) ~[neoforge-20.4.251.jar:?]
@@ -170,7 +166,7 @@ com.google.gson.JsonParseException: Item must not be minecraft:air
 	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
 	at java.lang.reflect.Method.invoke(Method.java:569) ~[?:?]
 	at net.neoforged.devlaunch.Main.main(Main.java:57) ~[?:?]
-[19Oca2026 23:59:21.939] [Render thread/ERROR] [net.minecraft.world.item.crafting.RecipeManager/]: Parsing error loading recipe vetsim:stethoscope
+[22Oca2026 22:57:18.312] [Render thread/ERROR] [net.minecraft.world.item.crafting.RecipeManager/]: Parsing error loading recipe vetsim:stethoscope
 com.google.gson.JsonParseException: Item must not be minecraft:air
 	at net.minecraft.Util.getOrThrow(Util.java:839) ~[neoforge-20.4.251.jar:?]
 	at net.neoforged.neoforge.common.conditions.ICondition.getWithWithConditionsCodec(ICondition.java:46) ~[neoforge-20.4.251.jar:?]
@@ -229,7 +225,7 @@ com.google.gson.JsonParseException: Item must not be minecraft:air
 	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
 	at java.lang.reflect.Method.invoke(Method.java:569) ~[?:?]
 	at net.neoforged.devlaunch.Main.main(Main.java:57) ~[?:?]
-[19Oca2026 23:59:21.944] [Render thread/ERROR] [net.minecraft.world.item.crafting.RecipeManager/]: Parsing error loading recipe vetsim:celep_whistle
+[22Oca2026 22:57:18.316] [Render thread/ERROR] [net.minecraft.world.item.crafting.RecipeManager/]: Parsing error loading recipe vetsim:celep_whistle
 com.google.gson.JsonParseException: Item must not be minecraft:air
 	at net.minecraft.Util.getOrThrow(Util.java:839) ~[neoforge-20.4.251.jar:?]
 	at net.neoforged.neoforge.common.conditions.ICondition.getWithWithConditionsCodec(ICondition.java:46) ~[neoforge-20.4.251.jar:?]
@@ -288,7 +284,7 @@ com.google.gson.JsonParseException: Item must not be minecraft:air
 	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
 	at java.lang.reflect.Method.invoke(Method.java:569) ~[?:?]
 	at net.neoforged.devlaunch.Main.main(Main.java:57) ~[?:?]
-[19Oca2026 23:59:21.956] [Render thread/ERROR] [net.minecraft.world.item.crafting.RecipeManager/]: Parsing error loading recipe vetcraft:celep_whistle
+[22Oca2026 22:57:18.327] [Render thread/ERROR] [net.minecraft.world.item.crafting.RecipeManager/]: Parsing error loading recipe vetcraft:celep_whistle
 com.google.gson.JsonParseException: Item must not be minecraft:air
 	at net.minecraft.Util.getOrThrow(Util.java:839) ~[neoforge-20.4.251.jar:?]
 	at net.neoforged.neoforge.common.conditions.ICondition.getWithWithConditionsCodec(ICondition.java:46) ~[neoforge-20.4.251.jar:?]
@@ -347,7 +343,7 @@ com.google.gson.JsonParseException: Item must not be minecraft:air
 	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
 	at java.lang.reflect.Method.invoke(Method.java:569) ~[?:?]
 	at net.neoforged.devlaunch.Main.main(Main.java:57) ~[?:?]
-[19Oca2026 23:59:21.965] [Render thread/ERROR] [net.minecraft.world.item.crafting.RecipeManager/]: Parsing error loading recipe vetcraft:smart_phone
+[22Oca2026 22:57:18.336] [Render thread/ERROR] [net.minecraft.world.item.crafting.RecipeManager/]: Parsing error loading recipe vetcraft:smart_phone
 com.google.gson.JsonParseException: Item must not be minecraft:air
 	at net.minecraft.Util.getOrThrow(Util.java:839) ~[neoforge-20.4.251.jar:?]
 	at net.neoforged.neoforge.common.conditions.ICondition.getWithWithConditionsCodec(ICondition.java:46) ~[neoforge-20.4.251.jar:?]
@@ -406,7 +402,7 @@ com.google.gson.JsonParseException: Item must not be minecraft:air
 	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
 	at java.lang.reflect.Method.invoke(Method.java:569) ~[?:?]
 	at net.neoforged.devlaunch.Main.main(Main.java:57) ~[?:?]
-[19Oca2026 23:59:21.968] [Render thread/ERROR] [net.minecraft.world.item.crafting.RecipeManager/]: Parsing error loading recipe vetcraft:stethoscope
+[22Oca2026 22:57:18.339] [Render thread/ERROR] [net.minecraft.world.item.crafting.RecipeManager/]: Parsing error loading recipe vetcraft:stethoscope
 com.google.gson.JsonParseException: Item must not be minecraft:air
 	at net.minecraft.Util.getOrThrow(Util.java:839) ~[neoforge-20.4.251.jar:?]
 	at net.neoforged.neoforge.common.conditions.ICondition.getWithWithConditionsCodec(ICondition.java:46) ~[neoforge-20.4.251.jar:?]
@@ -465,7 +461,7 @@ com.google.gson.JsonParseException: Item must not be minecraft:air
 	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
 	at java.lang.reflect.Method.invoke(Method.java:569) ~[?:?]
 	at net.neoforged.devlaunch.Main.main(Main.java:57) ~[?:?]
-[19Oca2026 23:59:21.975] [Render thread/ERROR] [net.minecraft.world.item.crafting.RecipeManager/]: Parsing error loading recipe vetsim:halter
+[22Oca2026 22:57:18.344] [Render thread/ERROR] [net.minecraft.world.item.crafting.RecipeManager/]: Parsing error loading recipe vetsim:halter
 com.google.gson.JsonParseException: Item must not be minecraft:air
 	at net.minecraft.Util.getOrThrow(Util.java:839) ~[neoforge-20.4.251.jar:?]
 	at net.neoforged.neoforge.common.conditions.ICondition.getWithWithConditionsCodec(ICondition.java:46) ~[neoforge-20.4.251.jar:?]
@@ -524,39 +520,79 @@ com.google.gson.JsonParseException: Item must not be minecraft:air
 	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
 	at java.lang.reflect.Method.invoke(Method.java:569) ~[?:?]
 	at net.neoforged.devlaunch.Main.main(Main.java:57) ~[?:?]
-[19Oca2026 23:59:21.979] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 7 recipes
-[19Oca2026 23:59:22.160] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 1271 advancements
-[19Oca2026 23:59:22.540] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Starting integrated minecraft server version 1.20.4
-[19Oca2026 23:59:22.540] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
-[19Oca2026 23:59:23.347] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld
-[19Oca2026 23:59:25.147] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[19Oca2026 23:59:25.279] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[19Oca2026 23:59:25.298] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[19Oca2026 23:59:25.298] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[19Oca2026 23:59:25.371] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[19Oca2026 23:59:25.877] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 51%
-[19Oca2026 23:59:26.084] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Time elapsed: 2725 ms
-[19Oca2026 23:59:26.084] [Server thread/INFO] [net.neoforged.neoforge.server.permission.PermissionAPI/]: Successfully initialized permission handler neoforge:default_handler
-[19Oca2026 23:59:26.207] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing view distance to 12, from 10
-[19Oca2026 23:59:26.207] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing simulation distance to 12, from 0
-[19Oca2026 23:59:26.973] [Server thread/INFO] [net.minecraft.server.players.PlayerList/]: Dev[local:E:cbf43466] logged in with entity id 148 at (79.5, 74.0, -113.5)
-[19Oca2026 23:59:27.048] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev joined the game
-[19Oca2026 23:59:27.742] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 2 advancements
-[19Oca2026 23:59:53.585] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
-[19Oca2026 23:59:53.600] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[19Oca2026 23:59:53.630] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[19Oca2026 23:59:53.640] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[19Oca2026 23:59:55.606] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Stopping!
-[19Oca2026 23:59:55.652] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Dev lost connection: Disconnected
-[19Oca2026 23:59:55.653] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev left the game
-[19Oca2026 23:59:55.666] [Server thread/INFO] [net.minecraft.server.network.ServerCommonPacketListenerImpl/]: Stopping singleplayer server as player logged out
-[19Oca2026 23:59:55.696] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server
-[19Oca2026 23:59:55.696] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving players
-[19Oca2026 23:59:55.698] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving worlds
-[19Oca2026 23:59:56.195] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[19Oca2026 23:59:56.464] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[19Oca2026 23:59:56.470] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[19Oca2026 23:59:56.481] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (New World (1)): All chunks are saved
-[19Oca2026 23:59:56.481] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[19Oca2026 23:59:56.481] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[19Oca2026 23:59:56.481] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved
+[22Oca2026 22:57:18.348] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 7 recipes
+[22Oca2026 22:57:18.518] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 1271 advancements
+[22Oca2026 22:57:18.901] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Starting integrated minecraft server version 1.20.4
+[22Oca2026 22:57:18.902] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
+[22Oca2026 22:57:19.866] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld
+[22Oca2026 22:57:21.748] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[22Oca2026 22:57:21.748] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[22Oca2026 22:57:21.748] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[22Oca2026 22:57:21.748] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[22Oca2026 22:57:21.899] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[22Oca2026 22:57:22.058] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Holstein, Pos: BlockPos{x=0, y=0, z=0}
+[22Oca2026 22:57:22.071] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Holstein, Pos: BlockPos{x=0, y=0, z=0}
+[22Oca2026 22:57:22.073] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Angus, Pos: BlockPos{x=0, y=0, z=0}
+[22Oca2026 22:57:22.075] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Yerli (Native), Pos: BlockPos{x=0, y=0, z=0}
+[22Oca2026 22:57:22.076] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Simmental, Pos: BlockPos{x=0, y=0, z=0}
+[22Oca2026 22:57:22.079] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Holstein, Pos: BlockPos{x=0, y=0, z=0}
+[22Oca2026 22:57:22.081] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Simmental, Pos: BlockPos{x=0, y=0, z=0}
+[22Oca2026 22:57:22.082] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Simmental, Pos: BlockPos{x=0, y=0, z=0}
+[22Oca2026 22:57:22.084] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Yerli (Native), Pos: BlockPos{x=0, y=0, z=0}
+[22Oca2026 22:57:22.084] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Simmental, Pos: BlockPos{x=0, y=0, z=0}
+[22Oca2026 22:57:22.086] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Yerli (Native), Pos: BlockPos{x=0, y=0, z=0}
+[22Oca2026 22:57:22.108] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Angus, Pos: BlockPos{x=0, y=0, z=0}
+[22Oca2026 22:57:22.109] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Simmental, Pos: BlockPos{x=0, y=0, z=0}
+[22Oca2026 22:57:22.110] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Jersey, Pos: BlockPos{x=0, y=0, z=0}
+[22Oca2026 22:57:22.113] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Angus, Pos: BlockPos{x=0, y=0, z=0}
+[22Oca2026 22:57:22.115] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Angus, Pos: BlockPos{x=0, y=0, z=0}
+[22Oca2026 22:57:22.116] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Holstein, Pos: BlockPos{x=0, y=0, z=0}
+[22Oca2026 22:57:22.126] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Yerli (Native), Pos: BlockPos{x=0, y=0, z=0}
+[22Oca2026 22:57:22.126] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Angus, Pos: BlockPos{x=0, y=0, z=0}
+[22Oca2026 22:57:22.128] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Simmental, Pos: BlockPos{x=0, y=0, z=0}
+[22Oca2026 22:57:22.129] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Simmental, Pos: BlockPos{x=0, y=0, z=0}
+[22Oca2026 22:57:22.130] [entity-deserializer/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Yerli (Native), Pos: BlockPos{x=0, y=0, z=0}
+[22Oca2026 22:57:22.402] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 65%
+[22Oca2026 22:57:22.511] [Server thread/INFO] [net.neoforged.neoforge.server.permission.PermissionAPI/]: Successfully initialized permission handler neoforge:default_handler
+[22Oca2026 22:57:22.516] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Time elapsed: 2632 ms
+[22Oca2026 22:57:22.600] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing view distance to 12, from 10
+[22Oca2026 22:57:22.600] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing simulation distance to 12, from 0
+[22Oca2026 22:57:23.365] [Server thread/INFO] [net.minecraft.server.players.PlayerList/]: Dev[local:E:9edcc497] logged in with entity id 260 at (77.52465989509528, 75.49390748022948, -113.67298512217354)
+[22Oca2026 22:57:23.476] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev joined the game
+[22Oca2026 22:57:23.811] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 4 advancements
+[22Oca2026 22:57:28.509] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💧 Hidrasyon: % 92 (✔)
+[22Oca2026 22:57:28.519] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💨 Gaz Seviyesi: % 0
+[22Oca2026 22:58:33.163] [Server thread/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Yerli (Native), Pos: BlockPos{x=0, y=0, z=0}
+[22Oca2026 22:58:34.514] [Server thread/INFO] [com.vetsim.vetcraft.VetCraft/]: CattleEntity Spawned: Yerli (Native), Pos: BlockPos{x=0, y=0, z=0}
+[22Oca2026 22:59:23.872] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💧 Hidrasyon: % 92 (✔)
+[22Oca2026 22:59:23.872] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 💨 Gaz Seviyesi: % 12
+[22Oca2026 22:59:55.311] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
+[22Oca2026 22:59:55.325] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[22Oca2026 22:59:55.352] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[22Oca2026 22:59:55.362] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[22Oca2026 23:01:12.260] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
+[22Oca2026 23:01:12.267] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[22Oca2026 23:01:12.288] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[22Oca2026 23:01:12.298] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[22Oca2026 23:02:09.659] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
+[22Oca2026 23:02:09.667] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[22Oca2026 23:02:09.681] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[22Oca2026 23:02:09.691] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[22Oca2026 23:02:49.160] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
+[22Oca2026 23:02:49.169] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[22Oca2026 23:02:49.183] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[22Oca2026 23:02:49.192] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[22Oca2026 23:13:45.862] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Dev lost connection: Disconnected
+[22Oca2026 23:13:45.863] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev left the game
+[22Oca2026 23:13:45.872] [Server thread/INFO] [net.minecraft.server.network.ServerCommonPacketListenerImpl/]: Stopping singleplayer server as player logged out
+[22Oca2026 23:13:45.913] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server
+[22Oca2026 23:13:45.914] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving players
+[22Oca2026 23:13:45.914] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving worlds
+[22Oca2026 23:13:46.356] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[22Oca2026 23:13:46.748] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[22Oca2026 23:13:46.754] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[22Oca2026 23:13:46.765] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (New World (1)): All chunks are saved
+[22Oca2026 23:13:46.766] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[22Oca2026 23:13:46.766] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[22Oca2026 23:13:46.766] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved
+[22Oca2026 23:38:05.380] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Stopping!

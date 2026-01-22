@@ -1,0 +1,29 @@
+{
+  "drugs": [
+    {
+      "id": "vetsim:hormone_pgf2a",
+      "category": "FUNCTIONAL",
+      "action": "ABORT_OR_ESTRUS",
+      "stress_impact": 20,
+      "bcs_impact": 0.05
+    },
+    {
+      "id": "vetsim:penicillin",
+      "category": "CURE",
+      "stress_impact": 10,
+      "//": "Penisilin can yakar (Stres artırır) ama hastalık iyileştirir."
+    },
+    {
+      "id": "minecraft:apple",
+      "category": "CURE",
+      "stress_impact": -5,
+      "//": "Elma (Vitamin) stresi düşürür."
+    },
+    {
+      "id": "vetsim:painkiller",
+      "category": "FUNCTIONAL",
+      "action": "STRESS_RELIEF",
+      "stress_impact": -30
+    }
+  ]
+}

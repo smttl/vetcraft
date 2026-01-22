@@ -1,7 +1,16 @@
 {
     "variants": {
-        "": {
-            "model": "vetcraft:block/feed_trough"
+        "level=0": {
+            "model": "minecraft:block/cauldron"
+        },
+        "level=1": {
+            "model": "vetcraft:block/feed_trough_level1"
+        },
+        "level=2": {
+            "model": "vetcraft:block/feed_trough_level2"
+        },
+        "level=3": {
+            "model": "vetcraft:block/feed_trough_level3"
         }
     }
 }
